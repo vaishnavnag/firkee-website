@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Philosophy — Firkee</title>
+  <meta name="description" content="Firkee is a footwear design studio in Mumbai with an in-house factory. Trend research, concept development, material sourcing, and prototyping — all under one roof.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👟</text></svg>">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta property="og:title" content="Design Philosophy — Firkee">
+  <meta property="og:description" content="Firkee is a footwear design studio in Mumbai with an in-house factory. Trend research, concept development, material sourcing, and prototyping — all under one roof.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://firkee.com/design">
+  <meta property="og:image" content="https://firkee.com/assets/og-design.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/design-page.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__letter">F</span>
+      <span class="loader__letter">I</span>
+      <span class="loader__letter">R</span>
+      <span class="loader__letter">K</span>
+      <span class="loader__letter">E</span>
+      <span class="loader__letter">E</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav nav--dark" id="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-text">FIRKEE</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="design.html" class="nav__link nav__link--active">Design</a>
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+      <a href="process.html" class="nav__link">Process</a>
+      <a href="factory.html" class="nav__link">Factory</a>
+      <a href="ai.html" class="nav__link">AI</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="work-with-us.html" class="nav__link">Work With Us</a>
+      <a href="contact.html" class="nav__link nav__link--cta">Start a Project</a>
+    </nav>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="design.html" class="mobile-menu__link">Design</a>
+      <a href="portfolio.html" class="mobile-menu__link">Portfolio</a>
+      <a href="process.html" class="mobile-menu__link">Process</a>
+      <a href="factory.html" class="mobile-menu__link">Factory</a>
+      <a href="ai.html" class="mobile-menu__link">AI</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="work-with-us.html" class="mobile-menu__link">Work With Us</a>
+      <a href="contact.html" class="mobile-menu__link mobile-menu__link--cta">Start a Project</a>
+    </nav>
+  </div>
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="dhero">
+    <div class="dhero__grain"></div>
+    <div class="dhero__gradient"></div>
+    <div class="dhero__content">
+      <h1 class="dhero__title reveal" data-delay="1">Everything Starts With <em>Design.</em></h1>
+      <p class="dhero__subtitle reveal" data-delay="2">We're a footwear design studio in Mumbai that also happens to run a factory. Not the other way around.</p>
+    </div>
+    <div class="dhero__scroll reveal" data-delay="4">
+      <div class="dhero__scroll-line"></div>
+      <span class="dhero__scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== 2. PHILOSOPHY ===== -->
+  <section class="philosophy">
+    <div class="philosophy__container">
+      <div class="section-label">
+        <span class="section-label__num">01</span>
+        <span class="section-label__text">Philosophy</span>
+      </div>
+      <div class="philosophy__quote reveal">
+        <p class="philosophy__text">We start where you start &mdash; with the trends. We follow the same global runways, the same street style, the same colour forecasts. When you send us a brief, we're already thinking in the same direction.</p>
+        <p class="philosophy__text" style="margin-top: 1.2em;">Our process is simple: trend research, concept development, material selection, prototyping. We do it all in-house, which means fewer delays, faster iterations, and a design team that actually understands manufacturing constraints &mdash; so you don't waste time on ideas that can't be built.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. DESIGN PROCESS TIMELINE ===== -->
+  <section class="timeline">
+    <div class="timeline__header">
+      <div class="section-label" style="justify-content: center;">
+        <span class="section-label__num">02</span>
+        <span class="section-label__text">Design Process</span>
+      </div>
+      <h2 class="timeline__title reveal">From Vision to <em>Reality</em></h2>
+    </div>
+
+    <div class="timeline__steps">
+
+      <!-- Step 1: Trend Research -->
+      <div class="timeline__step reveal">
+        <div class="timeline__step-body">
+          <span class="timeline__step-num">01</span>
+          <h3 class="timeline__step-title">Trend Research</h3>
+          <p class="timeline__step-desc">WGSN, runway reports, street style, material fairs &mdash; we track it all season-round. By the time your brief arrives, we've usually spotted the same directions you have.</p>
+          <div class="photo-placeholder" style="margin-top: var(--space-sm);">
+            <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;">
+              <rect width="300" height="180" fill="none"/>
+              <!-- Mood board pins and swatches -->
+              <rect x="40" y="30" width="50" height="40" rx="2" stroke="#b8956a" stroke-width="0.6" fill="none" opacity="0.18"/>
+              <rect x="110" y="25" width="60" height="50" rx="2" stroke="#b8956a" stroke-width="0.6" fill="none" opacity="0.15"/>
+              <rect x="190" y="35" width="55" height="35" rx="2" stroke="#b8956a" stroke-width="0.6" fill="none" opacity="0.18"/>
+              <rect x="60" y="90" width="45" height="50" rx="2" stroke="#b8956a" stroke-width="0.6" fill="none" opacity="0.12"/>
+              <rect x="130" y="95" width="65" height="45" rx="2" stroke="#b8956a" stroke-width="0.6" fill="none" opacity="0.15"/>
+              <!-- Pins -->
+              <circle cx="65" cy="30" r="3" fill="#b8956a" opacity="0.2"/>
+              <circle cx="140" cy="25" r="3" fill="#b8956a" opacity="0.2"/>
+              <circle cx="217" cy="35" r="3" fill="#b8956a" opacity="0.2"/>
+            </svg>
+            <span class="photo-placeholder__label">REAL PHOTO: Mood board with fabric swatches, colour chips, and trend tearsheets pinned to a cork board</span>
+          </div>
+        </div>
+        <div class="timeline__step-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Magnifying glass + trend lines -->
+              <circle cx="85" cy="85" r="35" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="110" y1="110" x2="145" y2="145" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <polyline points="65,95 78,78 90,88 105,70" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="40" y1="140" x2="160" y2="140" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+              <line x1="40" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+              <line x1="40" y1="160" x2="120" y2="160" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+            </svg>
+            <span class="placeholder-shoe__label">Trend Intelligence</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Concept Development -->
+      <div class="timeline__step reveal">
+        <div class="timeline__step-body">
+          <span class="timeline__step-num">02</span>
+          <h3 class="timeline__step-title">Concept Development</h3>
+          <p class="timeline__step-desc">Your brief meets our research. We sketch options, explore directions, and narrow down. No fluff &mdash; just focused creative work that moves fast.</p>
+        </div>
+        <div class="timeline__step-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Stiletto heel sketch -->
+              <path d="M50,150 Q55,140 60,130 Q70,110 85,100 Q100,92 120,90 L145,90 Q150,90 150,95 L150,105 Q150,110 145,110 L90,112 Q75,115 68,125 Q62,135 58,150 Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Heel -->
+              <path d="M58,150 L55,170 Q54,175 58,175 L65,175 Q68,175 67,170 L62,150" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <!-- Sole line -->
+              <line x1="62" y1="150" x2="150" y2="110" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="4 3"/>
+              <!-- Pencil -->
+              <line x1="140" y1="50" x2="170" y2="80" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <polygon points="140,50 137,43 144,46" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <span class="placeholder-shoe__label">Creative Vision</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Material Selection -->
+      <div class="timeline__step reveal">
+        <div class="timeline__step-body">
+          <span class="timeline__step-num">03</span>
+          <h3 class="timeline__step-title">Material Selection</h3>
+          <p class="timeline__step-desc">200+ materials in our library. If we don't have it, we source it. Leather, textile, synthetic &mdash; whatever the design needs.</p>
+        </div>
+        <div class="timeline__step-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Fabric swatches layered -->
+              <rect x="40" y="60" width="50" height="50" rx="2" stroke="currentColor" stroke-width="1.5" transform="rotate(-8 65 85)"/>
+              <rect x="70" y="55" width="50" height="50" rx="2" stroke="currentColor" stroke-width="1.5" transform="rotate(3 95 80)"/>
+              <rect x="100" y="65" width="50" height="50" rx="2" stroke="currentColor" stroke-width="1.5" transform="rotate(-3 125 90)"/>
+              <!-- Texture lines in first swatch -->
+              <line x1="48" y1="72" x2="82" y2="68" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+              <line x1="50" y1="80" x2="84" y2="76" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+              <line x1="52" y1="88" x2="86" y2="84" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+              <!-- Cross-hatch in third swatch -->
+              <line x1="108" y1="74" x2="142" y2="74" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+              <line x1="108" y1="82" x2="142" y2="82" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+              <line x1="116" y1="66" x2="116" y2="108" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+              <line x1="130" y1="66" x2="130" y2="108" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+              <!-- Thread/needle -->
+              <path d="M60,130 Q80,120 100,135 Q120,150 140,130" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="6 4" opacity="0.4"/>
+            </svg>
+            <span class="placeholder-shoe__label">Material Library</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Prototyping -->
+      <div class="timeline__step reveal">
+        <div class="timeline__step-body">
+          <span class="timeline__step-num">04</span>
+          <h3 class="timeline__step-title">Prototyping</h3>
+          <p class="timeline__step-desc">Counter samples in 7&ndash;14 days. We make them in-house, so iterations are fast and you're not waiting on third parties.</p>
+        </div>
+        <div class="timeline__step-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Flat/mule shoe profile -->
+              <path d="M35,120 Q40,105 55,98 Q80,88 110,85 Q130,84 155,86 Q165,87 168,92 L170,100 Q170,108 160,110 L45,118 Q38,119 35,120Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Sole thickness -->
+              <path d="M35,120 Q38,124 45,125 L160,118 Q168,117 170,112 L170,100" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+              <!-- Iteration arrows (circular) -->
+              <path d="M85,55 A25,25 0 1,1 115,55" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+              <polygon points="115,55 112,48 120,52" stroke="currentColor" stroke-width="0.8" fill="currentColor" opacity="0.4"/>
+              <path d="M115,155 A25,25 0 1,1 85,155" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+              <polygon points="85,155 88,162 80,158" stroke="currentColor" stroke-width="0.8" fill="currentColor" opacity="0.4"/>
+            </svg>
+            <span class="placeholder-shoe__label">Rapid Iteration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Wear Testing -->
+      <div class="timeline__step reveal">
+        <div class="timeline__step-body">
+          <span class="timeline__step-num">05</span>
+          <h3 class="timeline__step-title">Testing &amp; Refinement</h3>
+          <p class="timeline__step-desc">Fit, finish, wearability. We test and refine until it's right. No cutting corners, no "good enough."</p>
+        </div>
+        <div class="timeline__step-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Boot silhouette -->
+              <path d="M70,55 L68,100 Q66,115 60,125 L55,135 Q52,140 55,145 L60,150 Q65,155 75,155 L140,155 Q150,155 152,150 L155,140 Q156,135 152,132 L140,128 Q130,124 128,115 L126,100 L128,55" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Check marks -->
+              <path d="M160,60 L167,67 L180,50" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M160,80 L167,87 L180,70" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M160,100 L167,107 L180,90" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Measurement lines -->
+              <line x1="40" y1="55" x2="40" y2="155" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="36" y1="55" x2="44" y2="55" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="36" y1="155" x2="44" y2="155" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+            </svg>
+            <span class="placeholder-shoe__label">Quality Assured</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6: Production-Ready -->
+      <div class="timeline__step reveal">
+        <div class="timeline__step-body">
+          <span class="timeline__step-num">06</span>
+          <h3 class="timeline__step-title">Production-Ready</h3>
+          <p class="timeline__step-desc">Approved sample becomes the production standard. Every pair matches. Your design intent carries all the way through to the shipping carton.</p>
+        </div>
+        <div class="timeline__step-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Wedge/platform shoe -->
+              <path d="M45,100 Q50,90 65,85 Q90,78 120,76 L150,76 Q158,76 160,82 L162,90 Q162,96 155,98 L50,105 Q46,105 45,100Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <!-- Platform sole -->
+              <path d="M45,100 L42,120 Q40,128 48,130 L155,118 Q164,116 164,108 L162,96" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <!-- Lock icon -->
+              <rect x="85" y="140" width="30" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M92,140 L92,132 Q92,125 100,125 Q108,125 108,132 L108,140" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <circle cx="100" cy="152" r="3" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.5"/>
+              <!-- Sparkle/star -->
+              <path d="M160,55 L162,50 L164,55 L169,57 L164,59 L162,64 L160,59 L155,57Z" stroke="currentColor" stroke-width="0.8" fill="currentColor" opacity="0.3"/>
+            </svg>
+            <span class="placeholder-shoe__label">Locked &amp; Ready</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 4. MATERIAL INNOVATION ===== -->
+  <section class="materials">
+    <div class="materials__header">
+      <div class="section-label section-label--light">
+        <span class="section-label__num">03</span>
+        <span class="section-label__text">Materials</span>
+      </div>
+      <h2 class="materials__title reveal">The <em>Materials</em></h2>
+    </div>
+
+    <div class="materials__track hscroll">
+
+      <!-- Leather -->
+      <div class="hscroll__item materials__card reveal" data-delay="0">
+        <div class="materials__card-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Leather hide shape -->
+              <path d="M30,65 Q35,30 70,25 Q100,20 130,28 Q160,36 170,65 Q175,90 150,105 Q120,115 80,110 Q40,105 30,65Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <!-- Grain texture dots -->
+              <circle cx="70" cy="55" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="85" cy="48" r="1" fill="currentColor" opacity="0.25"/>
+              <circle cx="100" cy="60" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="115" cy="52" r="1" fill="currentColor" opacity="0.2"/>
+              <circle cx="90" cy="70" r="1" fill="currentColor" opacity="0.35"/>
+              <circle cx="110" cy="75" r="1" fill="currentColor" opacity="0.25"/>
+              <circle cx="130" cy="65" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="75" cy="80" r="1" fill="currentColor" opacity="0.2"/>
+              <circle cx="120" cy="85" r="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+            <span class="placeholder-shoe__label">Leather</span>
+          </div>
+        </div>
+        <div class="materials__card-body">
+          <h3 class="materials__card-title">Leather</h3>
+          <p class="materials__card-desc">Full grain, nappa, suede, patent, metallic. Indian and imported. India is the world's second-largest leather producer &mdash; we source directly from tanneries in Chennai, Kanpur, and Kolkata for the best quality at competitive prices.</p>
+        </div>
+      </div>
+
+      <!-- Textiles -->
+      <div class="hscroll__item materials__card reveal" data-delay="1">
+        <div class="materials__card-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Woven textile pattern -->
+              <line x1="40" y1="30" x2="40" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="55" y1="30" x2="55" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="70" y1="30" x2="70" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="85" y1="30" x2="85" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="100" y1="30" x2="100" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="115" y1="30" x2="115" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="130" y1="30" x2="130" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="145" y1="30" x2="145" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="160" y1="30" x2="160" y2="100" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <!-- Horizontal weave -->
+              <path d="M35,40 Q47,35 55,40 Q62,45 70,40 Q78,35 85,40 Q93,45 100,40 Q108,35 115,40 Q123,45 130,40 Q138,35 145,40 Q152,45 160,40 L165,40" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+              <path d="M35,55 Q47,60 55,55 Q62,50 70,55 Q78,60 85,55 Q93,50 100,55 Q108,60 115,55 Q123,50 130,55 Q138,60 145,55 Q152,50 160,55 L165,55" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+              <path d="M35,70 Q47,65 55,70 Q62,75 70,70 Q78,65 85,70 Q93,75 100,70 Q108,65 115,70 Q123,75 130,70 Q138,65 145,70 Q152,75 160,70 L165,70" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+              <path d="M35,85 Q47,90 55,85 Q62,80 70,85 Q78,90 85,85 Q93,80 100,85 Q108,90 115,85 Q123,80 130,85 Q138,90 145,85 Q152,80 160,85 L165,85" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+            </svg>
+            <span class="placeholder-shoe__label">Textiles</span>
+          </div>
+        </div>
+        <div class="materials__card-body">
+          <h3 class="materials__card-title">Textiles</h3>
+          <p class="materials__card-desc">Satin, canvas, denim, velvet, mesh, knit, jacquard. The texture options that give a design its character.</p>
+        </div>
+      </div>
+
+      <!-- Embellishments -->
+      <div class="hscroll__item materials__card reveal" data-delay="2">
+        <div class="materials__card-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Decorative beading / embroidery pattern -->
+              <circle cx="100" cy="65" r="30" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <circle cx="100" cy="65" r="18" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <circle cx="100" cy="65" r="4" fill="currentColor" opacity="0.5"/>
+              <!-- Beads around outer ring -->
+              <circle cx="100" cy="35" r="3" stroke="currentColor" stroke-width="1"/>
+              <circle cx="126" cy="50" r="3" stroke="currentColor" stroke-width="1"/>
+              <circle cx="126" cy="80" r="3" stroke="currentColor" stroke-width="1"/>
+              <circle cx="100" cy="95" r="3" stroke="currentColor" stroke-width="1"/>
+              <circle cx="74" cy="80" r="3" stroke="currentColor" stroke-width="1"/>
+              <circle cx="74" cy="50" r="3" stroke="currentColor" stroke-width="1"/>
+              <!-- Small decorative dots -->
+              <circle cx="60" cy="35" r="1.5" fill="currentColor" opacity="0.2"/>
+              <circle cx="140" cy="35" r="1.5" fill="currentColor" opacity="0.2"/>
+              <circle cx="55" cy="95" r="1.5" fill="currentColor" opacity="0.2"/>
+              <circle cx="145" cy="95" r="1.5" fill="currentColor" opacity="0.2"/>
+              <!-- Embroidery stitch lines -->
+              <path d="M50,108 Q65,100 80,108 Q95,116 110,108 Q125,100 140,108 Q155,116 170,108" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.3" stroke-dasharray="3 2"/>
+            </svg>
+            <span class="placeholder-shoe__label">Embellishments</span>
+          </div>
+        </div>
+        <div class="materials__card-body">
+          <h3 class="materials__card-title">Embellishments</h3>
+          <p class="materials__card-desc">Hand beading, thread embroidery, sequins, laser cut, rhinestones, pearls. The details that make the difference.</p>
+        </div>
+      </div>
+
+      <!-- Sustainable -->
+      <div class="hscroll__item materials__card reveal" data-delay="3">
+        <div class="materials__card-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Leaf / eco symbol -->
+              <path d="M100,100 Q80,80 80,55 Q80,30 100,20 Q120,30 120,55 Q120,80 100,100Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <!-- Leaf vein -->
+              <line x1="100" y1="100" x2="100" y2="28" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+              <path d="M100,50 Q90,55 85,50" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.3"/>
+              <path d="M100,60 Q110,65 115,60" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.3"/>
+              <path d="M100,70 Q90,75 85,70" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.3"/>
+              <path d="M100,40 Q110,45 115,40" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.3"/>
+              <!-- Recycle arrow fragments -->
+              <path d="M55,90 Q50,105 60,110" stroke="currentColor" stroke-width="1" fill="none" opacity="0.25"/>
+              <path d="M145,90 Q150,105 140,110" stroke="currentColor" stroke-width="1" fill="none" opacity="0.25"/>
+            </svg>
+            <span class="placeholder-shoe__label">Sustainable</span>
+          </div>
+        </div>
+        <div class="materials__card-body">
+          <h3 class="materials__card-title">Sustainable</h3>
+          <p class="materials__card-desc">PU leather, recycled PET, bio-based alternatives, water-based adhesives. When the brief calls for it, we have the options.</p>
+        </div>
+      </div>
+
+      <!-- Hardware -->
+      <div class="hscroll__item materials__card reveal" data-delay="4">
+        <div class="materials__card-visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Buckle -->
+              <rect x="60" y="35" width="40" height="30" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="80" y1="35" x2="80" y2="65" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="75" y1="50" x2="60" y2="50" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <!-- Zipper -->
+              <line x1="120" y1="30" x2="120" y2="100" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M115,40 L120,45 L125,40" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.4"/>
+              <path d="M115,50 L120,55 L125,50" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.4"/>
+              <path d="M115,60 L120,65 L125,60" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.4"/>
+              <path d="M115,70 L120,75 L125,70" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.4"/>
+              <path d="M115,80 L120,85 L125,80" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.4"/>
+              <!-- Zipper pull -->
+              <rect x="117" y="25" width="6" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.3"/>
+              <!-- Decorative ring -->
+              <circle cx="160" cy="65" r="12" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="160" cy="65" r="8" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+            </svg>
+            <span class="placeholder-shoe__label">Hardware</span>
+          </div>
+        </div>
+        <div class="materials__card-body">
+          <h3 class="materials__card-title">Hardware</h3>
+          <p class="materials__card-desc">Buckles, studs, zips, eyelets, chains, D-rings. Custom finishes available. We match the hardware to the design language.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== HOW WE COLLABORATE ========== -->
+  <section class="collab" id="collab">
+    <div class="collab__container">
+      <div class="section-label reveal">
+        <span class="section-label__num">04</span>
+        <span class="section-label__text">Collaboration</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>How We</span>
+        <span class="section-heading--accent">Collaborate</span>
+      </h2>
+      <p class="collab__intro reveal">Every project starts differently. Some brands send detailed tech packs. Others send a photo and a phone call. We've built collections from both.</p>
+
+      <div class="collab__grid">
+        <div class="collab__accept reveal" data-delay="0">
+          <h3>What You Send Us</h3>
+          <ul class="collab__list">
+            <li>
+              <strong>A tech pack</strong>
+              <span>Full specs, BOMs, construction details &mdash; the works</span>
+            </li>
+            <li>
+              <strong>A sketch on a napkin</strong>
+              <span>Hand-drawn, digital, or scribbled on a flight &mdash; we'll develop it</span>
+            </li>
+            <li>
+              <strong>A photo from Instagram</strong>
+              <span>"Something like this, but in suede, with a block heel"</span>
+            </li>
+            <li>
+              <strong>A mood board</strong>
+              <span>Pinterest boards, runway screenshots, competitor samples</span>
+            </li>
+            <li>
+              <strong>Even just a verbal idea</strong>
+              <span>We've started collections from less. Seriously.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="collab__provide reveal" data-delay="1">
+          <h3>What You Get Back</h3>
+          <ul class="collab__list collab__list--gold">
+            <li>
+              <strong>Counter samples</strong>
+              <span>Production-quality samples in 7&ndash;14 days, not rough prototypes</span>
+            </li>
+            <li>
+              <strong>Material alternatives you didn't know existed</strong>
+              <span>Options that hit the design intent at a better price &mdash; or push it further</span>
+            </li>
+            <li>
+              <strong>Honest feedback</strong>
+              <span>What'll work at scale and what won't &mdash; before you commit</span>
+            </li>
+            <li>
+              <strong>Fit &amp; comfort input</strong>
+              <span>30+ years of manufacturing experience applied to your design</span>
+            </li>
+            <li>
+              <strong>Progress photos throughout</strong>
+              <span>Pattern, first sample, corrections, final approval &mdash; all documented</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MATERIAL LIBRARY ========== -->
+  <section class="materials-lib" id="materials-lib">
+    <div class="materials-lib__container">
+      <div class="section-label section-label--light reveal">
+        <span class="section-label__num">05</span>
+        <span class="section-label__text">Material Library</span>
+      </div>
+      <h2 class="section-heading section-heading--light reveal">
+        <span>200+ Materials.</span>
+        <span class="section-heading--accent">Always Growing.</span>
+      </h2>
+
+      <div class="materials-lib__grid">
+        <div class="materials-lib__category reveal" data-delay="0">
+          <h4>Leathers</h4>
+          <p>Full grain, nappa, suede, patent, metallic, embossed, printed, vegetable-tanned. Indian and imported.</p>
+        </div>
+        <div class="materials-lib__category reveal" data-delay="1">
+          <h4>Textiles</h4>
+          <p>Satin, canvas, denim, velvet, mesh, knit, jacquard, organza, lace. New weaves added every season.</p>
+        </div>
+        <div class="materials-lib__category reveal" data-delay="2">
+          <h4>Synthetics</h4>
+          <p>PU leather, microfiber, TPU, recycled PET. When design or sustainability calls for it &mdash; no compromise on look or hand-feel.</p>
+        </div>
+        <div class="materials-lib__category reveal" data-delay="3">
+          <h4>Soles</h4>
+          <p>TPR, PU, leather, EVA, rubber, cork, jute, espadrille, wood. Matched to silhouette and price point.</p>
+        </div>
+        <div class="materials-lib__category reveal" data-delay="4">
+          <h4>Hardware</h4>
+          <p>Buckles, studs, zippers, eyelets, chains, D-rings, snaps. Custom finishes available &mdash; gold, silver, gunmetal, antique brass, matte black.</p>
+        </div>
+        <div class="materials-lib__category reveal" data-delay="5">
+          <h4>Embellishments</h4>
+          <p>Hand beading, thread embroidery, sequins, laser cut, heat transfer, rhinestones, pearls, crystals. Done in-house by our artisan team.</p>
+        </div>
+      </div>
+
+      <p class="materials-lib__note reveal">We obsess over materials. Every season we add new options from Indian and international suppliers. Swatch books and physical samples available on request.</p>
+    </div>
+  </section>
+
+  <!-- Seasonal Trends -->
+  <section class="section dtrends">
+    <div class="container">
+      <span class="section__number reveal">06</span>
+      <h2 class="section__title reveal" style="color: var(--cream);">What We're Watching</h2>
+      <p class="dtrends__intro reveal">Current trend directions we're developing for SS26 and AW26.</p>
+      <div class="dtrends__grid">
+        <div class="dtrends__card reveal">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;">
+              <rect width="400" height="260" fill="none"/>
+              <!-- Woven texture pattern -->
+              <path d="M80 60 H320" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+              <path d="M80 80 H320" stroke="#b8956a" stroke-width="0.5" opacity="0.12"/>
+              <path d="M80 100 H320" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+              <path d="M80 120 H320" stroke="#b8956a" stroke-width="0.5" opacity="0.12"/>
+              <path d="M80 140 H320" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+              <path d="M80 160 H320" stroke="#b8956a" stroke-width="0.5" opacity="0.12"/>
+              <path d="M80 180 H320" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+              <path d="M120 40 V220" stroke="#b8956a" stroke-width="0.5" opacity="0.1"/>
+              <path d="M160 40 V220" stroke="#b8956a" stroke-width="0.5" opacity="0.1"/>
+              <path d="M200 40 V220" stroke="#b8956a" stroke-width="0.5" opacity="0.1"/>
+              <path d="M240 40 V220" stroke="#b8956a" stroke-width="0.5" opacity="0.1"/>
+              <path d="M280 40 V220" stroke="#b8956a" stroke-width="0.5" opacity="0.1"/>
+            </svg>
+            <span class="photo-placeholder__label">REAL PHOTO: Woven texture flat in earthy tones — trend board collage</span>
+          </div>
+          <h3 class="dtrends__card-title">Artisan Weaves</h3>
+          <p class="dtrends__card-text">Hand-woven uppers in raffia and jute blends. Earthy ochre, sand, and terracotta palettes. Flat sandals and mules with raw-edge soles and unfinished textile detailing. Natural textures, imperfect beauty.</p>
+          <span class="dtrends__season">SS26</span>
+        </div>
+        <div class="dtrends__card reveal">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;">
+              <rect width="400" height="260" fill="none"/>
+              <!-- Sculptural sole profile -->
+              <path d="M100 180 C100 170 120 130 160 120 L280 120 C300 120 310 130 310 140 L310 160 C310 172 300 180 280 180 Z" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.2"/>
+              <!-- Chunky platform layers -->
+              <path d="M100 180 L310 180" stroke="#b8956a" stroke-width="0.8" opacity="0.15"/>
+              <path d="M105 190 L305 190" stroke="#b8956a" stroke-width="0.8" opacity="0.12"/>
+              <path d="M110 200 L300 200" stroke="#b8956a" stroke-width="0.8" opacity="0.1"/>
+              <!-- Asymmetric wedge shape -->
+              <path d="M100 180 L120 200 L300 200 L310 180" stroke="#b8956a" stroke-width="0.8" fill="none" opacity="0.18"/>
+            </svg>
+            <span class="photo-placeholder__label">REAL PHOTO: Sculptural sole flat — architectural profile shot</span>
+          </div>
+          <h3 class="dtrends__card-title">Sculptural Soles</h3>
+          <p class="dtrends__card-text">Architectural outsoles in matte black and tonal neutrals. Chunky EVA platforms, asymmetric wedges, and layered TPR stacks. The sole becomes the design element. Flat silhouettes with visual weight.</p>
+          <span class="dtrends__season">AW26</span>
+        </div>
+        <div class="dtrends__card reveal">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;">
+              <rect width="400" height="260" fill="none"/>
+              <!-- Quilted pattern (diamond grid) -->
+              <path d="M120 60 L200 100 L120 140 L40 100 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.12"/>
+              <path d="M200 60 L280 100 L200 140 L120 100 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.12"/>
+              <path d="M280 60 L360 100 L280 140 L200 100 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.12"/>
+              <path d="M120 140 L200 180 L120 220 L40 180 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.1"/>
+              <path d="M200 140 L280 180 L200 220 L120 180 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.1"/>
+              <path d="M280 140 L360 180 L280 220 L200 180 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.1"/>
+              <!-- Pillow puff effect dots -->
+              <circle cx="120" cy="100" r="4" fill="#b8956a" opacity="0.08"/>
+              <circle cx="200" cy="100" r="4" fill="#b8956a" opacity="0.08"/>
+              <circle cx="280" cy="100" r="4" fill="#b8956a" opacity="0.08"/>
+              <circle cx="160" cy="140" r="4" fill="#b8956a" opacity="0.06"/>
+              <circle cx="240" cy="140" r="4" fill="#b8956a" opacity="0.06"/>
+            </svg>
+            <span class="photo-placeholder__label">REAL PHOTO: Quilted ballet flat — buttery soft leather detail</span>
+          </div>
+          <h3 class="dtrends__card-title">Soft Volume</h3>
+          <p class="dtrends__card-text">Pillow-effect uppers in buttery nappa and padded satin. Quilted ballet flats, gathered leather mules, puffy strap sandals. Deep burgundy, forest green, and cream. Comfort as aesthetic.</p>
+          <span class="dtrends__season">AW26</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. DESIGN STUDIO ===== -->
+  <section class="studio">
+    <div class="studio__container">
+      <div class="section-label">
+        <span class="section-label__num">07</span>
+        <span class="section-label__text">The Studio</span>
+      </div>
+
+      <div class="studio__grid">
+        <div class="studio__text-block">
+          <h2 class="studio__title reveal">Where It All <em>Happens</em></h2>
+          <p class="studio__desc reveal">Our studio is in Lower Parel, Mumbai &mdash; right in the city's design district. It's where trend research, concept development, and material sourcing happen. The factory is 60km away in Vasai, close enough for daily coordination. Samples move between the two constantly.</p>
+        </div>
+        <div class="studio__visual reveal">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Studio abstract: drawing desk, mannequin, shelves -->
+              <!-- Desk -->
+              <rect x="80" y="160" width="160" height="8" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="100" y1="168" x2="90" y2="240" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="220" y1="168" x2="230" y2="240" stroke="currentColor" stroke-width="1.5"/>
+              <!-- Paper on desk -->
+              <rect x="110" y="140" width="50" height="35" rx="1" stroke="currentColor" stroke-width="0.8" opacity="0.3" transform="rotate(-5 135 157)"/>
+              <rect x="150" y="138" width="50" height="35" rx="1" stroke="currentColor" stroke-width="0.8" opacity="0.25" transform="rotate(3 175 155)"/>
+              <!-- Lamp -->
+              <line x1="260" y1="160" x2="260" y2="100" stroke="currentColor" stroke-width="1"/>
+              <path d="M245,100 L260,85 L275,100" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <!-- Shoe form on shelf -->
+              <line x1="280" y1="130" x2="350" y2="130" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <path d="M295,130 Q300,120 310,118 Q325,115 335,118 Q340,120 340,125 L340,130" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+              <!-- Window -->
+              <rect x="50" y="40" width="60" height="80" rx="2" stroke="currentColor" stroke-width="1" opacity="0.2"/>
+              <line x1="80" y1="40" x2="80" y2="120" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+              <line x1="50" y1="80" x2="110" y2="80" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+              <!-- Abstract geometric (Firkee gold accent) -->
+              <polygon points="320,50 340,30 360,50 340,70" stroke="currentColor" stroke-width="1" fill="none" opacity="0.2"/>
+              <polygon points="330,50 340,38 350,50 340,62" stroke="currentColor" stroke-width="0.8" fill="currentColor" opacity="0.1"/>
+            </svg>
+            <span class="placeholder-shoe__label">Lower Parel Studio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="studio__stats reveal">
+        <div class="studio__stat">
+          <div class="studio__stat-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="16" cy="10" r="6"/>
+              <path d="M6 28c0-6 4-10 10-10s10 4 10 10"/>
+            </svg>
+          </div>
+          <span class="studio__stat-label">In-House<br>Design Team</span>
+        </div>
+        <div class="studio__stat">
+          <div class="studio__stat-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="6" width="24" height="18" rx="2"/>
+              <path d="M10 14l4 4 8-8"/>
+            </svg>
+          </div>
+          <span class="studio__stat-label">CAD Suite<br>Rhino &bull; Illustrator &bull; Pattern CAD</span>
+        </div>
+        <div class="studio__stat">
+          <div class="studio__stat-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 8h24M4 16h24M4 24h16"/>
+              <circle cx="26" cy="24" r="4"/>
+            </svg>
+          </div>
+          <span class="studio__stat-label">Trend<br>Library</span>
+        </div>
+        <div class="studio__stat">
+          <div class="studio__stat-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8 28V12l8-6 8 6v16"/>
+              <path d="M14 28v-8h4v8"/>
+            </svg>
+          </div>
+          <span class="studio__stat-label">Sample<br>Lab</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 8. CTA ===== -->
+  <section class="dcta">
+    <div class="dcta__container">
+      <h2 class="dcta__title reveal">Ready to See Design <em>in Action?</em></h2>
+      <div class="dcta__buttons reveal">
+        <a href="portfolio.html" class="btn btn--primary">
+          View Portfolio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn--outline-light">
+          Start a Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="assets/firkee-lookbook-2026.pdf" class="btn btn--outline" style="margin-left: var(--space-sm);" download>Download Lookbook (PDF)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">FIRKEE</span>
+          <span class="footer__tagline">From Sketch to Sole</span>
+        </div>
+        <div class="footer__nav-grid">
+          <div class="footer__nav-col">
+            <h4>Explore</h4>
+            <a href="design.html">Design</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="process.html">Process</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <a href="factory.html">Factory</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@firkee.com">info@firkee.com</a>
+            <a href="https://instagram.com/firkeeaccessories" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://linkedin.com/company/firkee-accessories" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Firkee Accessories Pvt. Ltd. All rights reserved.</span>
+        <span class="footer__certs">ISO Certified &bull; SEDEX Audited &bull; ICS Compliant</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+</body>
+</html>

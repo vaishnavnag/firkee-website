@@ -1,0 +1,59 @@
+/* ==========================================================================
+   FIRKEE ACCESSORIES — Design Tokens
+   Colors, typography, spacing, easing, breakpoints
+   ========================================================================== */
+
+:root {
+  /* --- Firkee Green — Brand Palette --- */
+  --color-obsidian: #071a07;
+  --color-charcoal: #122612;
+  --color-graphite: #1e3a1e;
+  --color-warm-gray: #4e6650;
+  --color-sand: #9ab89c;
+  --color-cream: #eef6ee;
+  --color-ivory: #f6fbf6;
+  --color-gold: #4CAF50;
+  --color-gold-light: #81C784;
+  --color-gold-faint: rgba(76, 175, 80, 0.08);
+  --color-rose: #66BB6A;
+
+  /* --- Brand Logo --- */
+  --color-logo: #4CAF50;
+  --color-logo-dark: #388E3C;
+
+  /* --- Typography --- */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Outfit', 'Helvetica Neue', sans-serif;
+
+  /* --- Easing --- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* --- Layout --- */
+  --nav-height: 72px;
+  --section-pad: clamp(80px, 12vw, 160px);
+  --side-pad: clamp(24px, 5vw, 80px);
+  --max-width: 1200px;
+  --max-width-narrow: 800px;
+  --max-width-wide: 1400px;
+
+  /* --- Grain texture (reusable) --- */
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Single brand theme — Firkee Green is the only palette */
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+    --side-pad: clamp(16px, 5vw, 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --side-pad: 16px;
+    --section-pad: clamp(56px, 10vw, 80px);
+  }
+}

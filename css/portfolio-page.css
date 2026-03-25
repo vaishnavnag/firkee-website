@@ -1,0 +1,611 @@
+/* ==========================================================================
+   FIRKEE ACCESSORIES — Portfolio Page Styles
+   Header, stats bar, filter tabs, masonry grid, featured, CTA
+   ========================================================================== */
+
+/* --- Page Header --- */
+.portfolio-header {
+  background: var(--color-ivory);
+  padding: calc(var(--nav-height) + var(--section-pad)) var(--side-pad) var(--section-pad);
+  text-align: center;
+}
+
+.portfolio-header__inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+}
+
+.portfolio-header .section-label {
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.portfolio-header__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-warm-gray);
+  max-width: 560px;
+  margin: 24px auto 0;
+}
+
+/* --- Stats Bar --- */
+.stats-bar {
+  background: var(--color-cream);
+  border-top: 2px solid var(--color-gold);
+  padding: 32px var(--side-pad);
+}
+
+.stats-bar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+
+.stats-bar__item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stats-bar__number {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 300;
+  color: var(--color-charcoal);
+  line-height: 1;
+}
+
+.stats-bar__plus {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.stats-bar__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-warm-gray);
+  margin-left: 4px;
+}
+
+.stats-bar__divider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-sand);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* --- Filter Bar --- */
+.filter-bar {
+  background: var(--color-ivory);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 100;
+  transition: box-shadow 0.3s;
+}
+
+.filter-bar.is-stuck {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.filter-bar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px var(--side-pad);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filter-bar__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-bar__tab {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-warm-gray);
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s;
+  flex-shrink: 0;
+}
+
+.filter-bar__tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width 0.4s var(--ease-out-expo);
+}
+
+.filter-bar__tab:hover {
+  color: var(--color-charcoal);
+}
+
+.filter-bar__tab.is-active {
+  color: var(--color-charcoal);
+}
+
+.filter-bar__tab.is-active::after {
+  width: 100%;
+}
+
+/* --- Portfolio Grid (Masonry via CSS columns) --- */
+.portfolio-grid {
+  background: var(--color-ivory);
+  padding: 48px var(--side-pad) var(--section-pad);
+}
+
+.portfolio-grid__inner {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  columns: 3;
+  column-gap: 24px;
+}
+
+/* --- Portfolio Card --- */
+.portfolio-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-cream);
+  transition: transform 0.5s var(--ease-out-expo),
+              box-shadow 0.5s var(--ease-out-expo),
+              border-color 0.5s;
+  border: 1px solid transparent;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-card.is-hiding {
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 0.3s var(--ease-out-expo),
+              transform 0.3s var(--ease-out-expo);
+}
+
+.portfolio-card.is-showing {
+  animation: cardShow 0.5s var(--ease-out-expo) forwards;
+}
+
+@keyframes cardShow {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.portfolio-card.is-hidden {
+  display: none;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-gold-light);
+}
+
+.portfolio-card__image {
+  overflow: hidden;
+}
+
+/* Aspect ratio variations for masonry effect */
+.portfolio-card--tall .portfolio-card__image {
+  aspect-ratio: 3 / 4;
+}
+
+.portfolio-card--square .portfolio-card__image {
+  aspect-ratio: 1 / 1;
+}
+
+.portfolio-card--wide .portfolio-card__image {
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-card__image .placeholder-shoe {
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+/* Category-specific gradients — warm tones for leather/natural, cool for structured/evening */
+.portfolio-card[data-category="flats"] .placeholder-shoe {
+  background: linear-gradient(145deg, #3b3028 0%, #4a3d30 40%, #2e2520 100%);
+}
+.portfolio-card[data-category="flats"] .placeholder-shoe svg {
+  color: #c4a882;
+}
+
+.portfolio-card[data-category="sandals"] .placeholder-shoe {
+  background: linear-gradient(145deg, #352d24 0%, #443828 40%, #2a2218 100%);
+}
+.portfolio-card[data-category="sandals"] .placeholder-shoe svg {
+  color: #d4b896;
+}
+
+.portfolio-card[data-category="mules"] .placeholder-shoe {
+  background: linear-gradient(145deg, #382e2a 0%, #483c32 40%, #2c241e 100%);
+}
+.portfolio-card[data-category="mules"] .placeholder-shoe svg {
+  color: #c8a878;
+}
+
+.portfolio-card[data-category="heeled"] .placeholder-shoe {
+  background: linear-gradient(145deg, #282a34 0%, #343848 40%, #1e2030 100%);
+}
+.portfolio-card[data-category="heeled"] .placeholder-shoe svg {
+  color: #a0a8c4;
+}
+
+.portfolio-card[data-category="boots"] .placeholder-shoe {
+  background: linear-gradient(145deg, #252530 0%, #30323e 40%, #1a1c28 100%);
+}
+.portfolio-card[data-category="boots"] .placeholder-shoe svg {
+  color: #8890a8;
+}
+
+.portfolio-card[data-category="embellished"] .placeholder-shoe {
+  background: linear-gradient(145deg, #342228 0%, #44303a 40%, #281822 100%);
+}
+.portfolio-card[data-category="embellished"] .placeholder-shoe svg {
+  color: #c89898;
+}
+
+.portfolio-card:hover .portfolio-card__image .placeholder-shoe {
+  transform: scale(1.03);
+}
+
+.portfolio-card__info {
+  padding: 16px 20px 20px;
+}
+
+.portfolio-card__tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+}
+
+.portfolio-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  line-height: 1.3;
+}
+
+.portfolio-card__desc {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-warm-gray);
+  margin-top: 4px;
+}
+
+/* --- Featured Collection --- */
+.featured-collection {
+  background: var(--color-cream);
+  padding: var(--section-pad) 0;
+  overflow: hidden;
+}
+
+.featured-collection__header {
+  padding: 0 var(--side-pad);
+  max-width: var(--max-width);
+  margin: 0 auto clamp(32px, 5vw, 56px);
+}
+
+.featured-card {
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-ivory);
+  transition: transform 0.5s var(--ease-out-expo),
+              box-shadow 0.5s var(--ease-out-expo);
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.featured-card__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.featured-card__image .placeholder-shoe {
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.featured-card:hover .featured-card__image .placeholder-shoe {
+  transform: scale(1.03);
+}
+
+.featured-card__info {
+  padding: 20px 24px 24px;
+}
+
+.featured-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.featured-card__season {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* --- CTA Section --- */
+.portfolio-cta {
+  background: var(--color-charcoal);
+  padding: var(--section-pad) var(--side-pad);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 200px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.portfolio-cta__inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--color-cream);
+  margin-bottom: 24px;
+}
+
+.portfolio-cta__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.portfolio-cta__text {
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-sand);
+  margin-bottom: 40px;
+}
+
+.portfolio-cta .btn--primary {
+  background: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+.portfolio-cta .btn--primary:hover {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+/* --- Responsive --- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .portfolio-grid__inner {
+    columns: 2;
+    column-gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .portfolio-header {
+    padding-top: calc(var(--nav-height) + 48px);
+    padding-bottom: 48px;
+  }
+
+  .stats-bar__inner {
+    gap: 24px;
+  }
+
+  .stats-bar__divider {
+    height: 24px;
+  }
+
+  .filter-bar__inner {
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 12px var(--side-pad);
+  }
+
+  .filter-bar__tab {
+    padding: 10px 16px;
+    font-size: 11px;
+    min-height: 44px;
+  }
+
+  .portfolio-grid__inner {
+    columns: 1;
+    column-gap: 0;
+  }
+
+  .portfolio-card {
+    margin-bottom: 20px;
+  }
+
+  .portfolio-cta__title {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .stats-bar__inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stats-bar__divider {
+    width: 40px;
+    height: 1px;
+  }
+
+  .stats-bar__item {
+    gap: 4px;
+  }
+
+  .portfolio-header__subtitle {
+    font-size: 14px;
+  }
+}
+
+/* --- Print --- */
+@media print {
+  .filter-bar,
+  .portfolio-cta::before {
+    display: none !important;
+  }
+
+  .portfolio-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .portfolio-grid__inner {
+    columns: 2;
+  }
+}
+
+/* Case Studies */
+.case-studies {
+  background: var(--color-ivory);
+  padding: var(--section-pad) var(--side-pad);
+}
+.case-studies__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+}
+.case-study {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+.case-study .photo-placeholder {
+  border: none;
+  border-radius: 0;
+}
+.case-study__content {
+  padding: 32px;
+}
+.case-study__tag {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+}
+.case-study__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-charcoal);
+  margin: 8px 0 16px;
+}
+.case-study__text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.case-study__stats {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 32px;
+}
+.case-study__stats li {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: #777;
+}
+.case-study__stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .case-studies__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .case-study__stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .case-study__content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-study__stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

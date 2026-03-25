@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factory &amp; Manufacturing — Firkee</title>
+  <meta name="description" content="Our vertically integrated Vasai production facility delivers complete manufacturing control — from raw materials to finished product under one roof.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👟</text></svg>">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta property="og:title" content="Factory — Firkee">
+  <meta property="og:description" content="Vertically integrated flat footwear factory in Vasai, Maharashtra. ISO certified, SEDEX audited. 15,000+ pairs per month capacity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://firkee.com/factory">
+  <meta property="og:image" content="https://firkee.com/assets/og-factory.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/factory-page.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__letter">F</span>
+      <span class="loader__letter">I</span>
+      <span class="loader__letter">R</span>
+      <span class="loader__letter">K</span>
+      <span class="loader__letter">E</span>
+      <span class="loader__letter">E</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav nav--dark" id="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-text">FIRKEE</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="design.html" class="nav__link">Design</a>
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+      <a href="process.html" class="nav__link">Process</a>
+      <a href="factory.html" class="nav__link nav__link--active">Factory</a>
+      <a href="ai.html" class="nav__link">AI</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="work-with-us.html" class="nav__link">Work With Us</a>
+      <a href="contact.html" class="nav__link nav__link--cta">Start a Project</a>
+    </nav>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="design.html" class="mobile-menu__link">Design</a>
+      <a href="portfolio.html" class="mobile-menu__link">Portfolio</a>
+      <a href="process.html" class="mobile-menu__link">Process</a>
+      <a href="factory.html" class="mobile-menu__link">Factory</a>
+      <a href="ai.html" class="mobile-menu__link">AI</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="work-with-us.html" class="mobile-menu__link">Work With Us</a>
+      <a href="contact.html" class="mobile-menu__link mobile-menu__link--cta">Start a Project</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="factory-hero" id="hero">
+    <div class="factory-hero__bg">
+      <div class="factory-hero__grain"></div>
+      <div class="factory-hero__gradient"></div>
+    </div>
+    <div class="factory-hero__content">
+      <h1 class="factory-hero__title">
+        <span class="factory-hero__title-line reveal" data-delay="1">The</span>
+        <span class="factory-hero__title-line reveal" data-delay="2"><em>Factory</em></span>
+      </h1>
+      <p class="factory-hero__sub reveal" data-delay="3">Vasai, Maharashtra. 60km from our design studio. Vertically integrated &mdash; cutting to packing under one roof.</p>
+    </div>
+    <div class="factory-hero__visual reveal" data-delay="2">
+      <svg class="factory-hero__svg" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Factory silhouette abstract illustration -->
+        <defs>
+          <linearGradient id="heroGrad" x1="0" y1="0" x2="800" y2="400">
+            <stop offset="0%" stop-color="#b8956a" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#b8956a" stop-opacity="0.05"/>
+          </linearGradient>
+        </defs>
+        <!-- Ground line -->
+        <line x1="0" y1="340" x2="800" y2="340" stroke="#b8956a" stroke-width="0.5" opacity="0.3"/>
+        <!-- Main building -->
+        <rect x="80" y="180" width="260" height="160" stroke="#b8956a" stroke-width="1" fill="url(#heroGrad)" opacity="0.6"/>
+        <!-- Sawtooth roof -->
+        <polyline points="80,180 130,130 180,180 230,130 280,180 340,130 340,180" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.5"/>
+        <!-- Windows grid -->
+        <rect x="100" y="210" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="145" y="210" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="190" y="210" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="235" y="210" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="280" y="210" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <!-- Second row windows -->
+        <rect x="100" y="270" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="145" y="270" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="190" y="270" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="235" y="270" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="280" y="270" width="30" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <!-- Chimney -->
+        <rect x="300" y="120" width="20" height="60" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.4"/>
+        <!-- Smoke wisps -->
+        <path d="M310 120 Q315 100 308 85 Q300 70 310 55" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2"/>
+        <path d="M315 118 Q320 95 312 80 Q305 65 315 50" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+        <!-- Tall secondary building -->
+        <rect x="380" y="140" width="120" height="200" stroke="#b8956a" stroke-width="1" fill="url(#heroGrad)" opacity="0.5"/>
+        <!-- Secondary building detail -->
+        <line x1="380" y1="200" x2="500" y2="200" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+        <line x1="380" y1="260" x2="500" y2="260" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+        <rect x="420" y="160" width="20" height="25" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="455" y="160" width="20" height="25" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="420" y="220" width="20" height="25" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="455" y="220" width="20" height="25" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <!-- Loading dock -->
+        <rect x="390" y="300" width="40" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <rect x="450" y="300" width="40" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <!-- Conveyor belt -->
+        <line x1="540" y1="310" x2="700" y2="310" stroke="#b8956a" stroke-width="1" opacity="0.35"/>
+        <circle cx="560" cy="310" r="8" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <circle cx="620" cy="310" r="8" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <circle cx="680" cy="310" r="8" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <!-- Small boxes on conveyor -->
+        <rect x="575" y="295" width="15" height="12" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.25"/>
+        <rect x="635" y="295" width="15" height="12" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.25"/>
+        <!-- Gear motif -->
+        <circle cx="660" cy="220" r="30" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+        <circle cx="660" cy="220" r="18" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+        <line x1="660" y1="188" x2="660" y2="252" stroke="#b8956a" stroke-width="0.5" opacity="0.1"/>
+        <line x1="628" y1="220" x2="692" y2="220" stroke="#b8956a" stroke-width="0.5" opacity="0.1"/>
+        <!-- Decorative dots -->
+        <circle cx="730" cy="180" r="2" fill="#b8956a" opacity="0.15"/>
+        <circle cx="745" cy="195" r="1.5" fill="#b8956a" opacity="0.12"/>
+        <circle cx="720" cy="200" r="1" fill="#b8956a" opacity="0.1"/>
+        <circle cx="60" cy="280" r="2" fill="#b8956a" opacity="0.15"/>
+        <circle cx="45" cy="260" r="1.5" fill="#b8956a" opacity="0.12"/>
+      </svg>
+    </div>
+    <div class="factory-hero__scroll reveal" data-delay="5">
+      <div class="factory-hero__scroll-line"></div>
+      <span class="factory-hero__scroll-text">Explore</span>
+    </div>
+  </section>
+
+  <!-- ========== CAPABILITIES ========== -->
+  <section class="capabilities" id="capabilities">
+    <div class="capabilities__container">
+      <div class="section-label">
+        <span class="section-label__num">01</span>
+        <span class="section-label__text">Capabilities</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>What We</span>
+        <span class="section-heading--accent">Actually Do</span>
+      </h2>
+      <div class="capabilities__grid">
+        <!-- Design Studio -->
+        <div class="capabilities__card reveal" data-delay="0">
+          <div class="capabilities__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 38V18l18-12 18 12v20a2 2 0 01-2 2H8a2 2 0 01-2-2z"/>
+              <path d="M18 40V28h12v12"/>
+              <path d="M30 20l-6-4-6 4" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3 class="capabilities__title">In-House Design</h3>
+          <p class="capabilities__text">Trend research, concept development, tech pack creation. Our studio is in Lower Parel, Mumbai.</p>
+          <div class="photo-placeholder" style="margin-top: var(--space-sm); min-height: 150px;">
+            <svg viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;">
+              <rect width="300" height="150" fill="none"/>
+              <!-- Drafting table -->
+              <rect x="80" y="30" width="140" height="90" rx="3" stroke="#b8956a" stroke-width="0.8" fill="none" opacity="0.18"/>
+              <!-- Sketch lines -->
+              <path d="M100 55 Q130 45 160 60 Q190 75 200 65" stroke="#b8956a" stroke-width="0.6" fill="none" opacity="0.15"/>
+              <path d="M100 70 Q125 80 150 70" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.12"/>
+              <!-- Pencil -->
+              <line x1="200" y1="40" x2="210" y2="100" stroke="#b8956a" stroke-width="0.8" opacity="0.15"/>
+            </svg>
+            <span class="photo-placeholder__label">REAL PHOTO: Design studio workspace — CAD screens, sketches on drafting table</span>
+          </div>
+        </div>
+        <!-- Rapid Prototyping -->
+        <div class="capabilities__card reveal" data-delay="1">
+          <div class="capabilities__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="24" cy="24" r="18"/>
+              <path d="M24 12v12l8 8"/>
+              <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3 class="capabilities__title">Fast Prototyping</h3>
+          <p class="capabilities__text">Counter samples in 7&ndash;14 days. In-house, so iterations don't bounce between vendors.</p>
+        </div>
+        <!-- Full Category Coverage -->
+        <div class="capabilities__card reveal" data-delay="2">
+          <div class="capabilities__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="6" y="6" width="16" height="16" rx="2"/>
+              <rect x="26" y="6" width="16" height="16" rx="2"/>
+              <rect x="6" y="26" width="16" height="16" rx="2"/>
+              <rect x="26" y="26" width="16" height="16" rx="2"/>
+            </svg>
+          </div>
+          <h3 class="capabilities__title">6 Categories</h3>
+          <p class="capabilities__text">Flats, sandals, mules, heeled sandals, boots, embellished. If it's flat-ish footwear, we make it.</p>
+        </div>
+        <!-- Embroidery & Embellishment -->
+        <div class="capabilities__card reveal" data-delay="3">
+          <div class="capabilities__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M24 4l4 12h12l-10 7 4 13-10-8-10 8 4-13-10-7h12z"/>
+              <circle cx="24" cy="22" r="4" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3 class="capabilities__title">Embellishment</h3>
+          <p class="capabilities__text">Beading, thread embroidery, laser cutting, decorative hardware. This is where we started &mdash; it's in our DNA.</p>
+        </div>
+        <!-- Quality Laboratory -->
+        <div class="capabilities__card reveal" data-delay="4">
+          <div class="capabilities__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 6v14l-8 14a4 4 0 003.5 6h21a4 4 0 003.5-6l-8-14V6"/>
+              <line x1="16" y1="6" x2="32" y2="6"/>
+              <path d="M20 28l4 4 6-8" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="capabilities__title">Quality Lab</h3>
+          <p class="capabilities__text">In-house testing for sole adhesion, colour fastness, material durability. We catch problems before they ship.</p>
+        </div>
+        <!-- Vertically Integrated -->
+        <div class="capabilities__card reveal" data-delay="5">
+          <div class="capabilities__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="24" cy="24" r="16"/>
+              <path d="M24 10v6l5 3"/>
+              <path d="M24 38v-6l-5-3"/>
+              <path d="M11 17l5 3v6"/>
+              <path d="M37 31l-5-3v-6"/>
+              <path d="M37 17l-5 3v6"/>
+              <path d="M11 31l5-3v-6"/>
+            </svg>
+          </div>
+          <h3 class="capabilities__title">One Roof</h3>
+          <p class="capabilities__text">Cutting, stitching, lasting, finishing, packing &mdash; all under one roof. No subcontracting, no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTION CAPACITY ========== -->
+  <section class="capacity-detail" id="capacity-detail">
+    <div class="capacity-detail__container">
+      <div class="section-label reveal">
+        <span class="section-label__num">02</span>
+        <span class="section-label__text">Production Capacity</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>The</span>
+        <span class="section-heading--accent">Numbers</span>
+      </h2>
+      <div class="capacity-detail__grid">
+        <div class="capacity-detail__card reveal" data-delay="0">
+          <span class="capacity-detail__value">15,000+</span>
+          <span class="capacity-detail__unit">pairs / month</span>
+          <span class="capacity-detail__desc">Total capacity across all categories</span>
+        </div>
+        <div class="capacity-detail__card reveal" data-delay="1">
+          <span class="capacity-detail__value">4</span>
+          <span class="capacity-detail__unit">production lines</span>
+          <span class="capacity-detail__desc">Running concurrently for different styles</span>
+        </div>
+        <div class="capacity-detail__card reveal" data-delay="2">
+          <span class="capacity-detail__value">200+</span>
+          <span class="capacity-detail__unit">craftspeople</span>
+          <span class="capacity-detail__desc">Cutters, stitchers, lasters, finishers, QC</span>
+        </div>
+        <div class="capacity-detail__card reveal" data-delay="3">
+          <span class="capacity-detail__value">500</span>
+          <span class="capacity-detail__unit">pairs MOQ</span>
+          <span class="capacity-detail__desc">Per style, per colour. Flexible for development.</span>
+        </div>
+      </div>
+
+      <div class="capacity-detail__specs reveal">
+        <h3 class="capacity-detail__specs-title">Technical Specifications</h3>
+        <div class="capacity-detail__specs-grid">
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Size Range</span>
+            <span class="capacity-detail__spec-value">EU 35&ndash;42 &bull; UK 2&ndash;9 &bull; US 5&ndash;11</span>
+          </div>
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Categories</span>
+            <span class="capacity-detail__spec-value">Flats, Sandals, Mules, Heeled Sandals, Boots, Embellished</span>
+          </div>
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Heel Heights</span>
+            <span class="capacity-detail__spec-value">Flat to 110mm &bull; Block, stiletto, wedge, platform</span>
+          </div>
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Sole Types</span>
+            <span class="capacity-detail__spec-value">TPR, PU, leather, EVA, rubber, cork, jute, espadrille</span>
+          </div>
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Upper Materials</span>
+            <span class="capacity-detail__spec-value">Leather, suede, satin, canvas, velvet, PU, mesh, knit</span>
+          </div>
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Construction Types</span>
+            <span class="capacity-detail__spec-value">Cemented, Stitch &amp; Turn, Blake Stitched, Vulcanized, Hand-lasted</span>
+          </div>
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Packaging</span>
+            <span class="capacity-detail__spec-value">Custom branded boxes, tissue, retail-ready. Private label available.</span>
+          </div>
+          <div class="capacity-detail__spec">
+            <span class="capacity-detail__spec-label">Pricing</span>
+            <span class="capacity-detail__spec-value">Competitive pricing at scale. MOQ 500 pairs per style per colour. Volume incentives available for orders above 5,000 pairs. Vertically integrated operations keep costs lean without compromising quality.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FACTORY TOUR — HORIZONTAL SCROLL ========== -->
+  <section class="factory-tour" id="tour">
+    <div class="factory-tour__header">
+      <div class="section-label section-label--light">
+        <span class="section-label__num">03</span>
+        <span class="section-label__text">Factory Tour</span>
+      </div>
+      <h2 class="section-heading section-heading--light reveal">
+        <span>Inside the</span>
+        <span class="section-heading--accent">Factory</span>
+      </h2>
+    </div>
+    <div class="factory-video reveal">
+      <div class="photo-placeholder photo-placeholder--video">
+        <div class="photo-placeholder__play">
+          <svg viewBox="0 0 24 24" fill="var(--gold)" width="48" height="48"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <span class="photo-placeholder__label">REAL VIDEO: 90-second factory walkthrough — cutting floor → stitching lines → lasting → finishing → QC → packing</span>
+      </div>
+    </div>
+    <div class="hscroll factory-tour__scroll">
+      <!-- Step 1: Raw Materials -->
+      <div class="hscroll__item factory-tour__card reveal" data-delay="0">
+        <div class="factory-tour__card-visual">
+          <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#1a1a1a"/>
+            <!-- Rolls of material -->
+            <ellipse cx="100" cy="160" rx="40" ry="50" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <ellipse cx="100" cy="160" rx="25" ry="35" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2"/>
+            <ellipse cx="100" cy="160" rx="10" ry="15" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+            <!-- Second roll -->
+            <ellipse cx="200" cy="170" rx="35" ry="45" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <ellipse cx="200" cy="170" rx="20" ry="28" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2"/>
+            <!-- Inspection clipboard -->
+            <rect x="280" y="100" width="60" height="80" rx="4" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.25"/>
+            <line x1="290" y1="125" x2="330" y2="125" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+            <line x1="290" y1="140" x2="320" y2="140" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+            <line x1="290" y1="155" x2="325" y2="155" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+            <path d="M295 165l5 5 10-10" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <!-- Shelf lines -->
+            <line x1="50" y1="80" x2="250" y2="80" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+            <line x1="50" y1="220" x2="250" y2="220" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="factory-tour__card-body">
+          <span class="factory-tour__step">01</span>
+          <h3 class="factory-tour__card-title">Material Store</h3>
+          <p class="factory-tour__card-text">Leathers, textiles, soles, hardware &mdash; all inspected on arrival for colour consistency, grain quality, and defects. Climate-controlled storage for sensitive materials. Organized by material type and supplier for fast retrieval.</p>
+        </div>
+      </div>
+
+      <!-- Step 2: Cutting -->
+      <div class="hscroll__item factory-tour__card reveal" data-delay="1">
+        <div class="factory-tour__card-visual">
+          <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#1a1a1a"/>
+            <!-- Cutting die / pattern -->
+            <path d="M80 60 Q120 50 160 70 Q200 90 240 80 Q280 70 320 90 L320 200 Q280 180 240 190 Q200 200 160 180 Q120 160 80 170 Z" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <!-- Pattern pieces -->
+            <path d="M120 100 L170 95 L175 140 L125 145 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2" stroke-dasharray="4 2"/>
+            <path d="M190 110 L250 105 L255 155 L195 160 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2" stroke-dasharray="4 2"/>
+            <!-- Scissors -->
+            <circle cx="310" cy="150" r="12" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.25"/>
+            <circle cx="330" cy="140" r="12" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.25"/>
+            <line x1="300" y1="160" x2="270" y2="200" stroke="#b8956a" stroke-width="1.5" opacity="0.3"/>
+            <line x1="340" y1="150" x2="370" y2="190" stroke="#b8956a" stroke-width="1.5" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="factory-tour__card-body">
+          <span class="factory-tour__step">02</span>
+          <h3 class="factory-tour__card-title">Cutting</h3>
+          <p class="factory-tour__card-text">Uppers and components cut from optimised patterns using hydraulic clicking presses and skilled hand-cutters. We track material yield closely &mdash; less waste, lower cost. Pattern nesting software ensures maximum use of each hide.</p>
+        </div>
+      </div>
+
+      <!-- Step 3: Stitching -->
+      <div class="hscroll__item factory-tour__card reveal" data-delay="2">
+        <div class="factory-tour__card-visual">
+          <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#1a1a1a"/>
+            <!-- Sewing machine silhouette -->
+            <path d="M120 200 L120 120 Q120 100 140 100 L240 100 Q260 100 260 120 L260 160" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <rect x="100" y="200" width="200" height="20" rx="2" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.25"/>
+            <!-- Needle -->
+            <line x1="200" y1="120" x2="200" y2="190" stroke="#b8956a" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="200" cy="195" r="3" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.3"/>
+            <!-- Thread path -->
+            <path d="M280 80 Q260 85 240 100 Q220 110 210 120" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2" stroke-dasharray="3 3"/>
+            <!-- Thread spool -->
+            <rect x="280" y="60" width="20" height="30" rx="3" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.25"/>
+            <!-- Stitching line on fabric -->
+            <path d="M140 180 Q170 175 200 180 Q230 185 260 180" stroke="#b8956a" stroke-width="0.5" opacity="0.2" stroke-dasharray="2 4"/>
+          </svg>
+        </div>
+        <div class="factory-tour__card-body">
+          <span class="factory-tour__step">03</span>
+          <h3 class="factory-tour__card-title">Stitching</h3>
+          <p class="factory-tour__card-text">Components assembled into the upper on industrial flat-bed and post-bed machines. Edge folding, binding, skiving, and decorative stitching happen here. Each operator specializes in specific stitch types for consistency across the run.</p>
+        </div>
+      </div>
+
+      <!-- Step 4: Lasting -->
+      <div class="hscroll__item factory-tour__card reveal" data-delay="3">
+        <div class="factory-tour__card-visual">
+          <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#1a1a1a"/>
+            <!-- Shoe last form -->
+            <path d="M100 180 Q100 120 140 100 Q180 80 220 90 Q260 100 280 130 Q300 160 320 170 Q340 175 340 190 L340 200 L100 200 Z" stroke="#b8956a" stroke-width="1.5" fill="none" opacity="0.35"/>
+            <!-- Inner form lines -->
+            <path d="M130 175 Q150 130 190 115 Q230 100 260 120 Q290 140 310 170" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+            <!-- Measurement lines -->
+            <line x1="140" y1="210" x2="140" y2="240" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+            <line x1="300" y1="210" x2="300" y2="240" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+            <line x1="140" y1="230" x2="300" y2="230" stroke="#b8956a" stroke-width="0.5" opacity="0.2"/>
+            <!-- Arrows -->
+            <path d="M145 230 L140 225 L140 235 Z" fill="#b8956a" opacity="0.2"/>
+            <path d="M295 230 L300 225 L300 235 Z" fill="#b8956a" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="factory-tour__card-body">
+          <span class="factory-tour__step">04</span>
+          <h3 class="factory-tour__card-title">Lasting</h3>
+          <p class="factory-tour__card-text">Uppers pulled over lasts and shaped using heat activation and manual tension. This is where fit and silhouette get locked in. We maintain our own last library across all size ranges and can develop custom lasts for new profiles.</p>
+        </div>
+      </div>
+
+      <!-- Step 5: Finishing -->
+      <div class="hscroll__item factory-tour__card reveal" data-delay="4">
+        <div class="factory-tour__card-visual">
+          <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#1a1a1a"/>
+            <!-- Shoe profile -->
+            <path d="M80 180 Q80 140 120 120 Q160 100 200 110 Q240 120 280 140 L320 160 Q340 170 340 185 L340 195 L80 195 Z" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <!-- Sole being attached -->
+            <path d="M80 195 L340 195 L345 205 Q345 215 335 215 L85 215 Q75 215 75 205 Z" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.25"/>
+            <!-- Polish/brush strokes -->
+            <path d="M150 140 Q170 135 190 140" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+            <path d="M200 130 Q220 125 240 130" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+            <path d="M160 155 Q180 150 200 155" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+            <!-- Sparkle effects -->
+            <circle cx="180" cy="130" r="2" fill="#b8956a" opacity="0.2"/>
+            <circle cx="250" cy="140" r="1.5" fill="#b8956a" opacity="0.15"/>
+            <circle cx="130" cy="150" r="1" fill="#b8956a" opacity="0.12"/>
+          </svg>
+        </div>
+        <div class="factory-tour__card-body">
+          <span class="factory-tour__step">05</span>
+          <h3 class="factory-tour__card-title">Finishing</h3>
+          <p class="factory-tour__card-text">Sole attachment using heat-activated adhesives and hydraulic presses. Trimming, edge painting, polishing, and final detailing by hand. Every surface checked before it moves to QC &mdash; stitch tension, adhesion, colour match, symmetry.</p>
+        </div>
+      </div>
+
+      <!-- Step 6: Quality Control -->
+      <div class="hscroll__item factory-tour__card reveal" data-delay="5">
+        <div class="factory-tour__card-visual">
+          <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#1a1a1a"/>
+            <!-- Magnifying glass -->
+            <circle cx="180" cy="140" r="50" stroke="#b8956a" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <line x1="215" y1="175" x2="260" y2="220" stroke="#b8956a" stroke-width="2" opacity="0.3"/>
+            <!-- Shoe inside magnifier -->
+            <path d="M150 150 Q155 130 175 125 Q195 120 210 135 Q220 145 215 155 L150 155 Z" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2"/>
+            <!-- Checklist -->
+            <rect x="280" y="80" width="80" height="120" rx="4" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2"/>
+            <path d="M295 105l5 5 10-10" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <path d="M295 130l5 5 10-10" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <path d="M295 155l5 5 10-10" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.3"/>
+            <line x1="320" y1="105" x2="348" y2="105" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+            <line x1="320" y1="130" x2="345" y2="130" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+            <line x1="320" y1="155" x2="350" y2="155" stroke="#b8956a" stroke-width="0.5" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="factory-tour__card-body">
+          <span class="factory-tour__step">06</span>
+          <h3 class="factory-tour__card-title">Quality Control</h3>
+          <p class="factory-tour__card-text">Multi-point inspection to AQL 2.5 standard: fit, finish, colour match, structural integrity, sole adhesion, and packaging accuracy. Every pair checked against your approved sample. Defective pairs are pulled before packing.</p>
+        </div>
+      </div>
+
+      <!-- Step 7: Packing -->
+      <div class="hscroll__item factory-tour__card reveal" data-delay="6">
+        <div class="factory-tour__card-visual">
+          <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#1a1a1a"/>
+            <!-- Open box -->
+            <path d="M100 160 L200 120 L300 160 L200 200 Z" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.25"/>
+            <path d="M100 160 L100 110 L200 70 L200 120" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.2"/>
+            <path d="M300 160 L300 110 L200 70" stroke="#b8956a" stroke-width="1" fill="none" opacity="0.2"/>
+            <!-- Tissue paper lines -->
+            <path d="M140 140 Q170 125 200 135 Q230 145 260 135" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+            <!-- Label/tag -->
+            <rect x="170" y="155" width="60" height="25" rx="2" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.2"/>
+            <line x1="180" y1="165" x2="220" y2="165" stroke="#b8956a" stroke-width="0.3" opacity="0.15"/>
+            <!-- Stacked boxes -->
+            <rect x="30" y="180" width="50" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+            <rect x="30" y="150" width="50" height="30" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.12"/>
+            <rect x="320" y="180" width="50" height="40" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.15"/>
+            <rect x="320" y="155" width="50" height="25" stroke="#b8956a" stroke-width="0.5" fill="none" opacity="0.12"/>
+          </svg>
+        </div>
+        <div class="factory-tour__card-body">
+          <span class="factory-tour__step">07</span>
+          <h3 class="factory-tour__card-title">Packing</h3>
+          <p class="factory-tour__card-text">Each pair stuffed, tissue-wrapped, and boxed to your spec. Inner and outer carton labelling, barcode scanning, and weight verification. Custom branded packaging or private label. Palletized and ready for container loading.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section class="certifications" id="certifications">
+    <div class="certifications__container">
+      <div class="section-label">
+        <span class="section-label__num">04</span>
+        <span class="section-label__text">Standards</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>The</span>
+        <span class="section-heading--accent">Paperwork</span>
+      </h2>
+      <p class="certifications__intro reveal">ISO certified, SEDEX audited, ICS compliant. The paperwork is real and current.</p>
+      <div class="certifications__grid">
+        <div class="certifications__card reveal" data-delay="0">
+          <div class="certifications__icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="20" cy="20" r="14"/>
+              <path d="M14 20l4 4 8-8"/>
+            </svg>
+          </div>
+          <h3 class="certifications__name">ISO Certified</h3>
+          <p class="certifications__desc">International quality management</p>
+        </div>
+        <div class="certifications__card reveal" data-delay="1">
+          <div class="certifications__icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 4v32M4 20h32"/>
+              <circle cx="20" cy="20" r="8"/>
+              <circle cx="20" cy="20" r="14"/>
+            </svg>
+          </div>
+          <h3 class="certifications__name">SEDEX</h3>
+          <p class="certifications__desc">Ethical supply chain audit</p>
+        </div>
+        <div class="certifications__card reveal" data-delay="2">
+          <div class="certifications__icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="6" y="6" width="12" height="12" rx="2"/>
+              <rect x="22" y="6" width="12" height="12" rx="2"/>
+              <rect x="6" y="22" width="12" height="12" rx="2"/>
+              <rect x="22" y="22" width="12" height="12" rx="2"/>
+            </svg>
+          </div>
+          <h3 class="certifications__name">Four Pillars</h3>
+          <p class="certifications__desc">Social compliance verified</p>
+        </div>
+        <div class="certifications__card reveal" data-delay="3">
+          <div class="certifications__icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 4C12 4 8 12 8 20s4 16 12 16c4-4 4-12 0-16 4 4 12 4 12-4S28 4 20 4z"/>
+            </svg>
+          </div>
+          <h3 class="certifications__name">ICS</h3>
+          <p class="certifications__desc">Initiative for Compliance &amp; Sustainability</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMPLIANCE DETAIL ========== -->
+  <section class="compliance" id="compliance">
+    <div class="compliance__container">
+      <div class="section-label section-label--light reveal">
+        <span class="section-label__num">05</span>
+        <span class="section-label__text">Compliance</span>
+      </div>
+      <h2 class="section-heading section-heading--light reveal">
+        <span>Audit-Ready.</span>
+        <span class="section-heading--accent">Always.</span>
+      </h2>
+      <p class="compliance__intro reveal">Pre-audited and ready for your team's inspection at any time.</p>
+
+      <div class="compliance__pillars reveal">
+        <div class="compliance__pillar">
+          <h4>Labour Standards</h4>
+          <p>Fair wages, regulated hours, zero child labour, third-party audited.</p>
+        </div>
+        <div class="compliance__pillar">
+          <h4>Health &amp; Safety</h4>
+          <p>PPE, fire safety, emergency protocols, first aid on every floor. Annual drills.</p>
+        </div>
+        <div class="compliance__pillar">
+          <h4>Environment</h4>
+          <p>Waste management, water recycling, REACH/SVHC chemical compliance.</p>
+        </div>
+        <div class="compliance__pillar">
+          <h4>Business Ethics</h4>
+          <p>Anti-bribery policy, full material traceability, NDA standard for all client IP.</p>
+        </div>
+      </div>
+
+      <p class="compliance__note reveal">All audit reports available on request. Factory open for buyer visits and third-party inspections at any time.</p>
+    </div>
+  </section>
+
+  <!-- ========== AWARDS ========== -->
+  <section class="awards" id="awards">
+    <div class="awards__container">
+      <div class="section-label section-label--light">
+        <span class="section-label__num">06</span>
+        <span class="section-label__text">Recognition</span>
+      </div>
+      <h2 class="section-heading section-heading--light reveal">
+        <span>Awards &amp;</span>
+        <span class="section-heading--accent">Recognition</span>
+      </h2>
+      <div class="awards__card reveal">
+        <div class="awards__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 4l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8z"/>
+          </svg>
+        </div>
+        <div class="awards__content">
+          <h3 class="awards__title">Best Exporter of the Year</h3>
+          <p class="awards__subtitle">Government of India &mdash; 2012, 2013, 2017, 2018</p>
+        </div>
+      </div>
+      <p class="awards__note reveal">Best Exporter awards from the Indian government, four times. Nice to have on the shelf.</p>
+    </div>
+  </section>
+
+  <!-- ========== CAPACITY STATS ========== -->
+  <section class="capacity" id="capacity">
+    <div class="capacity__container">
+      <div class="capacity__grid">
+        <div class="stat-card stat-card--light reveal" data-delay="0">
+          <span class="stat-card__number" data-count="1">0</span>
+          <span class="stat-card__label">Factory, One Roof</span>
+        </div>
+        <div class="stat-card stat-card--light reveal" data-delay="1">
+          <span class="stat-card__number" data-count="6">0</span>
+          <span class="stat-card__label">Categories We Make</span>
+        </div>
+        <div class="stat-card stat-card--light reveal" data-delay="2">
+          <span class="stat-card__number" data-count="1530">0</span><span class="stat-card__plus">+</span>
+          <span class="stat-card__label">Shipments Sent</span>
+        </div>
+        <div class="stat-card stat-card--light reveal" data-delay="3">
+          <span class="stat-card__number">4x</span>
+          <span class="stat-card__label">Export Awards</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOGISTICS ========== -->
+  <section class="logistics" id="logistics">
+    <div class="logistics__container">
+      <div class="section-label reveal">
+        <span class="section-label__num">07</span>
+        <span class="section-label__text">Logistics</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>Getting It</span>
+        <span class="section-heading--accent">To You</span>
+      </h2>
+      <div class="logistics__grid">
+        <div class="logistics__card reveal" data-delay="0">
+          <h4>Port Proximity</h4>
+          <p>JNPT (Nhava Sheva), Mumbai — India's largest container port. 45-minute drive from our factory.</p>
+        </div>
+        <div class="logistics__card reveal" data-delay="1">
+          <h4>Shipping Terms</h4>
+          <p>FOB Mumbai, CIF, DDP, and custom arrangements. We work with all major freight forwarders.</p>
+        </div>
+        <div class="logistics__card reveal" data-delay="2">
+          <h4>Markets Served</h4>
+          <p>India (Mumbai, Delhi, Bangalore &mdash; direct supply to retail chains), Europe (UK, Spain, Netherlands), North America, Middle East, Asia-Pacific. Active export licenses for all major markets.</p>
+        </div>
+        <div class="logistics__card reveal" data-delay="3">
+          <h4>Documentation</h4>
+          <p>GSP certificates, phytosanitary certificates, REACH compliance docs, test reports — all handled by our export team.</p>
+        </div>
+        <div class="logistics__card reveal" data-delay="4">
+          <h4>Payment &amp; Trade Terms</h4>
+          <p>Standard: 30% advance, 70% against B/L copy. Irrevocable L/C at sight accepted. Open account (Net 30/60) for established relationships. All terms formalized in proforma invoice before production.</p>
+        </div>
+        <div class="logistics__card reveal" data-delay="5">
+          <h4>Packaging</h4>
+          <p>Custom branded boxes, tissue wrapping, hang tags, and dust bags. Private-label packaging to your spec. Master cartons with barcoded labels for warehouse receiving. Gift-box ready on request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="factory-cta" id="cta">
+    <div class="factory-cta__container">
+      <h2 class="factory-cta__title reveal">
+        See Our Work<br><em>in Action</em>
+      </h2>
+      <div class="factory-cta__actions reveal" data-delay="1">
+        <a href="portfolio.html" class="btn btn--primary">
+          View Portfolio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="contact.html" class="btn btn--outline">
+          Start a Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="assets/firkee-capability-deck-2026.pdf" class="btn btn--outline" style="margin-left: var(--space-sm);" download>Download Capability Deck (PDF)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">FIRKEE</span>
+          <span class="footer__tagline">From Sketch to Sole</span>
+        </div>
+        <div class="footer__nav-grid">
+          <div class="footer__nav-col">
+            <h4>Explore</h4>
+            <a href="design.html">Design</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="process.html">Process</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <a href="factory.html">Factory</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@firkee.com">info@firkee.com</a>
+            <a href="https://instagram.com/firkeeaccessories" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://linkedin.com/company/firkee-accessories" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Firkee Accessories Pvt. Ltd. All rights reserved.</span>
+        <span class="footer__certs">ISO Certified &bull; SEDEX Audited &bull; ICS Compliant</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+</body>
+</html>

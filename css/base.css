@@ -1,0 +1,278 @@
+/* ==========================================================================
+   FIRKEE ACCESSORIES — Base Styles
+   Reset, typography, scrollbar, print, selection
+   ========================================================================== */
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  background: var(--color-ivory);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* --- Typography Utilities --- */
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-charcoal);
+}
+
+.section-heading span {
+  display: block;
+}
+
+.section-heading--accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.section-heading--light {
+  color: var(--color-cream);
+}
+
+/* --- Section Labels (01, 02, etc.) --- */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.section-label--absolute {
+  position: absolute;
+  top: var(--section-pad);
+  left: var(--side-pad);
+  margin-bottom: 0;
+}
+
+.section-label__num {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.section-label__text {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-gray);
+}
+
+.section-label--light .section-label__text {
+  color: var(--color-sand);
+}
+
+.section-label--light .section-label__num {
+  color: var(--color-gold-light);
+}
+
+/* --- Reveal Animations --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --- Selection Color --- */
+::selection {
+  background: rgba(184, 149, 106, 0.25);
+  color: var(--color-charcoal);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sand);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* --- Print --- */
+@media print {
+  .nav, .loader, .mobile-menu, .hero__scroll, .hero__grain, .hero__gradient {
+    display: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+/* --- Designed SVG Placeholders --- */
+.placeholder-shoe {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, var(--color-charcoal) 0%, var(--color-graphite) 60%, #252220 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-shoe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 200px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.placeholder-shoe svg {
+  width: 60%;
+  height: 60%;
+  max-width: 200px;
+  opacity: 0.2;
+  color: var(--color-gold);
+  transition: opacity 0.4s;
+}
+
+.placeholder-shoe:hover svg {
+  opacity: 0.3;
+}
+
+.placeholder-shoe__label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS — Global Safeguards
+   ========================================================================== */
+
+/* Prevent horizontal overflow globally */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Ensure all sections respect viewport width */
+  section,
+  .section,
+  main,
+  header,
+  footer {
+    max-width: 100vw;
+  }
+
+  /* Ensure all images behave on mobile */
+  img, svg, video, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure minimum readable font size */
+  body {
+    font-size: 16px;
+  }
+
+  /* Reduce section label margins on mobile */
+  .section-label {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tighter heading at 320px */
+  .section-heading {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .section-label {
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+
+  /* Ensure placeholder SVGs don't overflow */
+  .placeholder-shoe svg {
+    width: 50%;
+    max-width: 120px;
+  }
+
+  .placeholder-shoe__label {
+    bottom: 12px;
+    left: 12px;
+    font-size: 12px;
+  }
+}

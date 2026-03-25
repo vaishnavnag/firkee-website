@@ -1,0 +1,1002 @@
+/* ==========================================================================
+   FIRKEE ACCESSORIES — About Page Styles
+   Page header, timeline, story, leadership, studio, values, sustainability, CTA
+   ========================================================================== */
+
+/* ==========================================================================
+   SECTION 1 — Page Header
+   ========================================================================== */
+.about-header {
+  background: var(--color-ivory);
+  padding: var(--section-pad) var(--side-pad);
+  padding-top: calc(var(--nav-height) + var(--section-pad));
+}
+
+.about-header__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about-header__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(40px, 7vw, 80px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  margin-bottom: 32px;
+}
+
+.about-header__title span {
+  display: block;
+}
+
+.about-header__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-warm-gray);
+  max-width: 640px;
+}
+
+/* ==========================================================================
+   SECTION 2 — Heritage Timeline
+   ========================================================================== */
+.timeline {
+  background: var(--color-cream);
+  padding: var(--section-pad) var(--side-pad);
+  overflow: hidden;
+}
+
+.timeline__container {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+}
+
+.timeline__track {
+  position: relative;
+  margin-top: 64px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 24px;
+  scrollbar-width: none;
+}
+
+.timeline__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gold connecting line — horizontal */
+.timeline__line {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-gold-light) 5%,
+    var(--color-gold) 50%,
+    var(--color-gold-light) 95%,
+    transparent 100%
+  );
+  z-index: 0;
+}
+
+.timeline__event {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  position: relative;
+  padding-top: 56px;
+  z-index: 1;
+}
+
+/* Gold dot on the line */
+.timeline__event::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-cream);
+  box-shadow: 0 0 0 2px var(--color-gold);
+  z-index: 2;
+}
+
+.timeline__year {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.timeline__card {
+  background: var(--color-ivory);
+  padding: 24px 20px;
+  margin: 0 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(184, 149, 106, 0.12);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.timeline__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(26, 26, 26, 0.08);
+}
+
+.timeline__card-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: 8px;
+}
+
+.timeline__card-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-warm-gray);
+}
+
+/* ==========================================================================
+   SECTION 3 — Company Story (Editorial)
+   ========================================================================== */
+.story {
+  background: var(--color-ivory);
+  padding: var(--section-pad) var(--side-pad);
+}
+
+.story__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+  margin-top: 16px;
+}
+
+.story__quote {
+  position: relative;
+  padding-top: 40px;
+}
+
+.story__quote-mark {
+  position: absolute;
+  top: -20px;
+  left: -8px;
+  font-family: var(--font-display);
+  font-size: clamp(100px, 14vw, 180px);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0.25;
+  pointer-events: none;
+  user-select: none;
+}
+
+.story__quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-charcoal);
+}
+
+.story__body {
+  padding-top: 8px;
+}
+
+.story__body p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-warm-gray);
+  margin-bottom: 20px;
+}
+
+.story__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SECTION 4 — Leadership Team
+   ========================================================================== */
+.leadership {
+  background: var(--color-cream);
+  padding: var(--section-pad) var(--side-pad);
+}
+
+.leadership__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Featured Leader (full width, horizontal layout) */
+.leadership__featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--color-ivory);
+  padding: 48px;
+  margin-top: 48px;
+  margin-bottom: 32px;
+  border: 1px solid rgba(184, 149, 106, 0.1);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.leadership__featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(26, 26, 26, 0.06);
+}
+
+/* Photo placeholder */
+.leadership__photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership__photo-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(145deg, var(--color-charcoal) 0%, var(--color-graphite) 60%, #252220 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.leadership__photo--featured .leadership__photo-placeholder {
+  border-radius: 0;
+  aspect-ratio: 4 / 5;
+}
+
+.leadership__photo-grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.leadership__initials {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  opacity: 0.4;
+  position: relative;
+  z-index: 1;
+}
+
+/* Info */
+.leadership__name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+}
+
+.leadership__role {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+}
+
+.leadership__bio {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-warm-gray);
+}
+
+/* Two-column grid for other leaders */
+.leadership__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.leadership__card {
+  background: var(--color-ivory);
+  padding: 32px;
+  border: 1px solid rgba(184, 149, 106, 0.1);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.leadership__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(26, 26, 26, 0.06);
+}
+
+.leadership__card .leadership__photo-placeholder {
+  aspect-ratio: 1 / 1;
+  width: 140px;
+  margin: 0 auto 24px;
+}
+
+.leadership__card .leadership__initials {
+  font-size: clamp(36px, 5vw, 56px);
+}
+
+/* Unique tone per team member */
+.leadership__card:nth-child(1) .leadership__photo-placeholder {
+  background: linear-gradient(145deg, #2a2830 0%, #38303e 60%, #20182a 100%);
+}
+.leadership__card:nth-child(2) .leadership__photo-placeholder {
+  background: linear-gradient(145deg, #28302a 0%, #303e34 60%, #182a1e 100%);
+}
+
+/* ==========================================================================
+   SECTION 5 — Design Studio
+   ========================================================================== */
+.studio {
+  background: var(--color-charcoal);
+  padding: var(--section-pad) var(--side-pad);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grain texture overlay */
+.studio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 200px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.studio__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.studio__intro {
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: var(--color-sand);
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+/* Designed Placeholder */
+.studio__visual {
+  margin-bottom: 48px;
+}
+
+.studio__placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  background: linear-gradient(145deg, var(--color-obsidian) 0%, var(--color-graphite) 40%, #1e1c1a 100%);
+  border: 1px solid rgba(184, 149, 106, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.studio__placeholder-grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.studio__placeholder-art {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  color: var(--color-gold);
+  position: relative;
+  z-index: 1;
+}
+
+.studio__placeholder-label {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-gold);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Studio Stats */
+.studio__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(184, 149, 106, 0.12);
+}
+
+.studio__stat {
+  background: var(--color-charcoal);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.studio__stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+/* ==========================================================================
+   SECTION 6 — Values
+   ========================================================================== */
+.values {
+  background: var(--color-ivory);
+  padding: var(--section-pad) var(--side-pad);
+}
+
+.values__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.values__card {
+  background: var(--color-cream);
+  padding: 40px 32px;
+  border: 1px solid rgba(184, 149, 106, 0.08);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.values__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(26, 26, 26, 0.06);
+}
+
+.values__card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  color: var(--color-gold);
+}
+
+.values__card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.values__card-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: 12px;
+}
+
+.values__card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-warm-gray);
+}
+
+/* ==========================================================================
+   SECTION 7 — Sustainability (Brief)
+   ========================================================================== */
+.about-sustain {
+  background: var(--color-obsidian);
+  padding: var(--section-pad) var(--side-pad);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-sustain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 200px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.about-sustain__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-sustain__text {
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: var(--color-sand);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+.about-sustain__pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.about-sustain__pillar {
+  text-align: center;
+  padding: 32px 16px;
+  border: 1px solid rgba(184, 149, 106, 0.1);
+  transition: border-color 0.4s, background 0.4s;
+}
+
+.about-sustain__pillar:hover {
+  border-color: rgba(184, 149, 106, 0.25);
+  background: rgba(184, 149, 106, 0.04);
+}
+
+.about-sustain__pillar-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  color: var(--color-gold);
+}
+
+.about-sustain__pillar-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.about-sustain__pillar-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-cream);
+}
+
+/* ==========================================================================
+   SECTION 7B — Company Registration Details
+   ========================================================================== */
+.company-reg {
+  background: var(--color-cream);
+  padding: var(--section-pad) var(--side-pad);
+}
+
+.company-reg__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.company-reg__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--color-warm-gray);
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.company-reg__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.company-reg__card {
+  padding: 24px 20px;
+  background: var(--color-ivory);
+  border: 1px solid rgba(184, 149, 106, 0.12);
+  transition: border-color 0.3s, transform 0.3s var(--ease-out-expo);
+}
+
+.company-reg__card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.company-reg__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.company-reg__value {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.company-reg__note {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-warm-gray);
+  font-style: italic;
+  margin-top: 24px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION 8 — CTA
+   ========================================================================== */
+.about-cta {
+  background: var(--color-cream);
+  padding: var(--section-pad) var(--side-pad);
+  text-align: center;
+}
+
+.about-cta__container {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+}
+
+.about-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-charcoal);
+  margin-bottom: 40px;
+}
+
+.about-cta__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   RESPONSIVE — Tablet (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-sustain__pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .leadership__featured {
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .company-reg__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — Mobile (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Page Header */
+  .about-header__title {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  /* Timeline: Vertical on mobile */
+  .timeline__track {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 0;
+    padding-left: 40px;
+    padding-bottom: 0;
+  }
+
+  .timeline__line {
+    top: 0;
+    bottom: 0;
+    left: 12px;
+    right: auto;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--color-gold-light) 5%,
+      var(--color-gold) 50%,
+      var(--color-gold-light) 95%,
+      transparent 100%
+    );
+  }
+
+  .timeline__event {
+    flex: none;
+    padding-top: 0;
+    padding-bottom: 32px;
+    padding-left: 0;
+  }
+
+  .timeline__event::before {
+    top: 8px;
+    left: -34px;
+    transform: none;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .timeline__year {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .timeline__card {
+    margin: 0;
+  }
+
+  /* Story: Single column */
+  .story__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story__quote-mark {
+    font-size: 100px;
+    top: -10px;
+  }
+
+  /* Leadership: Single column */
+  .leadership__featured {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .leadership__photo--featured .leadership__photo-placeholder {
+    aspect-ratio: 3 / 2;
+  }
+
+  .leadership__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Studio stats */
+  .studio__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .studio__placeholder {
+    aspect-ratio: 3 / 2;
+  }
+
+  /* Values: 2-col */
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .values__card {
+    padding: 28px 20px;
+  }
+
+  /* Sustainability pillars: 2-col */
+  .about-sustain__pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — Small Mobile (max-width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  /* Values: 1-col */
+  .values__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sustainability: 1-col */
+  .about-sustain__pillars {
+    grid-template-columns: 1fr;
+  }
+
+  /* Company Registration: 1-col */
+  .company-reg__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Studio stats: 1-col */
+  .studio__stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Leadership featured card */
+  .leadership__featured {
+    padding: 16px;
+  }
+
+  .leadership__card {
+    padding: 20px;
+  }
+
+  /* Timeline */
+  .timeline__track {
+    padding-left: 32px;
+  }
+
+  .timeline__event::before {
+    left: -26px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Photo Placeholders */
+.photo-placeholder {
+  background: linear-gradient(145deg, var(--color-charcoal) 0%, var(--color-graphite) 50%, #252220 100%);
+  border: 1px solid rgba(184, 149, 106, 0.15);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 200px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.photo-placeholder::after {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid rgba(184, 149, 106, 0.2);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.photo-placeholder--portrait {
+  border-radius: 4px;
+}
+.photo-placeholder__label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  text-align: center;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Company Introduction / PPT Download
+   ========================================================================== */
+.company-intro {
+  background: var(--color-charcoal);
+  padding: var(--section-pad) var(--side-pad);
+}
+.company-intro .section__title {
+  color: var(--color-cream);
+}
+.company-intro .section__number {
+  color: var(--color-gold);
+}
+.company-intro__text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(245,240,235,0.6);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+.company-intro__download {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.company-intro__preview .photo-placeholder {
+  border-radius: 4px;
+}
+.company-intro__deck-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-cream);
+  margin-bottom: 24px;
+}
+.company-intro__contents {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+.company-intro__contents li {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(245,240,235,0.5);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(184,149,106,0.1);
+}
+.company-intro__contents li::before {
+  content: '\2014';
+  margin-right: 8px;
+  color: var(--color-gold);
+}
+.company-intro__actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.company-intro__note {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(245,240,235,0.3);
+}
+
+@media (max-width: 768px) {
+  .company-intro__download {
+    grid-template-columns: 1fr;
+  }
+  .company-intro__actions {
+    flex-direction: column;
+  }
+  .photo-placeholder {
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-placeholder {
+    min-height: 120px;
+    padding: 16px;
+  }
+}

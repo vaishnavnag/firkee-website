@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firkee — From Sketch to Sole</title>
+  <meta name="description" content="Firkee is a flat footwear design studio and manufacturer in Mumbai, India. Designing and manufacturing for brands that care.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👟</text></svg>">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Firkee — From Sketch to Sole">
+  <meta property="og:description" content="Firkee is a flat footwear design studio and manufacturer in Mumbai, India. Designing and manufacturing for brands that care.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://firkee.com">
+  <meta property="og:image" content="https://firkee.com/assets/og-home.jpg">
+  <meta property="og:site_name" content="Firkee">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Firkee — From Sketch to Sole">
+  <meta name="twitter:description" content="Design studio meets factory. Flat footwear for brands that care.">
+  <meta name="twitter:image" content="https://firkee.com/assets/og-home.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__letter">F</span>
+      <span class="loader__letter">I</span>
+      <span class="loader__letter">R</span>
+      <span class="loader__letter">K</span>
+      <span class="loader__letter">E</span>
+      <span class="loader__letter">E</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-text">FIRKEE</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="design.html" class="nav__link">Design</a>
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+      <a href="process.html" class="nav__link">Process</a>
+      <a href="factory.html" class="nav__link">Factory</a>
+      <a href="ai.html" class="nav__link">AI</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="work-with-us.html" class="nav__link">Work With Us</a>
+      <a href="contact.html" class="nav__link nav__link--cta">Start a Project</a>
+    </nav>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="design.html" class="mobile-menu__link">Design</a>
+      <a href="portfolio.html" class="mobile-menu__link">Portfolio</a>
+      <a href="process.html" class="mobile-menu__link">Process</a>
+      <a href="factory.html" class="mobile-menu__link">Factory</a>
+      <a href="ai.html" class="mobile-menu__link">AI</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="work-with-us.html" class="mobile-menu__link">Work With Us</a>
+      <a href="contact.html" class="mobile-menu__link mobile-menu__link--cta">Start a Project</a>
+    </nav>
+  </div>
+
+  <!-- ========== 1. HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__grain"></div>
+      <div class="hero__gradient"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__pre reveal" data-delay="0">Flat footwear studio &mdash; Mumbai</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line reveal" data-delay="1">We Design</span>
+        <span class="hero__title-line hero__title-line--italic reveal" data-delay="2">Shoes.</span>
+        <span class="hero__title-line reveal" data-delay="3">Then We Make Them.</span>
+      </h1>
+      <p class="hero__sub reveal" data-delay="4">Designing and manufacturing for brands that care.</p>
+      <div class="hero__ctas reveal" data-delay="5">
+        <a href="portfolio.html" class="btn btn--primary">See the Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="design.html" class="btn btn--outline">Visit the Studio</a>
+      </div>
+      <div class="hero__photo-placeholder reveal">
+        <div class="photo-placeholder photo-placeholder--hero">
+          <span class="photo-placeholder__label">REAL PHOTO: Hero lifestyle shot — designer's hands sketching a flat sandal, studio table with material swatches and lasts visible</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll reveal" data-delay="6">
+      <div class="hero__scroll-line"></div>
+      <span class="hero__scroll-text">Scroll</span>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat reveal" data-delay="4">
+        <span class="hero__stat-num" data-count="30">0</span><span class="hero__stat-plus">+</span>
+        <span class="hero__stat-label">Years</span>
+      </div>
+      <div class="hero__stat reveal" data-delay="5">
+        <span class="hero__stat-num" data-count="1530">0</span><span class="hero__stat-plus">+</span>
+        <span class="hero__stat-label">Shipments</span>
+      </div>
+      <div class="hero__stat reveal" data-delay="6">
+        <span class="hero__stat-num" data-count="8">0</span><span class="hero__stat-plus">+</span>
+        <span class="hero__stat-label">Brands</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Story -->
+  <section class="section brand-story">
+    <div class="container">
+      <p class="brand-story__text reveal"><em>Firkee</em> — Hindi for "lace." The detail that completes the shoe. It's a small thing, but it says everything about how we think: design is in the details.</p>
+      <p class="brand-story__text brand-story__text--sub reveal" data-delay="1" style="margin-top: 1em; font-size: 0.9em; opacity: 0.8;">Most manufacturers wait for your tech pack. We show up with ideas of our own. That is what sets us apart.</p>
+    </div>
+  </section>
+
+  <!-- ========== 2. BRAND LOGOS MARQUEE ========== -->
+  <section class="marquee-section">
+    <div class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__logo"><span class="marquee__logo-text">ZARA</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">DUNE LONDON</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">STEVE MADDEN</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">BATA</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">WESTSIDE</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">RELIANCE</span></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="marquee__logo"><span class="marquee__logo-text">ZARA</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">DUNE LONDON</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">STEVE MADDEN</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">BATA</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">WESTSIDE</span></div>
+        <div class="marquee__logo"><span class="marquee__logo-text">RELIANCE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY PARTNER ========== -->
+  <section class="why-partner" id="why-partner">
+    <div class="why-partner__container">
+      <div class="section-label reveal">
+        <span class="section-label__num">01</span>
+        <span class="section-label__text">The Short Version</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>What We</span>
+        <span class="section-heading--accent">Actually Do</span>
+      </h2>
+      <p class="why-partner__intro reveal">Three things, done well, under one roof.</p>
+
+      <div class="why-partner__grid">
+        <!-- Design Column -->
+        <div class="why-partner__col reveal" data-delay="0">
+          <h3 class="why-partner__col-title">Design</h3>
+          <div class="why-partner__points">
+            <div class="why-partner__point">
+              <span class="why-partner__point-num">01</span>
+              <div>
+                <strong>In-House Studio</strong>
+                <p>We have an in-house design studio in Lower Parel, Mumbai. We research trends, develop original collections, and collaborate with your team from concept to counter sample.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Make Column -->
+        <div class="why-partner__col why-partner__col--dark reveal" data-delay="1">
+          <h3 class="why-partner__col-title">Make</h3>
+          <div class="why-partner__points">
+            <div class="why-partner__point">
+              <span class="why-partner__point-num">01</span>
+              <div>
+                <strong>Own Factory</strong>
+                <p>Our factory in Vasai runs 4 production lines. Flats, sandals, mules, heeled sandals, boots, embellished &mdash; 15,000+ pairs a month.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ship Column -->
+        <div class="why-partner__col reveal" data-delay="2">
+          <h3 class="why-partner__col-title">Ship</h3>
+          <div class="why-partner__points">
+            <div class="why-partner__point">
+              <span class="why-partner__point-num">01</span>
+              <div>
+                <strong>Fast Turnaround</strong>
+                <p>7&ndash;14 days for samples. 3&ndash;6 weeks for production. JNPT port is 40 minutes away. We've shipped 1,530+ consignments to date.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. DATA DASHBOARD ========== -->
+  <section class="dashboard" id="dashboard">
+    <div class="dashboard__container">
+      <div class="section-label reveal">
+        <span class="section-label__num">02</span>
+        <span class="section-label__text">At a Glance</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>The Numbers That</span>
+        <span class="section-heading--accent">Define Us</span>
+      </h2>
+      <div class="dashboard__grid">
+        <div class="stat-card reveal" data-delay="0">
+          <span class="stat-card__number" data-count="30">0</span><span class="stat-card__plus">+</span>
+          <span class="stat-card__label">yrs in the game</span>
+        </div>
+        <div class="stat-card reveal" data-delay="1">
+          <span class="stat-card__number" data-count="1530">0</span><span class="stat-card__plus">+</span>
+          <span class="stat-card__label">shipments sent</span>
+        </div>
+        <div class="stat-card reveal" data-delay="2">
+          <span class="stat-card__number" data-count="8">0</span><span class="stat-card__plus">+</span>
+          <span class="stat-card__label">brands trust us</span>
+        </div>
+        <div class="stat-card reveal" data-delay="3">
+          <span class="stat-card__number" data-count="6">0</span>
+          <span class="stat-card__label">shoe categories</span>
+        </div>
+        <div class="stat-card reveal" data-delay="4">
+          <span class="stat-card__number">7&ndash;14</span>
+          <span class="stat-card__label">day samples</span>
+        </div>
+        <div class="stat-card reveal" data-delay="5">
+          <span class="stat-card__number" data-count="4">0</span><span class="stat-card__plus">x</span>
+          <span class="stat-card__label">best exporter</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. DESIGN DIFFERENTIATOR ========== -->
+  <section class="differ" id="differ">
+    <div class="differ__container">
+      <div class="section-label section-label--light reveal">
+        <span class="section-label__num">03</span>
+        <span class="section-label__text">Our Edge</span>
+      </div>
+      <div class="differ__grid">
+        <!-- Card 1: Trend Intelligence -->
+        <a href="design.html" class="differ__card reveal" data-delay="0">
+          <div class="differ__visual">
+            <div class="placeholder-shoe">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 160 C40 160 42 120 60 110 C78 100 85 95 90 80 C95 65 100 50 120 45 C140 40 155 50 160 65 C165 80 160 100 165 115 C170 130 175 140 175 150 C175 155 172 160 165 160 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <path d="M60 155 C60 155 80 145 110 148 C140 151 165 155 165 155" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <circle cx="120" cy="70" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="135" cy="65" r="2" fill="currentColor" opacity="0.2"/>
+                <circle cx="105" cy="80" r="2" fill="currentColor" opacity="0.2"/>
+              </svg>
+              <span class="placeholder-shoe__label">Trend-Led Design</span>
+            </div>
+          </div>
+          <div class="differ__text">
+            <h3 class="differ__title">Trend-Led Design</h3>
+            <p class="differ__desc">We follow the same trend calendars you do. Our design team translates seasonal direction into production-ready concepts.</p>
+          </div>
+        </a>
+        <!-- Card 2: Material Mastery -->
+        <a href="design.html" class="differ__card reveal" data-delay="1">
+          <div class="differ__visual">
+            <div class="placeholder-shoe">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 155 C30 155 35 130 50 125 C65 120 75 118 85 115 C95 112 105 108 130 108 C155 108 165 115 170 125 C175 135 175 145 175 155 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <path d="M50 125 C50 125 60 100 80 90 C100 80 110 78 110 78" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <path d="M85 115 L90 95 L100 90 L115 92 L120 108" stroke="currentColor" stroke-width="0.8" opacity="0.25"/>
+                <line x1="45" y1="140" x2="170" y2="140" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+              </svg>
+              <span class="placeholder-shoe__label">Material Obsession</span>
+            </div>
+          </div>
+          <div class="differ__text">
+            <h3 class="differ__title">Material Obsession</h3>
+            <p class="differ__desc">200+ materials in our library. Leathers, textiles, synthetics, hardware. We source what the design needs.</p>
+          </div>
+        </a>
+        <!-- Card 3: Artisan Craft -->
+        <a href="design.html" class="differ__card reveal" data-delay="2">
+          <div class="differ__visual">
+            <div class="placeholder-shoe">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M35 155 C35 155 38 145 45 140 C52 135 60 130 75 120 C90 110 95 95 95 80 C95 65 100 50 115 45 C130 40 145 48 150 60 C155 72 150 90 155 105 C160 120 168 130 172 140 C176 150 175 155 170 155 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <path d="M95 80 C100 75 110 72 115 70" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+                <path d="M70 130 C80 125 90 122 100 120" stroke="currentColor" stroke-width="0.8" opacity="0.25"/>
+                <path d="M50 148 C70 142 100 138 130 140 C150 142 165 148 170 150" stroke="currentColor" stroke-width="0.8" opacity="0.2"/>
+                <!-- Decorative stitch marks -->
+                <line x1="110" y1="55" x2="115" y2="58" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+                <line x1="118" y1="60" x2="123" y2="63" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+                <line x1="125" y1="67" x2="130" y2="70" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              </svg>
+              <span class="placeholder-shoe__label">Sample Speed</span>
+            </div>
+          </div>
+          <div class="differ__text">
+            <h3 class="differ__title">Sample Speed</h3>
+            <p class="differ__desc">Sketch to counter sample in 7&ndash;14 days. We prototype fast because we control the entire process in-house.</p>
+          </div>
+        </a>
+      </div>
+      <div class="differ__cta reveal" data-delay="3">
+        <a href="design.html" class="btn btn--outline-light">Explore Our Design Philosophy
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. CATEGORY PREVIEW (horizontal scroll) ========== -->
+  <section class="categories" id="categories">
+    <div class="categories__header">
+      <div class="section-label reveal">
+        <span class="section-label__num">04</span>
+        <span class="section-label__text">Categories</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>What We</span>
+        <span class="section-heading--accent">Create</span>
+      </h2>
+    </div>
+    <div class="hscroll" id="categoryScroll">
+      <!-- Flats -->
+      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="0">
+        <div class="category-card__visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 100 C20 100 25 80 45 75 C65 70 80 68 100 68 C120 68 140 70 155 75 C170 80 180 90 182 95 C184 100 182 105 175 105 L25 105 C22 105 20 103 20 100 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <path d="M45 75 C50 60 65 50 80 50 C90 50 95 55 95 55" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <line x1="30" y1="98" x2="175" y2="98" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+            </svg>
+            <span class="placeholder-shoe__label">Flat</span>
+          </div>
+        </div>
+        <div class="category-card__info">
+          <h3 class="category-card__name">Flats</h3>
+          <span class="category-card__count">24+ Styles</span>
+        </div>
+      </a>
+      <!-- Sandals -->
+      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="1">
+        <div class="category-card__visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25 105 C25 105 30 85 50 80 C70 75 90 73 110 73 C130 73 150 75 165 82 C175 87 180 95 180 100 C180 103 178 105 175 105 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <path d="M70 73 L65 45 C65 42 67 40 70 40 L75 40 C78 40 80 42 80 45 L78 73" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <path d="M120 73 L118 50 C118 47 120 45 123 45 L128 45 C131 45 133 47 133 50 L130 73" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="35" y1="98" x2="175" y2="98" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+            </svg>
+            <span class="placeholder-shoe__label">Sandal</span>
+          </div>
+        </div>
+        <div class="category-card__info">
+          <h3 class="category-card__name">Sandals</h3>
+          <span class="category-card__count">24+ Styles</span>
+        </div>
+      </a>
+      <!-- Mules -->
+      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="2">
+        <div class="category-card__visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 105 C30 105 32 85 50 78 C68 71 85 68 105 68 C125 68 142 72 155 78 C168 84 175 92 175 98 C175 102 172 105 168 105 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <path d="M50 78 C55 62 70 52 85 50 C100 48 108 55 108 55" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <path d="M70 68 C70 68 75 55 90 55 C105 55 108 62 108 68" stroke="currentColor" stroke-width="0.8" opacity="0.25" stroke-dasharray="3 3"/>
+            </svg>
+            <span class="placeholder-shoe__label">Mule</span>
+          </div>
+        </div>
+        <div class="category-card__info">
+          <h3 class="category-card__name">Mules</h3>
+          <span class="category-card__count">24+ Styles</span>
+        </div>
+      </a>
+      <!-- Heeled Sandals -->
+      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="3">
+        <div class="category-card__visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25 65 C25 65 35 55 55 52 C75 49 90 50 105 55 C120 60 130 65 135 68 L170 68 C175 68 178 70 178 73 L178 78 C178 80 176 82 174 82 L30 82 C27 82 25 80 25 78 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <path d="M35 82 L28 115 C28 118 30 120 33 120 L43 120 C46 120 48 118 48 115 L42 82" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+              <path d="M60 52 L55 35 C55 33 57 32 59 32 L65 32" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <path d="M100 55 L95 38 C95 36 97 35 99 35 L105 35" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+            </svg>
+            <span class="placeholder-shoe__label">Heeled</span>
+          </div>
+        </div>
+        <div class="category-card__info">
+          <h3 class="category-card__name">Heeled Sandals</h3>
+          <span class="category-card__count">24+ Styles</span>
+        </div>
+      </a>
+      <!-- Boots -->
+      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="4">
+        <div class="category-card__visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55 20 C55 20 50 18 48 20 C46 22 45 30 45 45 C45 60 44 75 42 85 C40 95 35 100 30 105 C25 110 25 115 28 118 L170 118 C175 118 178 115 178 112 C178 108 175 105 168 102 C161 99 150 98 145 98 C140 98 138 95 136 90 C134 85 130 70 128 55 C126 40 120 25 115 22 C110 19 100 18 95 20 C90 22 87 30 85 30 C83 30 80 25 75 22 C70 19 60 18 55 20 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <path d="M48 50 L120 50" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+              <path d="M46 70 L130 70" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+              <path d="M44 90 L138 90" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+              <line x1="35" y1="112" x2="172" y2="112" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+            </svg>
+            <span class="placeholder-shoe__label">Boot</span>
+          </div>
+        </div>
+        <div class="category-card__info">
+          <h3 class="category-card__name">Boots</h3>
+          <span class="category-card__count">24+ Styles</span>
+        </div>
+      </a>
+      <!-- Embellished -->
+      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="5">
+        <div class="category-card__visual">
+          <div class="placeholder-shoe">
+            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 100 C20 100 25 82 45 76 C65 70 85 68 105 68 C125 68 145 72 160 78 C170 82 178 90 180 96 C182 100 180 104 175 104 L25 104 C22 104 20 102 20 100 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <path d="M50 76 C55 60 70 50 85 48" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <!-- Decorative beads/embellishments -->
+              <circle cx="65" cy="72" r="2.5" fill="currentColor" opacity="0.4"/>
+              <circle cx="78" cy="69" r="2" fill="currentColor" opacity="0.35"/>
+              <circle cx="92" cy="67" r="2.5" fill="currentColor" opacity="0.4"/>
+              <circle cx="105" cy="68" r="2" fill="currentColor" opacity="0.35"/>
+              <circle cx="118" cy="70" r="2.5" fill="currentColor" opacity="0.4"/>
+              <circle cx="130" cy="73" r="2" fill="currentColor" opacity="0.35"/>
+              <circle cx="72" cy="80" r="1.5" fill="currentColor" opacity="0.25"/>
+              <circle cx="85" cy="78" r="1.5" fill="currentColor" opacity="0.25"/>
+              <circle cx="98" cy="76" r="1.5" fill="currentColor" opacity="0.25"/>
+              <circle cx="112" cy="77" r="1.5" fill="currentColor" opacity="0.25"/>
+              <circle cx="125" cy="80" r="1.5" fill="currentColor" opacity="0.25"/>
+            </svg>
+            <span class="placeholder-shoe__label">Embellished</span>
+          </div>
+        </div>
+        <div class="category-card__info">
+          <h3 class="category-card__name">Embellished</h3>
+          <span class="category-card__count">24+ Styles</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== 6. PROCESS TEASER ========== -->
+  <section class="process-teaser" id="process-teaser">
+    <div class="process-teaser__container">
+      <div class="section-label section-label--light reveal">
+        <span class="section-label__num">05</span>
+        <span class="section-label__text">Our Process</span>
+      </div>
+      <h2 class="section-heading section-heading--light reveal">
+        <span>How It</span>
+        <span class="section-heading--accent">Works</span>
+      </h2>
+      <div class="process-teaser__timeline reveal">
+        <div class="process-teaser__step">
+          <span class="process-teaser__num">01</span>
+          <span class="process-teaser__name">Inquiry</span>
+        </div>
+        <div class="process-teaser__connector"></div>
+        <div class="process-teaser__step">
+          <span class="process-teaser__num">02</span>
+          <span class="process-teaser__name">Design</span>
+        </div>
+        <div class="process-teaser__connector"></div>
+        <div class="process-teaser__step">
+          <span class="process-teaser__num">03</span>
+          <span class="process-teaser__name">Sampling</span>
+        </div>
+        <div class="process-teaser__connector"></div>
+        <div class="process-teaser__step">
+          <span class="process-teaser__num">04</span>
+          <span class="process-teaser__name">Approval</span>
+        </div>
+        <div class="process-teaser__connector"></div>
+        <div class="process-teaser__step">
+          <span class="process-teaser__num">05</span>
+          <span class="process-teaser__name">Planning</span>
+        </div>
+        <div class="process-teaser__connector"></div>
+        <div class="process-teaser__step">
+          <span class="process-teaser__num">06</span>
+          <span class="process-teaser__name">Manufacturing</span>
+        </div>
+        <div class="process-teaser__connector"></div>
+        <div class="process-teaser__step">
+          <span class="process-teaser__num">07</span>
+          <span class="process-teaser__name">Delivery</span>
+        </div>
+      </div>
+      <div class="process-teaser__footer reveal">
+        <span class="process-teaser__duration">From your first email to delivery &mdash; here's the timeline</span>
+        <a href="process.html" class="btn btn--outline-light">View Full Process
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <span class="section__number reveal">06</span>
+      <h2 class="section__title reveal">What They Say</h2>
+      <div class="testimonials__grid">
+        <blockquote class="testimonial reveal">
+          <p class="testimonial__text">"We needed a factory that could think like a design studio. Firkee gets the brief faster than most in-house teams."</p>
+          <footer class="testimonial__author">
+            <span class="testimonial__name">Senior Designer</span>
+            <span class="testimonial__company">European Fashion Brand</span>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial reveal">
+          <p class="testimonial__text">"Sample turnaround in 10 days. Other factories quote 4 weeks for the same complexity. The speed is real."</p>
+          <footer class="testimonial__author">
+            <span class="testimonial__name">Head of Sourcing</span>
+            <span class="testimonial__company">UK High Street Retailer</span>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial reveal">
+          <p class="testimonial__text">"Third season working together. They push back on design when something won't work in production — that's the kind of partner you want."</p>
+          <footer class="testimonial__author">
+            <span class="testimonial__name">Creative Director</span>
+            <span class="testimonial__company">Indian Premium Label</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. VALUES ========== -->
+  <section class="section values-pillars" id="values">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__num">07</span>
+        <span class="section-label__text">What We Stand For</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>Built on</span>
+        <span class="section-heading--accent">Principle</span>
+      </h2>
+      <p class="values-pillars__intro reveal">Three commitments that shape how we run our factory, treat our people, and think about the future.</p>
+
+      <div class="values-pillars__grid">
+
+        <div class="values-pillar values-pillar--ai reveal" data-delay="0">
+          <div class="ai-pillar__copy">
+            <div class="values-pillar__num">01</div>
+            <h3 class="values-pillar__title">AI for Process Control</h3>
+            <p class="values-pillar__text">Live monitoring at every stage — from cutting to packing. Defects caught before they ship.</p>
+            <a href="ai.html" class="btn btn--outline" style="align-self:flex-start;margin-top:8px;font-size:0.8rem;padding:8px 18px;">See How It Works →</a>
+          </div>
+
+          <!-- Teaser stats -->
+          <div class="ai-pillar__teaser">
+            <div class="ai-pillar__tstat">
+              <span class="ai-pillar__tval">98%+</span>
+              <span class="ai-pillar__tlabel">Quality Score</span>
+            </div>
+            <div class="ai-pillar__tstat">
+              <span class="ai-pillar__tval">&lt;1%</span>
+              <span class="ai-pillar__tlabel">Defect Rate</span>
+            </div>
+            <div class="ai-pillar__tstat">
+              <span class="ai-pillar__tval">4</span>
+              <span class="ai-pillar__tlabel">Lines Monitored</span>
+            </div>
+            <div class="ai-pillar__tstat">
+              <span class="ai-pillar__tval">Real-time</span>
+              <span class="ai-pillar__tlabel">Alerts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="values-pillar reveal values-pillar--accent" data-delay="1">
+          <div class="values-pillar__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="16" r="6"/>
+              <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+              <path d="M18 28l2 4 4-8 4 8 2-4"/>
+            </svg>
+          </div>
+          <div class="values-pillar__num">02</div>
+          <h3 class="values-pillar__title">People First</h3>
+          <p class="values-pillar__text">Our 200+ craftspeople are the factory. We invest in fair wages, safe conditions, and skills training — because great products are made by people who are looked after.</p>
+        </div>
+
+        <div class="values-pillar reveal" data-delay="2">
+          <div class="values-pillar__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 6C14 6 7 15 8 25c1 8 7 14 16 17 9-3 15-9 16-17 1-10-6-19-16-19z"/>
+              <path d="M24 6v36M8 25h32"/>
+              <path d="M14 12c4 4 6 8 6 13M34 12c-4 4-6 8-6 13"/>
+            </svg>
+          </div>
+          <div class="values-pillar__num">03</div>
+          <h3 class="values-pillar__title">Environmental Mindset</h3>
+          <p class="values-pillar__text">Protect and preserve. We source responsibly, reduce waste on the floor, and work towards certifications that prove it. Fashion shouldn't cost the earth.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. CTA ========== -->
+  <section class="home-cta" id="home-cta">
+    <div class="home-cta__container">
+      <h2 class="home-cta__title reveal">
+        Got a collection<br><em>in mind?</em>
+      </h2>
+      <p class="home-cta__text reveal">Send us a sketch, a tech pack, or just an idea. We'll take it from there.</p>
+      <div class="reveal">
+        <a href="contact.html" class="btn btn--primary">Get in Touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="assets/firkee-company-profile-2026.pdf" class="btn btn--outline" style="margin-left: var(--space-sm);" download>Download Company Profile
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">FIRKEE</span>
+          <span class="footer__tagline">From Sketch to Sole</span>
+        </div>
+        <div class="footer__nav-grid">
+          <div class="footer__nav-col">
+            <h4>Explore</h4>
+            <a href="design.html">Design</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="process.html">Process</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <a href="factory.html">Factory</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@firkee.com">info@firkee.com</a>
+            <a href="https://instagram.com/firkeeaccessories" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://linkedin.com/company/firkee-accessories" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Firkee Accessories Pvt. Ltd. All rights reserved.</span>
+        <span class="footer__certs">ISO Certified &bull; SEDEX Audited &bull; ICS Compliant</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+  (function () {
+    var stages = ['cut','last','stitch','qc','pack'];
+    var alerts = [
+      { stage: 'stitch', msg: 'Stitch tension variance detected — pair #1047 flagged', type: 'warn' },
+      { stage: 'qc',     msg: 'Sole adhesion checked — AQL 2.5 passed', type: 'ok' },
+      { stage: 'cut',    msg: 'Pattern alignment within 0.2mm tolerance', type: 'ok' },
+      { stage: 'qc',     msg: 'Colour deviation on pair #1051 — routed for re-check', type: 'warn' },
+      { stage: 'pack',   msg: 'Batch 1040–1060 cleared — ready for dispatch', type: 'ok' },
+    ];
+    var activeStageIdx = 0;
+    var alertIdx = 0;
+
+    function getEl(id) { return document.getElementById(id); }
+
+    function setStageState(stageName, state) {
+      var el = document.querySelector('[data-stage="' + stageName + '"]');
+      if (!el) return;
+      el.className = 'ai-stage ai-stage--' + state;
+      var s = el.querySelector('.ai-stage__status');
+      if (state === 'ok')       s.textContent = '✓';
+      else if (state === 'scan') s.textContent = '⟳';
+      else if (state === 'warn') s.textContent = '!';
+      else s.textContent = '';
+    }
+
+    function randomBetween(a, b) {
+      return Math.round((Math.random() * (b - a) + a) * 10) / 10;
+    }
+
+    function updateMetrics() {
+      var q = randomBetween(97.2, 99.1);
+      var d = randomBetween(0.1, 0.8);
+      var p = Math.round(randomBetween(820, 920));
+      var qEl = getEl('aiQuality');
+      var dEl = getEl('aiDefect');
+      var pEl = getEl('aiPairs');
+      if (qEl) qEl.innerHTML = q.toFixed(1) + '<span style="font-size:0.65em">%</span>';
+      if (dEl) dEl.innerHTML = d.toFixed(1) + '<span style="font-size:0.65em">%</span>';
+      if (pEl) pEl.textContent = p;
+      var qBar = getEl('aiQualityBar');
+      var dBar = getEl('aiDefectBar');
+      var pBar = getEl('aiPairsBar');
+      if (qBar) qBar.style.width = q + '%';
+      if (dBar) dBar.style.width = (d * 10) + '%';
+      if (pBar) pBar.style.width = ((p - 700) / 300 * 100) + '%';
+    }
+
+    function showAlert(a) {
+      var el = getEl('aiAlert');
+      if (!el) return;
+      el.className = 'ai-alert ai-alert--' + a.type + ' ai-alert--visible';
+      el.innerHTML = (a.type === 'warn' ? '⚠ ' : '✓ ') + a.msg;
+      setTimeout(function () { el.className = 'ai-alert'; }, 3500);
+    }
+
+    function tick() {
+      // Mark previous stage done
+      var prev = (activeStageIdx - 1 + stages.length) % stages.length;
+      setStageState(stages[prev], 'idle');
+
+      // Scan current stage
+      setStageState(stages[activeStageIdx], 'scan');
+
+      setTimeout(function () {
+        var isWarn = Math.random() < 0.15;
+        setStageState(stages[activeStageIdx], isWarn ? 'warn' : 'ok');
+        updateMetrics();
+
+        // Show alert every other tick
+        if (activeStageIdx % 2 === 0) {
+          var a = alerts[alertIdx % alerts.length];
+          alertIdx++;
+          showAlert(a);
+        }
+
+        activeStageIdx = (activeStageIdx + 1) % stages.length;
+      }, 900);
+    }
+
+    // Start after dashboard is visible
+    var dashboard = getEl('aiDashboard');
+    if (dashboard && 'IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          obs.disconnect();
+          tick();
+          setInterval(tick, 2200);
+        }
+      }, { threshold: 0.4 });
+      obs.observe(dashboard);
+    }
+  })();
+  </script>
+</body>
+</html>

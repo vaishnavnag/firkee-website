@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firkee.com/sitemap.xml
+
+# Firkee Accessories — Flat Footwear Design Studio & Manufacturer
+# Mumbai, India | firkee.com

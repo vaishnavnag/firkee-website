@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Process Control — Firkee</title>
+  <meta name="description" content="How Firkee uses AI to monitor every stage of footwear production — from cutting to packing. Live defect detection, quality scoring, and process intelligence.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👟</text></svg>">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta property="og:title" content="AI for Process Control — Firkee">
+  <meta property="og:description" content="Live monitoring at every stage of footwear manufacturing. Defects caught before they ship.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://firkee.com/ai">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/ai-page.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__letter">F</span>
+      <span class="loader__letter">I</span>
+      <span class="loader__letter">R</span>
+      <span class="loader__letter">K</span>
+      <span class="loader__letter">E</span>
+      <span class="loader__letter">E</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav nav--dark" id="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-text">FIRKEE</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="design.html" class="nav__link">Design</a>
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+      <a href="process.html" class="nav__link">Process</a>
+      <a href="factory.html" class="nav__link">Factory</a>
+      <a href="ai.html" class="nav__link">AI</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="work-with-us.html" class="nav__link">Work With Us</a>
+      <a href="contact.html" class="nav__link nav__link--cta">Start a Project</a>
+    </nav>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="design.html" class="mobile-menu__link">Design</a>
+      <a href="portfolio.html" class="mobile-menu__link">Portfolio</a>
+      <a href="process.html" class="mobile-menu__link">Process</a>
+      <a href="factory.html" class="mobile-menu__link">Factory</a>
+      <a href="ai.html" class="mobile-menu__link">AI</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="work-with-us.html" class="mobile-menu__link">Work With Us</a>
+      <a href="contact.html" class="mobile-menu__link mobile-menu__link--cta">Start a Project</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="ai-hero">
+    <div class="ai-hero__bg">
+      <div class="ai-hero__grid"></div>
+      <div class="ai-hero__glow ai-hero__glow--1"></div>
+      <div class="ai-hero__glow ai-hero__glow--2"></div>
+    </div>
+    <div class="ai-hero__content">
+      <div class="section-label section-label--light reveal">
+        <span class="section-label__num">AI</span>
+        <span class="section-label__text">Process Intelligence</span>
+      </div>
+      <h1 class="ai-hero__title reveal" data-delay="1">
+        Every defect caught.<br><em>Before it ships.</em>
+      </h1>
+      <p class="ai-hero__sub reveal" data-delay="2">
+        We monitor every stage of production in real time — cut, last, stitch, QC, pack.
+        AI flags deviations the moment they happen, not after the carton is sealed.
+      </p>
+      <div class="ai-hero__stats reveal" data-delay="3">
+        <div class="ai-hero__stat">
+          <span class="ai-hero__stat-val" data-count="98">0</span><span class="ai-hero__stat-sfx">%+</span>
+          <span class="ai-hero__stat-label">Quality score</span>
+        </div>
+        <div class="ai-hero__stat">
+          <span class="ai-hero__stat-val">&lt;1</span><span class="ai-hero__stat-sfx">%</span>
+          <span class="ai-hero__stat-label">Defect rate</span>
+        </div>
+        <div class="ai-hero__stat">
+          <span class="ai-hero__stat-val" data-count="4">0</span>
+          <span class="ai-hero__stat-label">Lines monitored</span>
+        </div>
+        <div class="ai-hero__stat">
+          <span class="ai-hero__stat-val">Real-time</span>
+          <span class="ai-hero__stat-label">Alerts</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live multi-line dashboard -->
+    <div class="ai-hero__dashboard reveal" data-delay="4">
+      <div class="mld-header">
+        <span class="mld-title">VASAI FACTORY — LIVE FLOOR VIEW</span>
+        <span class="mld-live"><span class="mld-dot"></span>LIVE</span>
+      </div>
+      <div class="mld-lines" id="mldLines">
+        <!-- 4 production lines injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section ai-how" id="how-it-works">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__num">01</span>
+        <span class="section-label__text">How It Works</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>Watching every</span>
+        <span class="section-heading--accent">stage</span>
+      </h2>
+
+      <div class="ai-stages-detail">
+
+        <div class="asd-item reveal" data-delay="0">
+          <div class="asd-item__num">01</div>
+          <div class="asd-item__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="8" y="16" width="32" height="24" rx="2"/>
+              <path d="M16 16v-4a2 2 0 012-2h12a2 2 0 012 2v4"/>
+              <path d="M14 28h8M14 34h5"/>
+              <path d="M34 28l-4 4 4 4"/>
+            </svg>
+          </div>
+          <div class="asd-item__body">
+            <h3 class="asd-item__title">Cut</h3>
+            <p class="asd-item__text">Pattern alignment is verified against a digital master. Any deviation beyond 0.5mm triggers an immediate flag before the leather moves to the next bench.</p>
+            <div class="asd-item__tag asd-item__tag--ok">Tolerance: ±0.5mm</div>
+          </div>
+        </div>
+
+        <div class="asd-item reveal" data-delay="1">
+          <div class="asd-item__num">02</div>
+          <div class="asd-item__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <ellipse cx="24" cy="30" rx="14" ry="8"/>
+              <path d="M10 30v-4c0-5 6-9 14-9s14 4 14 9v4"/>
+              <path d="M24 17v-6"/>
+              <circle cx="24" cy="9" r="2"/>
+            </svg>
+          </div>
+          <div class="asd-item__body">
+            <h3 class="asd-item__title">Lasting</h3>
+            <p class="asd-item__text">Sole alignment and heel positioning are checked against spec. Asymmetry and adhesion gaps are flagged in real time by visual sensors on the last bench.</p>
+            <div class="asd-item__tag asd-item__tag--ok">Alignment: ±1mm</div>
+          </div>
+        </div>
+
+        <div class="asd-item reveal" data-delay="2">
+          <div class="asd-item__num">03</div>
+          <div class="asd-item__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M10 24 Q17 16 24 24 Q31 32 38 24" stroke-dasharray="3 3"/>
+              <circle cx="10" cy="24" r="3" fill="currentColor" opacity="0.4"/>
+              <circle cx="38" cy="24" r="3" fill="currentColor" opacity="0.4"/>
+              <path d="M24 14v4M24 30v4"/>
+            </svg>
+          </div>
+          <div class="asd-item__body">
+            <h3 class="asd-item__title">Stitching</h3>
+            <p class="asd-item__text">Stitch tension, stitch count per inch, and thread colour consistency are monitored continuously. Variance beyond spec triggers a stop-and-check alert.</p>
+            <div class="asd-item__tag asd-item__tag--warn">Most common flag point</div>
+          </div>
+        </div>
+
+        <div class="asd-item reveal" data-delay="3">
+          <div class="asd-item__num">04</div>
+          <div class="asd-item__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="24" cy="24" r="16"/>
+              <path d="M16 24l6 6 10-12"/>
+            </svg>
+          </div>
+          <div class="asd-item__body">
+            <h3 class="asd-item__title">Quality Control</h3>
+            <p class="asd-item__text">AQL 2.5 inspection, automated. Colour deviation, sole separation, embellishment check, and finish consistency — all scored and logged before a pair advances to packing.</p>
+            <div class="asd-item__tag asd-item__tag--ok">AQL 2.5 standard</div>
+          </div>
+        </div>
+
+        <div class="asd-item reveal" data-delay="4">
+          <div class="asd-item__num">05</div>
+          <div class="asd-item__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="8" y="20" width="32" height="22" rx="2"/>
+              <path d="M16 20v-6a8 8 0 0116 0v6"/>
+              <path d="M24 30v5"/>
+              <circle cx="24" cy="28" r="2" fill="currentColor" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="asd-item__body">
+            <h3 class="asd-item__title">Packing</h3>
+            <p class="asd-item__text">Batch completion is verified against the order spec. Size assortment, box labelling, and carton count are all cross-checked before a batch is marked dispatch-ready.</p>
+            <div class="asd-item__tag asd-item__tag--ok">Batch verified before dispatch</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIVE FLOOR ========== -->
+  <section class="ai-floor" id="live-floor">
+    <div class="container">
+      <div class="section-label section-label--light reveal">
+        <span class="section-label__num">02</span>
+        <span class="section-label__text">Live Floor</span>
+      </div>
+      <h2 class="section-heading section-heading--light reveal">
+        <span>4 lines.</span>
+        <span class="section-heading--accent">Right now.</span>
+      </h2>
+      <p class="ai-floor__intro reveal">Each production line runs independently with its own AI monitor. Flags from any line surface instantly.</p>
+
+      <div class="ai-floor__grid" id="floorGrid">
+        <!-- 4 full dashboards rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT AI CATCHES ========== -->
+  <section class="section ai-catches" id="what-we-catch">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__num">03</span>
+        <span class="section-label__text">What AI Catches</span>
+      </div>
+      <h2 class="section-heading reveal">
+        <span>Common defects,</span>
+        <span class="section-heading--accent">stopped early</span>
+      </h2>
+
+      <div class="catches-grid">
+        <div class="catch-card reveal" data-delay="0">
+          <div class="catch-card__stage">Stitching</div>
+          <h3 class="catch-card__defect">Tension Variance</h3>
+          <p class="catch-card__desc">Loose or tight stitching that changes under wear. AI detects thread tension deviation per stitch cycle.</p>
+          <div class="catch-card__bar"><div class="catch-card__fill" style="width:72%"></div></div>
+          <span class="catch-card__freq">72% of stitch-stage flags</span>
+        </div>
+        <div class="catch-card reveal" data-delay="1">
+          <div class="catch-card__stage">Lasting</div>
+          <h3 class="catch-card__defect">Sole Gap</h3>
+          <p class="catch-card__desc">Adhesion failure between upper and sole. Detected by gap sensor at the lasting press before bonding sets.</p>
+          <div class="catch-card__bar"><div class="catch-card__fill" style="width:54%"></div></div>
+          <span class="catch-card__freq">54% of lasting-stage flags</span>
+        </div>
+        <div class="catch-card reveal" data-delay="2">
+          <div class="catch-card__stage">QC</div>
+          <h3 class="catch-card__defect">Colour Deviation</h3>
+          <p class="catch-card__desc">Dye lot inconsistency between pairs in the same batch. Colour delta is compared to the approved lab dip.</p>
+          <div class="catch-card__bar"><div class="catch-card__fill" style="width:48%"></div></div>
+          <span class="catch-card__freq">48% of QC-stage flags</span>
+        </div>
+        <div class="catch-card reveal" data-delay="3">
+          <div class="catch-card__stage">Cut</div>
+          <h3 class="catch-card__defect">Pattern Misalignment</h3>
+          <p class="catch-card__desc">Grain or texture misalignment across paired components. Flagged before the leather is cut, saving material.</p>
+          <div class="catch-card__bar"><div class="catch-card__fill" style="width:38%"></div></div>
+          <span class="catch-card__freq">38% of cut-stage flags</span>
+        </div>
+        <div class="catch-card reveal" data-delay="4">
+          <div class="catch-card__stage">Stitching</div>
+          <h3 class="catch-card__defect">Skipped Stitch</h3>
+          <p class="catch-card__desc">Missed stitch cycles that create structural weak points. Vision sensor counts stitches per inch in real time.</p>
+          <div class="catch-card__bar"><div class="catch-card__fill" style="width:29%"></div></div>
+          <span class="catch-card__freq">29% of stitch-stage flags</span>
+        </div>
+        <div class="catch-card reveal" data-delay="5">
+          <div class="catch-card__stage">Packing</div>
+          <h3 class="catch-card__defect">Size Mismatch</h3>
+          <p class="catch-card__desc">Wrong size in a carton. Barcode scan at packing verified against the order pick list before the box seals.</p>
+          <div class="catch-card__bar"><div class="catch-card__fill" style="width:18%"></div></div>
+          <span class="catch-card__freq">18% of pack-stage flags</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OUTCOME NUMBERS ========== -->
+  <section class="ai-outcomes" id="outcomes">
+    <div class="container">
+      <div class="section-label section-label--light reveal">
+        <span class="section-label__num">04</span>
+        <span class="section-label__text">Outcomes</span>
+      </div>
+      <h2 class="section-heading section-heading--light reveal">
+        <span>What it means</span>
+        <span class="section-heading--accent">for your order</span>
+      </h2>
+      <div class="ai-outcomes__grid">
+        <div class="outcome-stat reveal" data-delay="0">
+          <span class="outcome-stat__val" data-count="62">0</span><span class="outcome-stat__sfx">%</span>
+          <span class="outcome-stat__label">Reduction in post-production rework since AI monitoring introduced</span>
+        </div>
+        <div class="outcome-stat reveal" data-delay="1">
+          <span class="outcome-stat__val" data-count="98">0</span><span class="outcome-stat__sfx">%+</span>
+          <span class="outcome-stat__label">Consistent quality score across all 4 production lines, every shift</span>
+        </div>
+        <div class="outcome-stat reveal" data-delay="2">
+          <span class="outcome-stat__val" data-count="3">0</span><span class="outcome-stat__sfx">x</span>
+          <span class="outcome-stat__label">Faster defect detection vs. manual end-of-line inspection only</span>
+        </div>
+        <div class="outcome-stat reveal" data-delay="3">
+          <span class="outcome-stat__val">Zero</span>
+          <span class="outcome-stat__label">Customer rejections due to quality in the last 18 months</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="home-cta">
+    <div class="home-cta__container">
+      <h2 class="home-cta__title reveal">
+        Want this on<br><em>your order?</em>
+      </h2>
+      <p class="home-cta__text reveal">Every order we take is monitored this way — it's not a premium add-on, it's just how we work.</p>
+      <div class="reveal">
+        <a href="contact.html" class="btn btn--primary">Start a Conversation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="factory.html" class="btn btn--outline" style="margin-left: var(--space-sm);">See the Factory</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">FIRKEE</span>
+          <span class="footer__tagline">From Sketch to Sole</span>
+        </div>
+        <div class="footer__nav-grid">
+          <div class="footer__nav-col">
+            <h4>Explore</h4>
+            <a href="design.html">Design</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="process.html">Process</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <a href="factory.html">Factory</a>
+            <a href="about.html">About Us</a>
+            <a href="ai.html">AI Control</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@firkee.com">info@firkee.com</a>
+            <a href="https://instagram.com/firkeeaccessories" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://linkedin.com/company/firkee-accessories" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Firkee Accessories Pvt. Ltd. All rights reserved.</span>
+        <span class="footer__certs">ISO Certified &bull; SEDEX Audited &bull; ICS Compliant</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+  <script src="js/ai-page.js"></script>
+</body>
+</html>
