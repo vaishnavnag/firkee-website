@@ -70,22 +70,9 @@
   display: none;
 }
 
-/* Gold connecting line — horizontal */
+/* Hide the line div — line drawn via event ::after connectors */
 .timeline__line {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    var(--color-gold-light) 5%,
-    var(--color-gold) 50%,
-    var(--color-gold-light) 95%,
-    transparent 100%
-  );
-  z-index: 0;
+  display: none;
 }
 
 .timeline__event {
@@ -110,6 +97,25 @@
   border: 3px solid var(--color-cream);
   box-shadow: 0 0 0 2px var(--color-gold);
   z-index: 2;
+}
+
+/* Connecting line segment per event */
+.timeline__event::after {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-gold);
+  z-index: 0;
+}
+.timeline__event:first-child::after {
+  left: 50%;
+}
+.timeline__event:last-child::after {
+  right: 50%;
+}
 }
 
 .timeline__year {
@@ -726,20 +732,19 @@
   }
 
   .timeline__line {
+    display: block;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 12px;
     right: auto;
     width: 2px;
     height: 100%;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--color-gold-light) 5%,
-      var(--color-gold) 50%,
-      var(--color-gold-light) 95%,
-      transparent 100%
-    );
+    background: var(--color-gold);
+  }
+
+  .timeline__event::after {
+    display: none;
   }
 
   .timeline__event {

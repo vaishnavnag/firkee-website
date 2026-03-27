@@ -88,6 +88,13 @@
   width: 100%;
   height: auto;
 }
+.factory-hero__img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
 /* Scroll indicator */
 .factory-hero__scroll {
@@ -255,6 +262,12 @@
 .factory-tour__card-visual svg {
   width: 100%;
   height: 100%;
+  display: block;
+}
+.factory-tour__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 

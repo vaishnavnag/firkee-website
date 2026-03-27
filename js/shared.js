@@ -149,30 +149,46 @@
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          animateCounter(entry.target);
+          waitForRevealThenAnimate(entry.target);
           observer.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.15,
+      threshold: 0,
       rootMargin: '0px 0px -20px 0px'
     });
 
     counters.forEach(function (el) {
-      // Check if the element is already in the viewport
-      var rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        animateCounter(el);
-      } else {
-        observer.observe(el);
-      }
+      observer.observe(el);
     });
+  }
+
+  // Wait until the parent .reveal element (if any) has 'is-visible' before animating
+  function waitForRevealThenAnimate(el) {
+    var revealParent = el.closest('.reveal');
+    if (!revealParent || revealParent.classList.contains('is-visible')) {
+      animateCounter(el);
+      return;
+    }
+    // Poll until the reveal parent becomes visible (checked every 100ms, max 5s)
+    var attempts = 0;
+    var check = setInterval(function () {
+      attempts++;
+      if (revealParent.classList.contains('is-visible')) {
+        clearInterval(check);
+        animateCounter(el);
+      } else if (attempts > 50) {
+        clearInterval(check);
+        animateCounter(el);
+      }
+    }, 100);
   }
 
   function animateCounter(el) {
     if (el.dataset.counted) return;
     el.dataset.counted = '1';
     var target = parseInt(el.dataset.count, 10);
+    if (isNaN(target)) return;
     var duration = 2000;
     var startTime = null;
 

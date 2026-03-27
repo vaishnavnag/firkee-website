@@ -851,3 +851,13 @@
     min-height: 120px;
   }
 }
+
+.design__img,
+.design__step-img,
+.design__material-img,
+.design__studio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}

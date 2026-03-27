@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI for Process Control — Firkee</title>
-  <meta name="description" content="How Firkee uses AI to monitor every stage of footwear production — from cutting to packing. Live defect detection, quality scoring, and process intelligence.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👟</text></svg>">
+  <title>Data Centric Process Control — Firkee</title>
+  <meta name="description" content="How Firkee uses data-centric monitoring at every stage of footwear production — from cutting to packing. Live defect detection, quality scoring, and process intelligence.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%234CAF50'/><text x='50' y='72' font-family='Georgia,serif' font-size='68' font-weight='bold' fill='white' text-anchor='middle'>F</text></svg>">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <meta property="og:title" content="AI for Process Control — Firkee">
+  <meta property="og:title" content="Data Centric Process Control — Firkee">
   <meta property="og:description" content="Live monitoring at every stage of footwear manufacturing. Defects caught before they ship.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://firkee.com/ai">
+  <meta property="og:url" content="https://firkee.com/data-centric">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/ai-page.css">
+  <link rel="stylesheet" href="css/data-centric-page.css">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
       <a href="portfolio.html" class="nav__link">Portfolio</a>
       <a href="process.html" class="nav__link">Process</a>
       <a href="factory.html" class="nav__link">Factory</a>
-      <a href="ai.html" class="nav__link">AI</a>
+      <a href="data-centric.html" class="nav__link nav__link--active">Data Centric</a>
       <a href="about.html" class="nav__link">About</a>
       <a href="work-with-us.html" class="nav__link">Work With Us</a>
       <a href="contact.html" class="nav__link nav__link--cta">Start a Project</a>
@@ -60,7 +60,7 @@
       <a href="portfolio.html" class="mobile-menu__link">Portfolio</a>
       <a href="process.html" class="mobile-menu__link">Process</a>
       <a href="factory.html" class="mobile-menu__link">Factory</a>
-      <a href="ai.html" class="mobile-menu__link">AI</a>
+      <a href="data-centric.html" class="mobile-menu__link">Data Centric</a>
       <a href="about.html" class="mobile-menu__link">About</a>
       <a href="work-with-us.html" class="mobile-menu__link">Work With Us</a>
       <a href="contact.html" class="mobile-menu__link mobile-menu__link--cta">Start a Project</a>
@@ -76,19 +76,19 @@
     </div>
     <div class="ai-hero__content">
       <div class="section-label section-label--light reveal">
-        <span class="section-label__num">AI</span>
-        <span class="section-label__text">Process Intelligence</span>
+        <span class="section-label__num">DC</span>
+        <span class="section-label__text">Data Centric Process Intelligence</span>
       </div>
       <h1 class="ai-hero__title reveal" data-delay="1">
         Every defect caught.<br><em>Before it ships.</em>
       </h1>
       <p class="ai-hero__sub reveal" data-delay="2">
         We monitor every stage of production in real time — cut, last, stitch, QC, pack.
-        AI flags deviations the moment they happen, not after the carton is sealed.
+        Data-driven monitoring flags deviations the moment they happen, not after the carton is sealed.
       </p>
       <div class="ai-hero__stats reveal" data-delay="3">
         <div class="ai-hero__stat">
-          <span class="ai-hero__stat-val" data-count="98">0</span><span class="ai-hero__stat-sfx">%+</span>
+          <span class="ai-hero__stat-val" data-count="98">98</span><span class="ai-hero__stat-sfx">%+</span>
           <span class="ai-hero__stat-label">Quality score</span>
         </div>
         <div class="ai-hero__stat">
@@ -96,7 +96,7 @@
           <span class="ai-hero__stat-label">Defect rate</span>
         </div>
         <div class="ai-hero__stat">
-          <span class="ai-hero__stat-val" data-count="4">0</span>
+          <span class="ai-hero__stat-val" data-count="4">4</span>
           <span class="ai-hero__stat-label">Lines monitored</span>
         </div>
         <div class="ai-hero__stat">
@@ -109,8 +109,7 @@
     <!-- Live multi-line dashboard -->
     <div class="ai-hero__dashboard reveal" data-delay="4">
       <div class="mld-header">
-        <span class="mld-title">VASAI FACTORY — LIVE FLOOR VIEW</span>
-        <span class="mld-live"><span class="mld-dot"></span>LIVE</span>
+        <span class="mld-title">VASAI FACTORY — FLOOR VIEW</span>
       </div>
       <div class="mld-lines" id="mldLines">
         <!-- 4 production lines injected by JS -->
@@ -230,7 +229,7 @@
         <span>4 lines.</span>
         <span class="section-heading--accent">Right now.</span>
       </h2>
-      <p class="ai-floor__intro reveal">Each production line runs independently with its own AI monitor. Flags from any line surface instantly.</p>
+      <p class="ai-floor__intro reveal">Each production line runs independently with its own data monitor. Flags from any line surface instantly.</p>
 
       <div class="ai-floor__grid" id="floorGrid">
         <!-- 4 full dashboards rendered by JS -->
@@ -238,12 +237,12 @@
     </div>
   </section>
 
-  <!-- ========== WHAT AI CATCHES ========== -->
+  <!-- ========== WHAT DATA CATCHES ========== -->
   <section class="section ai-catches" id="what-we-catch">
     <div class="container">
       <div class="section-label reveal">
         <span class="section-label__num">03</span>
-        <span class="section-label__text">What AI Catches</span>
+        <span class="section-label__text">What Data Catches</span>
       </div>
       <h2 class="section-heading reveal">
         <span>Common defects,</span>
@@ -254,7 +253,7 @@
         <div class="catch-card reveal" data-delay="0">
           <div class="catch-card__stage">Stitching</div>
           <h3 class="catch-card__defect">Tension Variance</h3>
-          <p class="catch-card__desc">Loose or tight stitching that changes under wear. AI detects thread tension deviation per stitch cycle.</p>
+          <p class="catch-card__desc">Loose or tight stitching that changes under wear. Data monitoring detects thread tension deviation per stitch cycle.</p>
           <div class="catch-card__bar"><div class="catch-card__fill" style="width:72%"></div></div>
           <span class="catch-card__freq">72% of stitch-stage flags</span>
         </div>
@@ -310,15 +309,15 @@
       </h2>
       <div class="ai-outcomes__grid">
         <div class="outcome-stat reveal" data-delay="0">
-          <span class="outcome-stat__val" data-count="62">0</span><span class="outcome-stat__sfx">%</span>
-          <span class="outcome-stat__label">Reduction in post-production rework since AI monitoring introduced</span>
+          <span class="outcome-stat__val" data-count="62">62</span><span class="outcome-stat__sfx">%</span>
+          <span class="outcome-stat__label">Reduction in post-production rework since data-centric monitoring introduced</span>
         </div>
         <div class="outcome-stat reveal" data-delay="1">
-          <span class="outcome-stat__val" data-count="98">0</span><span class="outcome-stat__sfx">%+</span>
+          <span class="outcome-stat__val" data-count="98">98</span><span class="outcome-stat__sfx">%+</span>
           <span class="outcome-stat__label">Consistent quality score across all 4 production lines, every shift</span>
         </div>
         <div class="outcome-stat reveal" data-delay="2">
-          <span class="outcome-stat__val" data-count="3">0</span><span class="outcome-stat__sfx">x</span>
+          <span class="outcome-stat__val" data-count="3">3</span><span class="outcome-stat__sfx">x</span>
           <span class="outcome-stat__label">Faster defect detection vs. manual end-of-line inspection only</span>
         </div>
         <div class="outcome-stat reveal" data-delay="3">
@@ -364,7 +363,7 @@
             <h4>Company</h4>
             <a href="factory.html">Factory</a>
             <a href="about.html">About Us</a>
-            <a href="ai.html">AI Control</a>
+            <a href="data-centric.html">Data Centric</a>
           </div>
           <div class="footer__nav-col">
             <h4>Connect</h4>
@@ -382,6 +381,6 @@
   </footer>
 
   <script src="js/shared.js"></script>
-  <script src="js/ai-page.js"></script>
+  <script src="js/data-centric-page.js"></script>
 </body>
 </html>
