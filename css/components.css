@@ -709,6 +709,13 @@
     justify-content: center;
     min-height: 48px;
     padding: 14px 32px;
+    margin-left: 0 !important;
+  }
+
+  /* Stack CTA buttons vertically */
+  .home-cta__container .btn + .btn,
+  .hero__ctas .btn + .btn {
+    margin-top: 12px;
   }
 
   .footer__top {
