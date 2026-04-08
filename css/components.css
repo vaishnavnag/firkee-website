@@ -99,16 +99,16 @@
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: var(--color-logo-dark);
+  color: var(--color-gold);
   transition: color 0.3s;
 }
 
 .nav--dark .nav__logo-text {
-  color: var(--color-logo);
+  color: var(--color-gold);
 }
 
 .nav--dark.is-scrolled .nav__logo-text {
-  color: var(--color-logo);
+  color: var(--color-gold);
 }
 
 .nav__logo-sub {
