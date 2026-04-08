@@ -23,28 +23,28 @@
 
 .loader__inner {
   display: flex;
-  gap: 4px;
-}
-
-.loader__letter {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 6vw, 56px);
-  font-weight: 300;
-  color: var(--color-cream);
-  letter-spacing: 0.15em;
+  align-items: center;
+  gap: 14px;
   opacity: 0;
-  transform: translateY(20px);
-  animation: loaderLetter 0.6s var(--ease-out-expo) forwards;
+  transform: translateY(16px);
+  animation: loaderReveal 0.7s var(--ease-out-expo) 0.2s forwards;
 }
 
-.loader__letter:nth-child(1) { animation-delay: 0.1s; }
-.loader__letter:nth-child(2) { animation-delay: 0.18s; }
-.loader__letter:nth-child(3) { animation-delay: 0.26s; }
-.loader__letter:nth-child(4) { animation-delay: 0.34s; }
-.loader__letter:nth-child(5) { animation-delay: 0.42s; }
-.loader__letter:nth-child(6) { animation-delay: 0.50s; }
+.loader__logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
 
-@keyframes loaderLetter {
+.loader__logo-text {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-charcoal);
+}
+
+@keyframes loaderReveal {
   to {
     opacity: 1;
     transform: translateY(0);
