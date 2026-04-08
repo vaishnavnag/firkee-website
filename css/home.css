@@ -50,13 +50,13 @@
     rgba(10, 14, 10, 0.18) 70%,
     rgba(10, 14, 10, 0.05) 100%
   );
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Content: left-aligned, vertically centred */
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding: 0 var(--side-pad) 120px;
   max-width: 700px;
 }
@@ -129,7 +129,7 @@
 /* Stats bar — bottom full-width */
 .hero__stats {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   gap: 0;
   background: rgba(0, 0, 0, 0.45);

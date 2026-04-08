@@ -82,10 +82,14 @@
     return tex;
   }
 
-  // Sobel filter → normal map
+  // Sobel filter → normal map (capped at 512px to avoid perf issues with large images)
   function generateNormalMap(img, strength) {
-    const w = img.naturalWidth  || img.width;
-    const h = img.naturalHeight || img.height;
+    const MAX = 512;
+    const nw = img.naturalWidth  || img.width;
+    const nh = img.naturalHeight || img.height;
+    const scale = Math.min(1, MAX / Math.max(nw, nh));
+    const w = Math.round(nw * scale);
+    const h = Math.round(nh * scale);
     const off = document.createElement('canvas');
     off.width = w; off.height = h;
     const ctx = off.getContext('2d');
@@ -162,7 +166,7 @@
       canvas.height = h;
       canvas.style.cssText = `
         position:absolute; inset:0; width:100%; height:100%;
-        pointer-events:none; display:block; z-index:0;
+        pointer-events:none; display:block; z-index:1;
       `;
 
       // Make container relative
