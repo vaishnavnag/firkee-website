@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firkee — Hero Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --green:#2E5D30; --green-light:#5A8A4A; --cream:#EEF4E8;
+      --ivory:#F5F9F0; --charcoal:#1e2e1e; --gold:#5A8A4A;
+      --ff-disp:'Cormorant Garamond',Georgia,serif;
+      --ff-body:'Outfit','Helvetica Neue',sans-serif;
+    }
+    html,body{height:100%;overflow:hidden}
+    body{font-family:var(--ff-body);background:#0e1a0e;color:#fff}
+
+    /* ── Shared Nav ── */
+    .nav{
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 clamp(20px,4vw,60px);height:68px;
+      background:rgba(14,26,14,0.5);backdrop-filter:blur(12px);
+    }
+    .nav-links-left,.nav-links-right{display:flex;align-items:center;gap:28px;flex:1}
+    .nav-links-right{justify-content:flex-end}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo img{height:20px;width:auto}
+    .nav-logo-text{font-family:var(--ff-body);font-size:20px;font-weight:700;letter-spacing:0.22em;color:#fff}
+    .nav-link{font-size:12px;font-weight:500;letter-spacing:0.05em;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .2s}
+    .nav-link:hover{color:#fff}
+    .nav-link-cta{color:#fff;background:var(--green);padding:8px 18px}
+
+    /* ── Hero container ── */
+    .hero-stage{position:fixed;inset:0;z-index:1}
+    .hero-variant{
+      position:absolute;inset:0;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;padding:0 clamp(24px,5vw,80px);
+      opacity:0;pointer-events:none;
+      transition:opacity .6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .hero-variant.active{opacity:1;pointer-events:auto}
+
+    /* Shared hero typography */
+    .hero-eyebrow{
+      font-family:var(--ff-body);font-size:11px;font-weight:500;
+      letter-spacing:0.3em;text-transform:uppercase;
+      color:rgba(255,255,255,0.45);margin-bottom:28px;
+    }
+    .hero-title{
+      font-family:var(--ff-disp);font-size:clamp(52px,9vw,128px);
+      font-weight:300;line-height:1.0;letter-spacing:-0.02em;color:#fff;
+    }
+    .hero-title em{font-style:italic;color:var(--green-light)}
+    .hero-sub{
+      margin-top:28px;font-size:clamp(15px,1.8vw,20px);
+      font-weight:300;color:rgba(255,255,255,0.5);max-width:480px;line-height:1.7;
+    }
+    .hero-btns{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;align-items:center}
+    .btn-p{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--green);color:#fff;font-family:var(--ff-body);
+      font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+      text-decoration:none;padding:14px 28px;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(46,93,48,0.45)}
+    .btn-g{
+      display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);
+      font-family:var(--ff-body);font-size:13px;font-weight:500;letter-spacing:0.05em;
+      text-transform:uppercase;text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:2px;
+      transition:color .2s,border-color .2s;
+    }
+    .btn-g:hover{color:#fff;border-color:rgba(255,255,255,0.6)}
+
+    .hero-stats{
+      display:flex;gap:48px;margin-top:56px;justify-content:center;flex-wrap:wrap;
+    }
+    .hero-stat-num{
+      font-family:var(--ff-disp);font-size:clamp(36px,5vw,56px);
+      font-weight:300;font-style:italic;color:#fff;line-height:1;
+    }
+    .hero-stat-num span{color:var(--green-light)}
+    .hero-stat-label{
+      font-size:10px;font-weight:500;letter-spacing:0.2em;
+      text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:6px;
+    }
+
+    /* ═══════════════════════════════════════════
+       OPTION 1 — STRIPE MESH GRADIENT
+    ═══════════════════════════════════════════ */
+    #v1{background:#0e1a0e}
+    #v1 canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+    #v1 .v-content{position:relative;z-index:1}
+    #v1 .hero-title{
+      background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.8) 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    #v1 .hero-title em{
+      -webkit-text-fill-color:transparent;
+      background:linear-gradient(135deg,#7ABF6A,#4A9A3A);
+      -webkit-background-clip:text;background-clip:text;
+    }
+
+    /* ═══════════════════════════════════════════
+       OPTION 2 — KINETIC / ROTATING WORD
+    ═══════════════════════════════════════════ */
+    #v2{background:var(--charcoal)}
+    #v2::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(46,93,48,0.18) 0%,transparent 70%);
+    }
+    #v2 .v-content{position:relative;z-index:1}
+    .word-cycle-wrap{
+      overflow:hidden;display:inline-block;vertical-align:bottom;
+      height:1.0em;
+    }
+    .word-cycle{
+      display:flex;flex-direction:column;
+      animation:wordCycle 4s steps(1) infinite;
+    }
+    .word-cycle span{
+      display:block;height:1.0em;line-height:1.0;
+      font-style:italic;color:var(--green-light);
+      transform:translateY(0);
+      animation:wordSlide 4s cubic-bezier(0.16,1,0.3,1) infinite;
+    }
+    @keyframes wordCycle{
+      0%,22%{transform:translateY(0)}
+      25%,47%{transform:translateY(-100%)}
+      50%,72%{transform:translateY(-200%)}
+      75%,97%{transform:translateY(-300%)}
+      100%   {transform:translateY(0)}
+    }
+    .cursor-blink{
+      display:inline-block;width:3px;height:0.75em;
+      background:var(--green-light);margin-left:4px;vertical-align:middle;
+      animation:blink 1s step-end infinite;
+    }
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+    /* ═══════════════════════════════════════════
+       OPTION 3 — SCROLLING PHOTO MARQUEE BG
+    ═══════════════════════════════════════════ */
+    #v3{background:#0a0f0a}
+    .marquee-bg{
+      position:absolute;inset:0;z-index:0;overflow:hidden;
+      display:flex;flex-direction:column;gap:0;
+    }
+    .marquee-row{display:flex;gap:8px;padding:4px 0}
+    .marquee-row:nth-child(even) .marquee-row-inner{animation-direction:reverse}
+    .marquee-row-inner{
+      display:flex;gap:8px;flex-shrink:0;
+      animation:mq 40s linear infinite;
+      width:max-content;
+    }
+    .marquee-row:nth-child(2) .marquee-row-inner{animation-duration:55s}
+    .marquee-row:nth-child(3) .marquee-row-inner{animation-duration:45s}
+    @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .marquee-img{
+      height:clamp(100px,13vh,160px);width:auto;flex-shrink:0;
+      object-fit:cover;border-radius:3px;opacity:0.35;
+      filter:brightness(0.7) saturate(0.5);
+    }
+    .marquee-overlay{
+      position:absolute;inset:0;z-index:1;
+      background:
+        linear-gradient(to right,#0a0f0a 0%,transparent 15%,transparent 85%,#0a0f0a 100%),
+        linear-gradient(to bottom,#0a0f0a 0%,transparent 20%,transparent 80%,#0a0f0a 100%);
+    }
+    #v3 .v-content{position:relative;z-index:2}
+
+    /* ═══════════════════════════════════════════
+       OPTION 4 — SPLIT HEADLINE REVEAL
+    ═══════════════════════════════════════════ */
+    #v4{background:#0e1a0e;overflow:hidden}
+    #v4::after{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(90,138,74,0.1) 0%,transparent 70%);
+    }
+    .split-hero{
+      position:relative;z-index:1;width:100%;max-width:1000px;
+      display:flex;flex-direction:column;align-items:center;
+    }
+    .split-line{overflow:hidden;display:block}
+    .split-word{
+      display:inline-block;
+      opacity:0;transform:translateY(100%);
+      animation:splitReveal 1s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .split-word:nth-child(1){animation-delay:0.05s}
+    .split-word:nth-child(2){animation-delay:0.15s}
+    .split-word:nth-child(3){animation-delay:0.25s}
+    .split-word:nth-child(4){animation-delay:0.35s}
+    @keyframes splitReveal{
+      to{opacity:1;transform:translateY(0)}
+    }
+    .split-image-wrap{
+      position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+      width:clamp(200px,30vw,400px);z-index:-1;opacity:0;
+      animation:imgFade 1.2s 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    @keyframes imgFade{to{opacity:0.18}}
+    .split-img{width:100%;display:block}
+    .split-sub{
+      opacity:0;animation:fadeUp 0.8s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .split-btns{
+      opacity:0;animation:fadeUp 0.8s 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:none}
+    }
+    #v4 .divider-line{
+      width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(90,138,74,0.6),transparent);
+      margin:32px auto;opacity:0;
+      animation:fadeUp 0.8s 0.4s forwards;
+    }
+
+    /* ═══════════════════════════════════════════
+       OPTION 5 — COUNTER ANIMATION
+    ═══════════════════════════════════════════ */
+    #v5{background:#0e1a0e}
+    #v5::before{
+      content:'';position:absolute;inset:0;
+      background:
+        radial-gradient(ellipse 50% 40% at 30% 50%,rgba(46,93,48,0.2) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 50% at 70% 50%,rgba(90,138,74,0.1) 0%,transparent 60%);
+    }
+    #v5 .v-content{position:relative;z-index:1;width:100%;max-width:1000px}
+    .counter-layout{
+      display:grid;grid-template-columns:1fr auto 1fr;gap:40px;
+      align-items:center;width:100%;
+    }
+    .counter-left{text-align:right}
+    .counter-right{text-align:left}
+    .counter-center{display:flex;flex-direction:column;align-items:center;gap:16px}
+    .counter-divider{width:1px;height:120px;background:linear-gradient(to bottom,transparent,rgba(90,138,74,0.5),transparent)}
+    .big-counter{
+      font-family:var(--ff-disp);font-size:clamp(60px,10vw,140px);
+      font-weight:300;font-style:italic;line-height:1;color:#fff;
+    }
+    .big-counter-plus{color:var(--green-light);font-size:0.6em}
+    .counter-label{
+      font-size:11px;font-weight:500;letter-spacing:0.25em;
+      text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:8px;
+    }
+    .counter-desc{
+      font-size:14px;font-weight:300;color:rgba(255,255,255,0.45);
+      margin-top:6px;line-height:1.5;max-width:200px;
+    }
+    .counter-left .big-counter,.counter-right .big-counter{font-size:clamp(44px,7vw,96px)}
+    .counter-sub-grid{
+      display:flex;gap:40px;margin-top:48px;justify-content:center;
+    }
+    .counter-sub-item{text-align:center}
+    @media(max-width:700px){
+      .counter-layout{grid-template-columns:1fr;gap:24px}
+      .counter-left,.counter-right{text-align:center}
+      .counter-divider{width:60px;height:1px}
+    }
+
+    /* ═══════════════════════════════════════════
+       SWITCHER UI
+    ═══════════════════════════════════════════ */
+    .switcher{
+      position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
+      z-index:1000;display:flex;gap:8px;align-items:center;
+      background:rgba(14,26,14,0.85);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:8px 12px;border-radius:100px;
+    }
+    .sw-btn{
+      display:flex;flex-direction:column;align-items:center;gap:3px;
+      background:transparent;border:none;cursor:pointer;
+      padding:8px 16px;border-radius:100px;
+      transition:background .2s;color:rgba(255,255,255,0.45);
+    }
+    .sw-btn:hover{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.8)}
+    .sw-btn.active{background:var(--green);color:#fff}
+    .sw-label{font-family:var(--ff-body);font-size:11px;font-weight:600;letter-spacing:0.06em;white-space:nowrap}
+    .sw-num{font-family:var(--ff-disp);font-size:10px;opacity:0.6}
+    .sw-sep{width:1px;height:28px;background:rgba(255,255,255,0.1)}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-links-left">
+    <a href="design.html" class="nav-link">Design</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="process.html" class="nav-link">Process</a>
+    <a href="factory.html" class="nav-link">Factory</a>
+  </div>
+  <a href="index.html" class="nav-logo">
+    <img src="/assets/images/firkee-mark.svg" alt="" aria-hidden="true">
+    <span class="nav-logo-text">FIRKEE</span>
+  </a>
+  <div class="nav-links-right">
+    <a href="data-centric.html" class="nav-link">Data Centric</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link nav-link-cta">Contact Us</a>
+  </div>
+</header>
+
+<div class="hero-stage">
+
+  <!-- ═══ OPTION 1: STRIPE MESH GRADIENT ═══ -->
+  <div class="hero-variant active" id="v1">
+    <canvas id="gradCanvas"></canvas>
+    <div class="v-content">
+      <p class="hero-eyebrow">Mumbai · Design Studio &amp; Manufacturer</p>
+      <h1 class="hero-title">
+        Sketch<br>to <em>Sole.</em>
+      </h1>
+      <p class="hero-sub">Flat footwear design studio and manufacturer. One roof — concept, sample, production, shipment.</p>
+      <div class="hero-btns">
+        <a href="portfolio.html" class="btn-p">See the Work →</a>
+        <a href="design.html" class="btn-g">Visit Studio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 2: KINETIC ROTATING WORD ═══ -->
+  <div class="hero-variant" id="v2">
+    <div class="v-content">
+      <p class="hero-eyebrow">Mumbai · Design Studio &amp; Manufacturer</p>
+      <h1 class="hero-title">
+        From Sketch<br>
+        to&nbsp;<span class="word-cycle-wrap"><span class="word-cycle">
+          <span>Sole.</span>
+          <span>Sample.</span>
+          <span>Shipment.</span>
+          <span>Store.</span>
+        </span></span><span class="cursor-blink"></span>
+      </h1>
+      <p class="hero-sub">Flat footwear, end to end. Design studio in Lower Parel. Factory in Vasai. Port 40 minutes away.</p>
+      <div class="hero-btns">
+        <a href="portfolio.html" class="btn-p">See the Work →</a>
+        <a href="design.html" class="btn-g">Visit Studio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 3: SCROLLING PHOTO BG ═══ -->
+  <div class="hero-variant" id="v3">
+    <div class="marquee-bg" id="marqueeBg">
+      <div class="marquee-row">
+        <div class="marquee-row-inner" id="mq1"></div>
+      </div>
+      <div class="marquee-row">
+        <div class="marquee-row-inner" id="mq2"></div>
+      </div>
+      <div class="marquee-row">
+        <div class="marquee-row-inner" id="mq3"></div>
+      </div>
+    </div>
+    <div class="marquee-overlay"></div>
+    <div class="v-content">
+      <p class="hero-eyebrow">Mumbai · Design Studio &amp; Manufacturer</p>
+      <h1 class="hero-title">Sketch<br>to <em>Sole.</em></h1>
+      <p class="hero-sub">Flat footwear design studio and manufacturer. One roof — concept, sample, production, shipment.</p>
+      <div class="hero-btns">
+        <a href="portfolio.html" class="btn-p">See the Work →</a>
+        <a href="design.html" class="btn-g">Visit Studio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 4: SPLIT HEADLINE REVEAL ═══ -->
+  <div class="hero-variant" id="v4">
+    <div class="split-image-wrap">
+      <img src="assets/images/product-slingback-brown.jpg" class="split-img" alt="">
+    </div>
+    <div class="split-hero v-content">
+      <h1 class="hero-title" style="font-size:clamp(60px,11vw,148px)">
+        <span class="split-line"><span class="split-word">From</span>&nbsp;<span class="split-word" style="font-style:italic;color:var(--green-light)">Sketch</span></span>
+        <span class="split-line"><span class="split-word">to</span>&nbsp;<span class="split-word" style="font-style:italic">Sole.</span></span>
+      </h1>
+      <div class="divider-line"></div>
+      <p class="hero-sub split-sub" style="animation-delay:0.5s">
+        Flat footwear design studio and manufacturer.<br>One roof — concept, sample, production, shipment.
+      </p>
+      <div class="hero-btns split-btns" style="animation-delay:0.7s">
+        <a href="portfolio.html" class="btn-p">See the Work →</a>
+        <a href="design.html" class="btn-g">Visit Studio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 5: COUNTER ANIMATION ═══ -->
+  <div class="hero-variant" id="v5">
+    <div class="v-content" style="display:flex;flex-direction:column;align-items:center">
+      <p class="hero-eyebrow">Mumbai · Design Studio &amp; Manufacturer</p>
+      <div class="counter-layout">
+        <div class="counter-left">
+          <div class="big-counter"><span class="count" data-target="30">0</span><span class="big-counter-plus">+</span></div>
+          <div class="counter-label">Years</div>
+          <div class="counter-desc">In flat footwear manufacturing</div>
+        </div>
+        <div class="counter-center">
+          <div class="counter-divider"></div>
+          <h1 class="hero-title" style="font-size:clamp(36px,5vw,64px);text-align:center;white-space:nowrap">
+            Sketch<br>to <em>Sole.</em>
+          </h1>
+          <div class="counter-divider"></div>
+        </div>
+        <div class="counter-right">
+          <div class="big-counter"><span class="count" data-target="1530">0</span><span class="big-counter-plus">+</span></div>
+          <div class="counter-label">Shipments</div>
+          <div class="counter-desc">Consignments delivered worldwide</div>
+        </div>
+      </div>
+      <div class="counter-sub-grid">
+        <div class="counter-sub-item">
+          <div class="big-counter" style="font-size:clamp(32px,4vw,56px)"><span class="count" data-target="15000">0</span><span class="big-counter-plus">+</span></div>
+          <div class="counter-label">Pairs / Month</div>
+        </div>
+        <div class="counter-sub-item">
+          <div class="big-counter" style="font-size:clamp(32px,4vw,56px)"><span class="count" data-target="200">0</span><span class="big-counter-plus">+</span></div>
+          <div class="counter-label">Materials</div>
+        </div>
+        <div class="counter-sub-item">
+          <div class="big-counter" style="font-size:clamp(32px,4vw,56px)"><span class="count" data-target="4">0</span></div>
+          <div class="counter-label">Production Lines</div>
+        </div>
+      </div>
+      <div class="hero-btns" style="margin-top:40px">
+        <a href="portfolio.html" class="btn-p">See the Work →</a>
+        <a href="design.html" class="btn-g">Visit Studio</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /hero-stage -->
+
+<!-- SWITCHER -->
+<div class="switcher">
+  <button class="sw-btn active" data-v="v1">
+    <span class="sw-label">Gradient</span>
+    <span class="sw-num">01</span>
+  </button>
+  <div class="sw-sep"></div>
+  <button class="sw-btn" data-v="v2">
+    <span class="sw-label">Kinetic Type</span>
+    <span class="sw-num">02</span>
+  </button>
+  <div class="sw-sep"></div>
+  <button class="sw-btn" data-v="v3">
+    <span class="sw-label">Photo Marquee</span>
+    <span class="sw-num">03</span>
+  </button>
+  <div class="sw-sep"></div>
+  <button class="sw-btn" data-v="v4">
+    <span class="sw-label">Split Reveal</span>
+    <span class="sw-num">04</span>
+  </button>
+  <div class="sw-sep"></div>
+  <button class="sw-btn" data-v="v5">
+    <span class="sw-label">Counters</span>
+    <span class="sw-num">05</span>
+  </button>
+</div>
+
+<script>
+/* ── Switcher ── */
+const btns = document.querySelectorAll('.sw-btn');
+const variants = document.querySelectorAll('.hero-variant');
+let current = 'v1';
+
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.v;
+    if (id === current) return;
+    document.getElementById(current).classList.remove('active');
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.sw-btn').forEach(b => b.classList.toggle('active', b.dataset.v === id));
+    current = id;
+    if (id === 'v4') restartSplitAnim();
+    if (id === 'v5') runCounters();
+  });
+});
+
+/* ══════════════════════════════════════
+   OPTION 1 — Animated Mesh Gradient
+══════════════════════════════════════ */
+(function() {
+  const canvas = document.getElementById('gradCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, frame = 0;
+
+  const blobs = [
+    { x: 0.2, y: 0.3, r: 0.55, color: [30, 80, 35],  speed: 0.0008, angle: 0 },
+    { x: 0.8, y: 0.6, r: 0.5,  color: [14, 50, 20],  speed: 0.0012, angle: 2 },
+    { x: 0.5, y: 0.8, r: 0.45, color: [60, 120, 55], speed: 0.0006, angle: 4 },
+    { x: 0.3, y: 0.7, r: 0.4,  color: [20, 60, 25],  speed: 0.001,  angle: 1 },
+    { x: 0.7, y: 0.2, r: 0.5,  color: [40, 90, 40],  speed: 0.0009, angle: 3 },
+  ];
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function draw() {
+    frame++;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0d190d';
+    ctx.fillRect(0, 0, W, H);
+
+    blobs.forEach(b => {
+      b.angle += b.speed;
+      const cx = (b.x + Math.sin(b.angle * 1.3) * 0.18) * W;
+      const cy = (b.y + Math.cos(b.angle * 0.9) * 0.15) * H;
+      const r  = b.r * Math.min(W, H);
+      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      const [R, G, B] = b.color;
+      grd.addColorStop(0,   `rgba(${R},${G},${B},0.55)`);
+      grd.addColorStop(0.5, `rgba(${R},${G},${B},0.18)`);
+      grd.addColorStop(1,   `rgba(${R},${G},${B},0)`);
+      ctx.fillStyle = grd;
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // Subtle vignette
+    const vig = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W,H)*0.7);
+    vig.addColorStop(0, 'transparent');
+    vig.addColorStop(1, 'rgba(0,0,0,0.45)');
+    ctx.fillStyle = vig;
+    ctx.fillRect(0, 0, W, H);
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+
+/* ══════════════════════════════════════
+   OPTION 3 — Photo Marquee
+══════════════════════════════════════ */
+(function() {
+  const imgs = [
+    'assets/images/product-slingback-brown.jpg',
+    'assets/images/product-woven-slide.jpg',
+    'assets/images/product-slingback-lace.jpg',
+    'assets/images/product-beige-slingback.jpg',
+    'assets/images/product-black-ring-slide.jpg',
+    'assets/images/product-floral-slide.jpg',
+    'assets/images/product-green-buckle-sandal.jpg',
+    'assets/images/product-leopard-slingback.jpg',
+    'assets/images/product-yellow-embossed-sandal.jpg',
+    'assets/images/flat-sandals.jpg',
+    'assets/images/mules.jpg',
+    'assets/images/heeled-sandals.jpg',
+    'assets/images/embellished.jpg',
+    'assets/images/boots.jpg',
+    'assets/images/sandals.jpg',
+    'assets/images/flats.jpg',
+    'assets/images/design-studio.jpg',
+    'assets/images/sample-department.jpg',
+  ];
+
+  function fill(id, subset) {
+    const el = document.getElementById(id);
+    const doubled = [...subset, ...subset];
+    el.innerHTML = doubled.map(src =>
+      `<img class="marquee-img" src="${src}" alt="" loading="lazy">`
+    ).join('');
+  }
+
+  fill('mq1', imgs.slice(0, 9));
+  fill('mq2', imgs.slice(5, 14));
+  fill('mq3', imgs.slice(9));
+})();
+
+/* ══════════════════════════════════════
+   OPTION 4 — Split Reveal (re-trigger on switch)
+══════════════════════════════════════ */
+function restartSplitAnim() {
+  const words = document.querySelectorAll('#v4 .split-word');
+  const sub   = document.querySelectorAll('#v4 .split-sub, #v4 .split-btns, #v4 .divider-line');
+  [...words, ...sub].forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = '';
+  });
+}
+
+/* ══════════════════════════════════════
+   OPTION 5 — Counters
+══════════════════════════════════════ */
+function runCounters() {
+  const els = document.querySelectorAll('#v5 .count');
+  els.forEach(el => {
+    const target = +el.dataset.target;
+    const duration = 1800;
+    const start = performance.now();
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out quart
+      const eased = 1 - Math.pow(1 - progress, 4);
+      const val = Math.round(eased * target);
+      el.textContent = val >= 1000 ? (val >= 10000 ? Math.round(val/1000)*1000 : val).toLocaleString() : val;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toLocaleString();
+    }
+    requestAnimationFrame(tick);
+  });
+}
+// Run once on load
+setTimeout(runCounters, 300);
+</script>
+</body>
+</html>
