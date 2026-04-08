@@ -221,6 +221,13 @@
 
 .portfolio-card__image {
   overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+
+.portfolio-card__image:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.20);
 }
 
 /* Aspect ratio variations for masonry effect */

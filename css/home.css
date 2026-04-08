@@ -16,27 +16,16 @@
   justify-content: flex-end;
 }
 
-/* Background image with Ken Burns */
+/* Background image — parallax handled by tilt3d.js */
 .hero__bg-img {
   position: absolute;
   inset: 0;
-  transform: scale(1.04);
-  animation: kenBurns 10s ease-out forwards;
+  background-image: url('../assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  transform: scale(1.12);
   z-index: 0;
-}
-
-.hero__bg-img-el {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-
-@keyframes kenBurns {
-  0%   { transform: scale(1.04); }
-  100% { transform: scale(1); }
+  will-change: transform;
 }
 
 /* Gradient overlay: dark on left, transparent on right */
@@ -50,13 +39,13 @@
     rgba(10, 14, 10, 0.18) 70%,
     rgba(10, 14, 10, 0.05) 100%
   );
-  z-index: 2;
+  z-index: 1;
 }
 
 /* Content: left-aligned, vertically centred */
 .hero__content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   padding: 0 var(--side-pad) 120px;
   max-width: 700px;
 }
@@ -129,7 +118,7 @@
 /* Stats bar — bottom full-width */
 .hero__stats {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   display: flex;
   gap: 0;
   background: rgba(0, 0, 0, 0.45);
@@ -249,6 +238,13 @@
   overflow: hidden;
   border-radius: 4px;
   background: var(--color-sand);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+
+.pt-item:hover {
+  box-shadow: 0 24px 48px rgba(0,0,0,0.22);
 }
 
 .pt-item--tall {

@@ -74,10 +74,8 @@
   </div>
 
   <!-- ========== 1. HERO ========== -->
-  <section class="hero" id="hero" data-normalmap data-nm-ambient="0.38" data-nm-specular="0.7" data-nm-shine="14" data-nm-strength="3.0">
-    <div class="hero__bg-img">
-      <img src="assets/images/hero-bg.jpg" alt="" aria-hidden="true" class="hero__bg-img-el">
-    </div>
+  <section class="hero" id="hero" data-hero-parallax>
+    <div class="hero__bg-img"></div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <h1 class="hero__headline">
@@ -186,11 +184,11 @@
       </div>
     </div>
     <div class="portfolio-teaser__grid">
-      <a href="portfolio.html" class="pt-item pt-item--tall reveal" data-normalmap data-nm-ambient="0.5" data-nm-specular="0.45" data-nm-shine="28"><img src="assets/images/portfolio-1.jpg" alt="Footwear collection" loading="lazy"></a>
-      <a href="portfolio.html" class="pt-item reveal" data-delay="1" data-normalmap data-nm-ambient="0.5" data-nm-specular="0.45" data-nm-shine="28"><img src="assets/images/portfolio-2.jpg" alt="Sandal design" loading="lazy"></a>
-      <a href="portfolio.html" class="pt-item reveal" data-delay="2" data-normalmap data-nm-ambient="0.5" data-nm-specular="0.45" data-nm-shine="28"><img src="assets/images/portfolio-3.jpg" alt="Mule collection" loading="lazy"></a>
-      <a href="portfolio.html" class="pt-item reveal" data-delay="1" data-normalmap data-nm-ambient="0.5" data-nm-specular="0.45" data-nm-shine="28"><img src="assets/images/portfolio-4.jpg" alt="Flat sandals" loading="lazy"></a>
-      <a href="portfolio.html" class="pt-item reveal" data-delay="2" data-normalmap data-nm-ambient="0.5" data-nm-specular="0.45" data-nm-shine="28"><img src="assets/images/portfolio-5.jpg" alt="Heeled sandals" loading="lazy"></a>
+      <a href="portfolio.html" class="pt-item pt-item--tall reveal" data-tilt><img src="assets/images/portfolio-1.jpg" alt="Footwear collection" loading="lazy"></a>
+      <a href="portfolio.html" class="pt-item reveal" data-delay="1" data-tilt><img src="assets/images/portfolio-2.jpg" alt="Sandal design" loading="lazy"></a>
+      <a href="portfolio.html" class="pt-item reveal" data-delay="2" data-tilt><img src="assets/images/portfolio-3.jpg" alt="Mule collection" loading="lazy"></a>
+      <a href="portfolio.html" class="pt-item reveal" data-delay="1" data-tilt><img src="assets/images/portfolio-4.jpg" alt="Flat sandals" loading="lazy"></a>
+      <a href="portfolio.html" class="pt-item reveal" data-delay="2" data-tilt><img src="assets/images/portfolio-5.jpg" alt="Heeled sandals" loading="lazy"></a>
     </div>
   </section>
 
@@ -368,7 +366,7 @@
 
   <script src="js/shared.js"></script>
   <script src="js/home.js"></script>
-  <script src="js/normalmap.js"></script>
+  <script src="js/tilt3d.js"></script>
   <script>
   (function () {
     var stages = ['cut','last','stitch','qc','pack'];
