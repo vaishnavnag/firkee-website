@@ -4,22 +4,22 @@
    ========================================================================== */
 
 :root {
-  /* --- Firkee Green — Brand Palette --- */
-  --color-obsidian: #071a07;
-  --color-charcoal: #122612;
-  --color-graphite: #1e3a1e;
-  --color-warm-gray: #4e6650;
-  --color-sand: #9ab89c;
-  --color-cream: #eef6ee;
-  --color-ivory: #f6fbf6;
-  --color-gold: #4CAF50;
-  --color-gold-light: #81C784;
-  --color-gold-faint: rgba(76, 175, 80, 0.08);
-  --color-rose: #66BB6A;
+  /* --- Sage — Brand Palette --- */
+  --color-obsidian: #0e1a0e;
+  --color-charcoal: #1e2e1e;
+  --color-graphite: #2e422e;
+  --color-warm-gray: #7A9A6A;
+  --color-sand: #A8C298;
+  --color-cream: #EEF4E8;
+  --color-ivory: #F5F9F0;
+  --color-gold: #5A8A4A;
+  --color-gold-light: #7AAA6A;
+  --color-gold-faint: rgba(90, 138, 74, 0.08);
+  --color-rose: #6A9A5A;
 
   /* --- Brand Logo --- */
-  --color-logo: #4CAF50;
-  --color-logo-dark: #388E3C;
+  --color-logo: #2E5D30;
+  --color-logo-dark: #2E5D30;
 
   /* --- Typography --- */
   --font-display: 'Cormorant Garamond', 'Georgia', serif;

@@ -149,6 +149,13 @@
   transition: color 0.3s;
 }
 
+.nav__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .nav--dark .nav__logo-text {
   color: var(--color-gold);
 }
@@ -386,6 +393,13 @@
   font-weight: 700;
   letter-spacing: 0.25em;
   color: var(--color-logo);
+}
+
+.footer__logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .footer__tagline {

@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firkee — From Sketch to Sole</title>
+  <meta name="description" content="Firkee is a flat footwear design studio and manufacturer in Mumbai, India. Designing and manufacturing for brands that care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #F0EAE0;
+      --bg-dark:  #1A100A;
+      --ink:      #1A100A;
+      --terra:    #C0522A;
+      --sand:     #D9C9B4;
+      --muted:    #8A7060;
+      --light:    #FAF6F0;
+      --ff-disp:  'Fraunces', Georgia, serif;
+      --ff-body:  'Bricolage Grotesque', sans-serif;
+      --ff-mono:  'DM Mono', monospace;
+      --ease:     cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── Custom cursor ── */
+    .cursor {
+      position: fixed;
+      width: 10px; height: 10px;
+      background: var(--terra);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: width .2s var(--ease), height .2s var(--ease), background .2s;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--terra);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%,-50%);
+      transition: transform .12s linear, width .25s var(--ease), height .25s var(--ease), opacity .2s;
+      opacity: 0.5;
+    }
+    body:hover .cursor { opacity: 1; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(20px,4vw,60px);
+      height: 68px;
+      background: transparent;
+      transition: background .4s, backdrop-filter .4s;
+    }
+    nav.scrolled {
+      background: rgba(240,234,224,0.92);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: var(--ff-disp);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: clamp(16px,2.5vw,36px);
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--ff-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.65;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta {
+      background: var(--ink) !important;
+      color: var(--bg) !important;
+      opacity: 1 !important;
+      padding: 8px 18px;
+      border-radius: 2px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh;
+      padding: 0 clamp(20px,5vw,80px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      padding-bottom: 80px;
+      padding-top: 68px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    /* Noise texture overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      align-self: end;
+      padding-bottom: 12px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--terra);
+    }
+
+    .hero-headline {
+      font-family: var(--ff-disp);
+      font-size: clamp(56px, 8.5vw, 130px);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: #F0EAE0;
+    }
+    .hero-headline em {
+      font-style: italic;
+      font-weight: 200;
+      color: var(--terra);
+    }
+
+    .hero-sub {
+      margin-top: 40px;
+      font-size: clamp(14px, 1.5vw, 17px);
+      font-weight: 300;
+      color: rgba(240,234,224,0.5);
+      max-width: 340px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 48px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--terra);
+      color: #fff;
+      font-family: var(--ff-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 2px;
+      transition: transform .2s var(--ease), box-shadow .2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(192,82,42,0.35);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(240,234,224,0.65);
+      font-family: var(--ff-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(240,234,224,0.2);
+      padding-bottom: 2px;
+      transition: color .2s, border-color .2s;
+    }
+    .btn-ghost:hover { color: #F0EAE0; border-color: rgba(240,234,224,0.6); }
+
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding-bottom: 12px;
+    }
+
+    /* Big ghost watermark */
+    .hero-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--ff-disp);
+      font-size: clamp(160px, 22vw, 340px);
+      font-weight: 800;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(240,234,224,0.05);
+      letter-spacing: -0.04em;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 1;
+      user-select: none;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(240,234,224,0.08);
+      border: 1px solid rgba(240,234,224,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 380px;
+    }
+    .hero-stat {
+      padding: 20px 18px;
+      background: rgba(240,234,224,0.03);
+    }
+    .hero-stat-num {
+      font-family: var(--ff-disp);
+      font-size: 38px;
+      font-weight: 600;
+      color: #F0EAE0;
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(240,234,224,0.4);
+      margin-top: 4px;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-scroll-hint span {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,234,224,0.3);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(240,234,224,0.3), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50%      { opacity: 0.8; transform: scaleY(1.1); }
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-section {
+      background: var(--terra);
+      overflow: hidden;
+      padding: 14px 0;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 0 36px;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      white-space: nowrap;
+    }
+    .marquee-item::before {
+      content: '✦';
+      font-size: 8px;
+      opacity: 0.6;
+    }
+
+    /* ── SECTION BASE ── */
+    section { overflow: hidden; }
+
+    .section-tag {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--terra);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--terra);
+    }
+
+    /* ── PILLARS ── */
+    .pillar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 70vh;
+    }
+    .pillar--flip { direction: rtl; }
+    .pillar--flip > * { direction: ltr; }
+
+    .pillar-text {
+      padding: clamp(60px,8vw,120px) clamp(32px,6vw,100px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--light);
+    }
+    .pillar--dark .pillar-text {
+      background: var(--bg-dark);
+    }
+
+    .pillar-num {
+      font-family: var(--ff-disp);
+      font-size: 80px;
+      font-weight: 800;
+      font-style: italic;
+      color: var(--sand);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .pillar--dark .pillar-num { color: rgba(240,234,224,0.08); }
+
+    .pillar-title {
+      font-family: var(--ff-disp);
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .pillar--dark .pillar-title { color: #F0EAE0; }
+
+    .pillar-body {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 380px;
+    }
+    .pillar--dark .pillar-body { color: rgba(240,234,224,0.55); }
+
+    .pillar-detail {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pillar-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .pillar--dark .pillar-detail-item { color: rgba(240,234,224,0.7); }
+    .pillar-detail-item::before {
+      content: '→';
+      font-size: 12px;
+      color: var(--terra);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .pillar-link {
+      margin-top: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terra);
+      text-decoration: none;
+      border-bottom: 1px solid var(--terra);
+      padding-bottom: 2px;
+      width: fit-content;
+      transition: gap .2s;
+    }
+    .pillar-link:hover { gap: 14px; }
+
+    .pillar-image {
+      overflow: hidden;
+      position: relative;
+    }
+    .pillar-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s var(--ease);
+    }
+    .pillar:hover .pillar-image img { transform: scale(1.04); }
+
+    /* ── CLIENTS SECTION ── */
+    .clients-wrap {
+      background: var(--bg);
+      padding: clamp(80px,10vw,140px) clamp(24px,5vw,80px);
+    }
+    .clients-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .clients-title {
+      font-family: var(--ff-disp);
+      font-size: clamp(40px,5vw,68px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .clients-title em {
+      font-style: italic;
+      color: var(--terra);
+    }
+    .clients-count {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .clients-divider {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .clients-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--sand);
+    }
+
+    .clients-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+    .client-chip {
+      padding: 8px 16px;
+      border: 1px solid var(--sand);
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      background: transparent;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .client-chip:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--bg);
+    }
+
+    .certs-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--sand);
+      padding: 6px 12px;
+      border-radius: 100px;
+    }
+    .cert-badge::before { content: '◆'; font-size: 7px; color: var(--terra); }
+
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--ink);
+      padding: clamp(60px,8vw,100px) clamp(24px,5vw,80px);
+    }
+    .stats-band-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .stat-block {
+      padding: 40px 32px;
+      border-right: 1px solid rgba(240,234,224,0.08);
+    }
+    .stat-block:last-child { border-right: none; }
+    .stat-big {
+      font-family: var(--ff-disp);
+      font-size: clamp(52px,7vw,96px);
+      font-weight: 300;
+      font-style: italic;
+      color: #F0EAE0;
+      line-height: 1;
+    }
+    .stat-big span { color: var(--terra); }
+    .stat-label {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(240,234,224,0.35);
+      margin-top: 10px;
+    }
+    .stat-sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(240,234,224,0.5);
+      margin-top: 6px;
+    }
+
+    /* ── CTA ── */
+    .home-cta {
+      background: var(--bg);
+      padding: clamp(100px,14vw,180px) clamp(24px,5vw,80px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-cta::after {
+      content: 'FIRKEE';
+      position: absolute;
+      right: -2vw;
+      bottom: -4vw;
+      font-family: var(--ff-disp);
+      font-size: clamp(120px,18vw,280px);
+      font-weight: 800;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(26,16,10,0.06);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .cta-tag { margin-bottom: 32px; }
+    .cta-headline {
+      font-family: var(--ff-disp);
+      font-size: clamp(44px,6.5vw,100px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+    .cta-headline em {
+      font-style: italic;
+      color: var(--terra);
+    }
+    .cta-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+      transition: color .2s, border-color .2s;
+    }
+    .btn-outline:hover { color: var(--terra); border-color: var(--terra); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-dark);
+      padding: clamp(60px,8vw,100px) clamp(24px,5vw,80px) 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 64px;
+    }
+    .footer-brand-name {
+      font-family: var(--ff-disp);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #F0EAE0;
+      margin-bottom: 12px;
+    }
+    .footer-tagline {
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(240,234,224,0.4);
+      font-family: var(--ff-disp);
+      margin-bottom: 20px;
+    }
+    .footer-address {
+      font-size: 12px;
+      line-height: 1.8;
+      color: rgba(240,234,224,0.3);
+      font-weight: 300;
+    }
+    .footer-col h4 {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(240,234,224,0.3);
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(240,234,224,0.6);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--terra); }
+    .footer-bottom {
+      border-top: 1px solid rgba(240,234,224,0.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom span {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(240,234,224,0.25);
+    }
+    .footer-certs {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-certs span {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,234,224,0.2);
+    }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal[data-d="1"] { transition-delay: 0.1s; }
+    .reveal[data-d="2"] { transition-delay: 0.2s; }
+    .reveal[data-d="3"] { transition-delay: 0.3s; }
+    .reveal[data-d="4"] { transition-delay: 0.4s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-bottom: 120px; }
+      .hero-right { display: none; }
+      .hero-watermark { font-size: 28vw; }
+      .pillar { grid-template-columns: 1fr; min-height: unset; }
+      .pillar--flip { direction: ltr; }
+      .pillar-image { height: 280px; order: -1; }
+      .stats-band-inner { grid-template-columns: 1fr 1fr; }
+      .stat-block { border-right: none; border-bottom: 1px solid rgba(240,234,224,0.08); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .stats-band-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .clients-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index-v2.html" class="nav-logo">FIRKEE</a>
+  <ul class="nav-links">
+    <li><a href="design.html">Design</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="factory.html">Factory</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">FIRKEE</div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">Mumbai, India · Est. 1990s</div>
+    <h1 class="hero-headline reveal" data-d="1">
+      From<br>
+      <em>Sketch</em><br>
+      to Sole.
+    </h1>
+    <p class="hero-sub reveal" data-d="2">
+      Flat footwear design studio and manufacturer. One roof, every step — concept, sample, production, shipment.
+    </p>
+    <div class="hero-actions reveal" data-d="3">
+      <a href="portfolio.html" class="btn-primary">
+        See the Work
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="design.html" class="btn-ghost">Studio Tour</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stats reveal" data-d="2">
+      <div class="hero-stat">
+        <div class="hero-stat-num">30<span style="font-size:0.6em;color:var(--terra)">+</span></div>
+        <div class="hero-stat-label">Years</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1530<span style="font-size:0.6em;color:var(--terra)">+</span></div>
+        <div class="hero-stat-label">Shipments</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">15k<span style="font-size:0.6em;color:var(--terra)">+</span></div>
+        <div class="hero-stat-label">Pairs/month</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item">Flat Footwear</span>
+    <span class="marquee-item">Flats &amp; Sandals</span>
+    <span class="marquee-item">Mules</span>
+    <span class="marquee-item">Heeled Sandals</span>
+    <span class="marquee-item">Embellished</span>
+    <span class="marquee-item">Espadrilles</span>
+    <span class="marquee-item">Wedges</span>
+    <span class="marquee-item">Woven &amp; Braided</span>
+    <span class="marquee-item">SEDEX Audited</span>
+    <span class="marquee-item">ISO Certified</span>
+    <span class="marquee-item">JNPT Port — 40 min</span>
+    <span class="marquee-item">7–14 Day Samples</span>
+    <span class="marquee-item">Flat Footwear</span>
+    <span class="marquee-item">Flats &amp; Sandals</span>
+    <span class="marquee-item">Mules</span>
+    <span class="marquee-item">Heeled Sandals</span>
+    <span class="marquee-item">Embellished</span>
+    <span class="marquee-item">Espadrilles</span>
+    <span class="marquee-item">Wedges</span>
+    <span class="marquee-item">Woven &amp; Braided</span>
+    <span class="marquee-item">SEDEX Audited</span>
+    <span class="marquee-item">ISO Certified</span>
+    <span class="marquee-item">JNPT Port — 40 min</span>
+    <span class="marquee-item">7–14 Day Samples</span>
+  </div>
+</div>
+
+<!-- PILLAR 1 — DESIGN -->
+<div class="pillar">
+  <div class="pillar-text">
+    <div class="section-tag reveal">01 — Design</div>
+    <div class="pillar-num reveal" data-d="1" aria-hidden="true">01</div>
+    <h2 class="pillar-title reveal" data-d="1">In-House<br>Design Studio</h2>
+    <p class="pillar-body reveal" data-d="2">
+      Lower Parel, Mumbai. Our team researches trend calendars, develops original collections, and collaborates from concept to counter sample.
+    </p>
+    <div class="pillar-detail reveal" data-d="3">
+      <div class="pillar-detail-item">200+ material library — leathers, textiles, hardware</div>
+      <div class="pillar-detail-item">Seasonal trend development</div>
+      <div class="pillar-detail-item">Counter sample in 7–14 days</div>
+    </div>
+    <a href="design.html" class="pillar-link reveal" data-d="4">Explore Studio →</a>
+  </div>
+  <div class="pillar-image">
+    <img src="assets/images/product-slingback-brown.jpg" alt="Trend-led footwear design" loading="lazy">
+  </div>
+</div>
+
+<!-- PILLAR 2 — MAKE (dark, flipped) -->
+<div class="pillar pillar--dark pillar--flip">
+  <div class="pillar-text">
+    <div class="section-tag reveal">02 — Manufacture</div>
+    <div class="pillar-num reveal" data-d="1" aria-hidden="true">02</div>
+    <h2 class="pillar-title reveal" data-d="1">Own Factory<br>in Vasai</h2>
+    <p class="pillar-body reveal" data-d="2">
+      4 production lines. Flats, sandals, mules, heeled sandals, boots, embellished — 15,000+ pairs a month, end-to-end control.
+    </p>
+    <div class="pillar-detail reveal" data-d="3">
+      <div class="pillar-detail-item">4 active production lines</div>
+      <div class="pillar-detail-item">Full last-to-sole in-house</div>
+      <div class="pillar-detail-item">AQL quality inspection at every stage</div>
+    </div>
+    <a href="factory.html" class="pillar-link reveal" data-d="4">See the Factory →</a>
+  </div>
+  <div class="pillar-image">
+    <img src="assets/images/product-woven-slide.jpg" alt="Woven footwear production" loading="lazy">
+  </div>
+</div>
+
+<!-- PILLAR 3 — SHIP -->
+<div class="pillar">
+  <div class="pillar-text">
+    <div class="section-tag reveal">03 — Logistics</div>
+    <div class="pillar-num reveal" data-d="1" aria-hidden="true">03</div>
+    <h2 class="pillar-title reveal" data-d="1">Fast Shipment<br>to Your Door</h2>
+    <p class="pillar-body reveal" data-d="2">
+      JNPT port is 40 minutes away. 1,530+ consignments shipped. 3–6 week production lead time — start to shipment.
+    </p>
+    <div class="pillar-detail reveal" data-d="3">
+      <div class="pillar-detail-item">3–6 weeks production to ship</div>
+      <div class="pillar-detail-item">1,530+ consignments delivered</div>
+      <div class="pillar-detail-item">Direct JNPT port access</div>
+    </div>
+    <a href="process.html" class="pillar-link reveal" data-d="4">Our Process →</a>
+  </div>
+  <div class="pillar-image">
+    <img src="assets/images/product-slingback-lace.jpg" alt="Footwear packed for shipment" loading="lazy">
+  </div>
+</div>
+
+<!-- CLIENTS -->
+<section class="clients-wrap">
+  <div class="clients-header">
+    <div>
+      <div class="section-tag reveal" style="margin-bottom:20px;">Trusted By</div>
+      <h2 class="clients-title reveal" data-d="1">Brands that<br><em>trust</em> us.</h2>
+    </div>
+    <div class="clients-count reveal" data-d="1">25+ brands<br>across 3 continents</div>
+  </div>
+
+  <div class="clients-divider reveal">International</div>
+  <div class="clients-grid reveal" data-d="1">
+    <div class="client-chip">La Redoute</div>
+    <div class="client-chip">Promod</div>
+    <div class="client-chip">TJX</div>
+    <div class="client-chip">Monoprix</div>
+    <div class="client-chip">Brownie</div>
+    <div class="client-chip">Cortefiel</div>
+    <div class="client-chip">Anthropologie</div>
+    <div class="client-chip">Primark</div>
+    <div class="client-chip">Dune London</div>
+    <div class="client-chip">Hoss Intropia</div>
+    <div class="client-chip">Urban Outfitters</div>
+    <div class="client-chip">Etam Paris</div>
+    <div class="client-chip">FatFace</div>
+    <div class="client-chip">Inditex</div>
+    <div class="client-chip">CCC</div>
+    <div class="client-chip">Tendam</div>
+    <div class="client-chip">Kmart</div>
+    <div class="client-chip">Mint Velvet</div>
+    <div class="client-chip">OBS</div>
+  </div>
+
+  <div class="clients-divider reveal" data-d="1">National</div>
+  <div class="clients-grid reveal" data-d="2">
+    <div class="client-chip">Pantaloons</div>
+    <div class="client-chip">Zudio</div>
+    <div class="client-chip">Westside</div>
+    <div class="client-chip">House of Anita Dongre</div>
+    <div class="client-chip">Lifestyle</div>
+    <div class="client-chip">Reliance Industries</div>
+  </div>
+
+  <div class="certs-row reveal" data-d="2">
+    <div class="cert-badge">SEDEX Audited</div>
+    <div class="cert-badge">ISO Certified</div>
+    <div class="cert-badge">ICS Compliant</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-band">
+  <div class="stats-band-inner">
+    <div class="stat-block reveal">
+      <div class="stat-big">30<span>+</span></div>
+      <div class="stat-label">Years</div>
+      <div class="stat-sub">In flat footwear manufacturing</div>
+    </div>
+    <div class="stat-block reveal" data-d="1">
+      <div class="stat-big">1530<span>+</span></div>
+      <div class="stat-label">Shipments</div>
+      <div class="stat-sub">Delivered worldwide to date</div>
+    </div>
+    <div class="stat-block reveal" data-d="2">
+      <div class="stat-big">15k<span>+</span></div>
+      <div class="stat-label">Pairs / Month</div>
+      <div class="stat-sub">Across 4 production lines</div>
+    </div>
+    <div class="stat-block reveal" data-d="3">
+      <div class="stat-big">200<span>+</span></div>
+      <div class="stat-label">Materials</div>
+      <div class="stat-sub">In our design library</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="home-cta">
+  <div class="cta-tag section-tag reveal">Start a Project</div>
+  <h2 class="cta-headline reveal" data-d="1">
+    Got a collection<br><em>in mind?</em>
+  </h2>
+  <p class="cta-body reveal" data-d="2">
+    Send us a sketch, a tech pack, or just an idea. We'll take it from there.
+  </p>
+  <div class="cta-actions reveal" data-d="3">
+    <a href="contact.html" class="btn-primary">
+      Get in Touch
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="assets/firkee-company-profile-2026.pdf" class="btn-outline" download>
+      Download Profile
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">FIRKEE</div>
+      <div class="footer-tagline">From Sketch to Sole</div>
+      <div class="footer-address">
+        Firkee Accessories Pvt. Ltd.<br>
+        Lower Parel, Mumbai — Studio<br>
+        Vasai — Factory<br>
+        info@firkee.com
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="design.html">Design</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="process.html">Process</a>
+      <a href="factory.html">Factory</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="data-centric.html">Data Centric</a>
+      <a href="work-with-us.html">Work With Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="mailto:info@firkee.com">info@firkee.com</a>
+      <a href="https://instagram.com/firkeeaccessories" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://linkedin.com/company/firkee-accessories" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Firkee Accessories Pvt. Ltd. All rights reserved.</span>
+    <div class="footer-certs">
+      <span>ISO Certified</span>
+      <span>SEDEX Audited</span>
+      <span>ICS Compliant</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Cursor
+  const cur = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animCursor() {
+    rx += (mx - rx) * 0.14;
+    ry += (my - ry) * 0.14;
+    if (cur) { cur.style.left = mx + 'px'; cur.style.top = my + 'px'; }
+    if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
+    requestAnimationFrame(animCursor);
+  }
+  animCursor();
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (cur) { cur.style.width = '6px'; cur.style.height = '6px'; }
+      if (ring) { ring.style.width = '52px'; ring.style.height = '52px'; ring.style.opacity = '0.8'; }
+    });
+    el.addEventListener('mouseleave', () => {
+      if (cur) { cur.style.width = '10px'; cur.style.height = '10px'; }
+      if (ring) { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.opacity = '0.5'; }
+    });
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // Trigger hero reveals immediately
+  setTimeout(() => {
+    document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('revealed'), i * 120);
+    });
+  }, 100);
+</script>
+</body>
+</html>
