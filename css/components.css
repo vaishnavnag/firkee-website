@@ -78,6 +78,52 @@
   background: rgba(26, 26, 26, 0.92);
 }
 
+/* Hero overlay variant — white text over dark hero, standard on scroll */
+.nav--hero .nav__logo-text {
+  color: #ffffff;
+}
+
+.nav--hero .nav__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nav--hero .nav__link:hover {
+  color: #ffffff;
+}
+
+.nav--hero .nav__link--cta {
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+}
+
+.nav--hero .nav__hamburger span {
+  background: #ffffff;
+}
+
+/* Once scrolled: light bg, switch to charcoal */
+.nav--hero.is-scrolled {
+  background: rgba(245, 249, 240, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.nav--hero.is-scrolled .nav__logo-text {
+  color: var(--color-charcoal);
+}
+
+.nav--hero.is-scrolled .nav__link {
+  color: var(--color-warm-gray);
+}
+
+.nav--hero.is-scrolled .nav__link:hover {
+  color: var(--color-charcoal);
+}
+
+.nav--hero.is-scrolled .nav__hamburger span {
+  background: var(--color-charcoal);
+}
+
 .nav__logo {
   display: flex;
   flex-direction: row;
