@@ -128,10 +128,10 @@
       this.container  = container;
       this.img        = container.querySelector('img');
       this.opts = Object.assign({
-        strength:  2.5,   // normal map edge strength
-        ambient:   0.55,  // base light level
-        specular:  0.4,   // specular highlight intensity
-        shine:     32,    // specular shininess
+        strength:  3.5,   // normal map edge strength
+        ambient:   0.40,  // base light level
+        specular:  0.65,  // specular highlight intensity
+        shine:     16,    // specular shininess
         lerp:      0.08,  // mouse follow smoothness
       }, options);
 
@@ -162,7 +162,7 @@
       canvas.height = h;
       canvas.style.cssText = `
         position:absolute; inset:0; width:100%; height:100%;
-        pointer-events:none; display:block;
+        pointer-events:none; display:block; z-index:0;
       `;
 
       // Make container relative
