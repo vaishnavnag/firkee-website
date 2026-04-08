@@ -10,14 +10,22 @@
   // --- Loader ---
   var loader = document.getElementById('loader');
 
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      if (loader) loader.classList.add('is-hidden');
+  function hideLoader() {
+    if (loader && !loader.classList.contains('is-hidden')) {
+      loader.classList.add('is-hidden');
       document.body.style.overflow = '';
       initRevealAnimations();
       initCounters();
-    }, 1200);
+    }
+  }
+
+  // Hide on load, with a short animation delay
+  window.addEventListener('load', function () {
+    setTimeout(hideLoader, 800);
   });
+
+  // Safety fallback — always hide after 3s no matter what
+  setTimeout(hideLoader, 3000);
 
   // Prevent scroll while loading
   document.body.style.overflow = 'hidden';
