@@ -80,7 +80,7 @@
 
 /* Hero overlay variant — white text over dark hero, standard on scroll */
 .nav--hero .nav__logo-text {
-  color: #ffffff;
+  color: var(--color-charcoal);
 }
 
 .nav--hero .nav__link {
