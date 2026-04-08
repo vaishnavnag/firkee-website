@@ -116,33 +116,13 @@
       background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(46,93,48,0.18) 0%,transparent 70%);
     }
     #v2 .v-content{position:relative;z-index:1}
-    .word-cycle-wrap{
-      overflow:hidden;display:inline-block;vertical-align:bottom;
-      height:1.0em;
-    }
-    .word-cycle{
-      display:flex;flex-direction:column;
-      animation:wordCycle 4s steps(1) infinite;
-    }
-    .word-cycle span{
-      display:block;height:1.0em;line-height:1.0;
+    .typewriter-word{
       font-style:italic;color:var(--green-light);
-      transform:translateY(0);
-      animation:wordSlide 4s cubic-bezier(0.16,1,0.3,1) infinite;
+      border-right:3px solid var(--green-light);
+      padding-right:4px;
+      animation:caretBlink 0.75s step-end infinite;
     }
-    @keyframes wordCycle{
-      0%,22%{transform:translateY(0)}
-      25%,47%{transform:translateY(-100%)}
-      50%,72%{transform:translateY(-200%)}
-      75%,97%{transform:translateY(-300%)}
-      100%   {transform:translateY(0)}
-    }
-    .cursor-blink{
-      display:inline-block;width:3px;height:0.75em;
-      background:var(--green-light);margin-left:4px;vertical-align:middle;
-      animation:blink 1s step-end infinite;
-    }
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    @keyframes caretBlink{0%,100%{border-color:var(--green-light)}50%{border-color:transparent}}
 
     /* ═══════════════════════════════════════════
        OPTION 3 — SCROLLING PHOTO MARQUEE BG
@@ -334,12 +314,7 @@
       <p class="hero-eyebrow">Mumbai · Design Studio &amp; Manufacturer</p>
       <h1 class="hero-title">
         From Sketch<br>
-        to&nbsp;<span class="word-cycle-wrap"><span class="word-cycle">
-          <span>Sole.</span>
-          <span>Sample.</span>
-          <span>Shipment.</span>
-          <span>Store.</span>
-        </span></span><span class="cursor-blink"></span>
+        to&nbsp;<span class="typewriter-word" id="typewriter1">Sole.</span>
       </h1>
       <p class="hero-sub">Flat footwear, end to end. Design studio in Lower Parel. Factory in Vasai. Port 40 minutes away.</p>
       <div class="hero-btns">
@@ -404,14 +379,7 @@
         <span class="split-line"><span class="split-word v6-word" style="animation-delay:0.15s">From</span>&nbsp;<span class="split-word v6-word" style="font-style:italic;color:var(--green-light);animation-delay:0.28s">Sketch</span></span>
         <span class="split-line" style="display:flex;align-items:baseline;gap:16px">
           <span class="split-word v6-word" style="animation-delay:0.4s">to</span>
-          <span class="v6-word-cycle-wrap split-word v6-word" style="animation-delay:0.4s;overflow:hidden;display:inline-block;height:1.0em;vertical-align:bottom">
-            <span class="v6-word-cycle">
-              <span style="display:block;height:1em;line-height:1;font-style:italic">Sole.</span>
-              <span style="display:block;height:1em;line-height:1;font-style:italic;color:var(--green-light)">Sample.</span>
-              <span style="display:block;height:1em;line-height:1;font-style:italic">Shipment.</span>
-              <span style="display:block;height:1em;line-height:1;font-style:italic;color:var(--green-light)">Store.</span>
-            </span>
-          </span>
+          <span class="typewriter-word split-word v6-word" id="typewriter2" style="animation-delay:0.4s">Sole.</span>
         </span>
       </h1>
       <div style="width:40px;height:1px;background:var(--green-light);margin:32px 0;opacity:0;transition:opacity 0.6s 0.8s" id="v6-line"></div>
@@ -625,6 +593,44 @@ btns.forEach(btn => {
 })();
 
 /* ══════════════════════════════════════
+   TYPEWRITER ENGINE (options 2 & 6)
+══════════════════════════════════════ */
+function makeTypewriter(el, words) {
+  let wi = 0, ci = 0, deleting = false;
+  const TYPE_SPEED = 90, DELETE_SPEED = 50, PAUSE = 1600, PAUSE_EMPTY = 300;
+
+  function tick() {
+    const word = words[wi];
+    if (!deleting) {
+      ci++;
+      el.textContent = word.slice(0, ci) + '.';
+      if (ci === word.length) {
+        deleting = true;
+        setTimeout(tick, PAUSE);
+        return;
+      }
+    } else {
+      if (ci > 0) ci--;
+      el.textContent = word.slice(0, ci) + (ci > 0 ? '.' : '');
+      if (ci === 0) {
+        deleting = false;
+        wi = (wi + 1) % words.length;
+        setTimeout(tick, PAUSE_EMPTY);
+        return;
+      }
+    }
+    setTimeout(tick, deleting ? DELETE_SPEED : TYPE_SPEED);
+  }
+  setTimeout(tick, 800);
+}
+
+const tw1 = document.getElementById('typewriter1');
+const tw2 = document.getElementById('typewriter2');
+const twWords = ['Sole', 'Sample', 'Shipment', 'Store'];
+if (tw1) makeTypewriter(tw1, twWords);
+if (tw2) makeTypewriter(tw2, twWords);
+
+/* ══════════════════════════════════════
    OPTION 4 — Split Reveal (re-trigger on switch)
 ══════════════════════════════════════ */
 function restartSplitAnim() {
@@ -733,10 +739,6 @@ setTimeout(() => { if (current === 'v6') triggerV6(); }, 300);
 
 <style>
   #v6 canvas { position:absolute;inset:0;width:100%;height:100%;z-index:0 }
-  .v6-word-cycle {
-    display:flex;flex-direction:column;
-    animation:wordCycle 4s steps(1) 1.5s infinite;
-  }
   #v6 .sw-btn[data-v="v6"] { border: 1px solid rgba(90,138,74,0.4) }
 </style>
 </body>
