@@ -48,18 +48,21 @@
 
   <!-- Navigation -->
   <header class="nav" id="nav">
-    <a href="index.html" class="nav__logo">
-      <span class="nav__logo-text">FIRKEE</span>
-    </a>
-    <nav class="nav__links" id="navLinks">
+    <nav class="nav__links nav__links--left" id="navLinksLeft">
       <a href="design.html" class="nav__link">Design</a>
       <a href="portfolio.html" class="nav__link">Portfolio</a>
       <a href="process.html" class="nav__link">Process</a>
       <a href="factory.html" class="nav__link">Factory</a>
+    </nav>
+    <a href="index.html" class="nav__logo nav__logo--center">
+      <img src="/assets/images/firkee-mark.svg" class="nav__logo-mark" alt="" aria-hidden="true">
+      <span class="nav__logo-text">FIRKEE</span>
+    </a>
+    <nav class="nav__links nav__links--right" id="navLinksRight">
       <a href="data-centric.html" class="nav__link">Data Centric</a>
       <a href="about.html" class="nav__link">About</a>
       <a href="work-with-us.html" class="nav__link">Work With Us</a>
-      <a href="contact.html" class="nav__link nav__link--cta">Start a Project</a>
+      <a href="contact.html" class="nav__link nav__link--cta">Contact Us</a>
     </nav>
     <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -86,26 +89,24 @@
       <div class="hero__gradient"></div>
     </div>
     <div class="hero__content">
-      <p class="hero__pre reveal" data-delay="0">Flat footwear studio &mdash; Mumbai</p>
-      <h1 class="hero__title">
-        <span class="hero__title-line reveal" data-delay="1">We Design</span>
-        <span class="hero__title-line hero__title-line--italic reveal" data-delay="2">Shoes.</span>
-        <span class="hero__title-line reveal" data-delay="3">Then We Make Them.</span>
-      </h1>
-      <p class="hero__sub reveal" data-delay="4">Designing and manufacturing for brands that care.</p>
-      <div class="hero__ctas reveal" data-delay="5">
+      <!-- Brand lockup -->
+      <div class="hero__brand reveal" data-delay="0">
+        <img src="/assets/images/firkee-mark.svg" class="hero__brand-mark" alt="" aria-hidden="true">
+        <span class="hero__brand-name">FIRKEE</span>
+      </div>
+      <!-- Tagline -->
+      <p class="hero__tagline reveal" data-delay="1">Sketch to Sole</p>
+      <!-- Hero image -->
+      <div class="hero-image-wrap reveal" data-delay="2">
+        <img src="https://us-central-1.telnyxcloudstorage.com/seafile/fjadfhsahlgkjsghnvjgalkjknavkjwlvklkjgnlkjasdhkjfa.png" alt="Firkee footwear craftsmanship" class="hero-image-main">
+      </div>
+      <!-- CTAs -->
+      <div class="hero__ctas reveal" data-delay="3">
         <a href="portfolio.html" class="btn btn--primary">See the Work
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="design.html" class="btn btn--outline">Visit the Studio</a>
       </div>
-      <div class="hero__photo reveal">
-        <img src="assets/images/product-floral-slide.jpg" alt="Firkee embroidered floral slide — product showcase" class="hero__img" loading="eager">
-      </div>
-    </div>
-    <div class="hero__scroll reveal" data-delay="6">
-      <div class="hero__scroll-line"></div>
-      <span class="hero__scroll-text">Scroll</span>
     </div>
     <div class="hero__stats">
       <div class="hero__stat reveal" data-delay="4">
@@ -278,131 +279,7 @@
     </div>
   </section>
 
-  <!-- ========== 5. CATEGORY PREVIEW (horizontal scroll) ========== -->
-  <section class="categories" id="categories">
-    <div class="categories__header">
-      <div class="section-label reveal">
-        <span class="section-label__num">04</span>
-        <span class="section-label__text">Categories</span>
-      </div>
-      <h2 class="section-heading reveal">
-        <span>What We</span>
-        <span class="section-heading--accent">Create</span>
-      </h2>
-    </div>
-    <div class="hscroll" id="categoryScroll">
-      <!-- Flat Sandals -->
-      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="0">
-        <div class="category-card__visual">
-          <img src="assets/images/product-beige-slingback.jpg" alt="Firkee flat sandals collection" class="category-card__img" loading="lazy">
-        </div>
-        <div class="category-card__info">
-          <h3 class="category-card__name">Flat Sandals</h3>
-        </div>
-      </a>
-      <!-- Embroidered Sandals -->
-      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="1">
-        <div class="category-card__visual">
-          <img src="assets/images/product-floral-slide.jpg" alt="Firkee embroidered flat sandals" class="category-card__img" loading="lazy">
-        </div>
-        <div class="category-card__info">
-          <h3 class="category-card__name">Embroidered Sandals</h3>
-        </div>
-      </a>
-      <!-- Mules, Ballerinas & Loafers -->
-      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="2">
-        <div class="category-card__visual">
-          <img src="assets/images/product-leopard-slingback.jpg" alt="Firkee mules, ballerinas and loafers" class="category-card__img" loading="lazy">
-        </div>
-        <div class="category-card__info">
-          <h3 class="category-card__name">Mules & Ballerinas</h3>
-        </div>
-      </a>
-      <!-- Heels & Pumps -->
-      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="3">
-        <div class="category-card__visual">
-          <img src="assets/images/product-yellow-embossed-sandal.jpg" alt="Firkee heels and pumps" class="category-card__img" loading="lazy">
-        </div>
-        <div class="category-card__info">
-          <h3 class="category-card__name">Heels & Pumps</h3>
-        </div>
-      </a>
-      <!-- Kid's Footwear -->
-      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="4">
-        <div class="category-card__visual">
-          <img src="assets/images/product-floral-thong-sandal.jpg" alt="Firkee kids footwear" class="category-card__img" loading="lazy">
-        </div>
-        <div class="category-card__info">
-          <h3 class="category-card__name">Kid's Footwear</h3>
-        </div>
-      </a>
-      <!-- Men's Footwear -->
-      <a href="portfolio.html" class="hscroll__item category-card reveal" data-delay="5">
-        <div class="category-card__visual">
-          <img src="assets/images/product-black-ring-slide.jpg" alt="Firkee mens footwear" class="category-card__img" loading="lazy">
-        </div>
-        <div class="category-card__info">
-          <h3 class="category-card__name">Men's Footwear</h3>
-        </div>
-      </a>
-    </div>
-  </section>
 
-  <!-- ========== 6. PROCESS TEASER ========== -->
-  <section class="process-teaser" id="process-teaser">
-    <div class="process-teaser__container">
-      <div class="section-label section-label--light reveal">
-        <span class="section-label__num">05</span>
-        <span class="section-label__text">Our Process</span>
-      </div>
-      <h2 class="section-heading section-heading--light reveal">
-        <span>How It</span>
-        <span class="section-heading--accent">Works</span>
-      </h2>
-      <div class="process-teaser__timeline reveal">
-        <div class="process-teaser__step">
-          <span class="process-teaser__num">01</span>
-          <span class="process-teaser__name">Inquiry</span>
-        </div>
-        <div class="process-teaser__connector"></div>
-        <div class="process-teaser__step">
-          <span class="process-teaser__num">02</span>
-          <span class="process-teaser__name">Design</span>
-        </div>
-        <div class="process-teaser__connector"></div>
-        <div class="process-teaser__step">
-          <span class="process-teaser__num">03</span>
-          <span class="process-teaser__name">Sampling</span>
-        </div>
-        <div class="process-teaser__connector"></div>
-        <div class="process-teaser__step">
-          <span class="process-teaser__num">04</span>
-          <span class="process-teaser__name">Approval</span>
-        </div>
-        <div class="process-teaser__connector"></div>
-        <div class="process-teaser__step">
-          <span class="process-teaser__num">05</span>
-          <span class="process-teaser__name">Planning</span>
-        </div>
-        <div class="process-teaser__connector"></div>
-        <div class="process-teaser__step">
-          <span class="process-teaser__num">06</span>
-          <span class="process-teaser__name">Manufacturing</span>
-        </div>
-        <div class="process-teaser__connector"></div>
-        <div class="process-teaser__step">
-          <span class="process-teaser__num">07</span>
-          <span class="process-teaser__name">Delivery</span>
-        </div>
-      </div>
-      <div class="process-teaser__footer reveal">
-        <span class="process-teaser__duration">From your first email to delivery &mdash; here's the timeline</span>
-        <a href="process.html" class="btn btn--outline-light">View Full Process
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- ========== 8. CTA ========== -->
   <section class="home-cta" id="home-cta">

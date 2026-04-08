@@ -80,10 +80,18 @@
 
 .nav__logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   line-height: 1;
-  gap: 2px;
+  gap: 10px;
   z-index: 1001;
+}
+
+.nav__logo-mark {
+  height: 18px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav__logo-text {
@@ -115,7 +123,12 @@
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
+  flex: 1;
+}
+
+.nav__links--right {
+  justify-content: flex-end;
 }
 
 .nav__link {
@@ -126,6 +139,10 @@
   color: var(--color-warm-gray);
   transition: color 0.3s;
   position: relative;
+}
+
+.nav--dark .nav__link {
+  color: var(--color-logo);
 }
 
 .nav__link::after {
@@ -586,6 +603,22 @@
   }
 }
 
+/* --- iPad --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav__logo-text {
+    font-size: 18px;
+    letter-spacing: 0.18em;
+  }
+
+  .nav__logo-mark {
+    height: 15px;
+  }
+
+  .nav__logo {
+    gap: 8px;
+  }
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .nav__links {
@@ -594,6 +627,15 @@
 
   .nav__hamburger {
     display: flex;
+  }
+
+  .nav__logo-text {
+    font-size: 18px;
+    letter-spacing: 0.15em;
+  }
+
+  .nav__logo-mark {
+    height: 14px;
   }
 
   .footer__top {
