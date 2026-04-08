@@ -110,6 +110,7 @@
 
 .nav--hero.is-scrolled .nav__logo-text {
   color: var(--color-charcoal);
+  text-shadow: none;
 }
 
 .nav--hero.is-scrolled .nav__link {
@@ -145,8 +146,9 @@
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: var(--color-gold);
-  transition: color 0.3s;
+  color: var(--color-charcoal);
+  transition: color 0.3s, text-shadow 0.3s;
+  text-shadow: 0 0 12px rgba(255,255,255,0.6), 0 1px 3px rgba(255,255,255,0.4);
 }
 
 .nav__logo-img {
