@@ -110,7 +110,6 @@
 
 .nav--hero.is-scrolled .nav__logo-text {
   color: var(--color-charcoal);
-  text-shadow: none;
 }
 
 .nav--hero.is-scrolled .nav__link {
@@ -147,8 +146,7 @@
   font-weight: 700;
   letter-spacing: 0.25em;
   color: var(--color-charcoal);
-  transition: color 0.3s, text-shadow 0.3s;
-  text-shadow: 0 0 12px rgba(255,255,255,0.6), 0 1px 3px rgba(255,255,255,0.4);
+  transition: color 0.3s;
 }
 
 .nav__logo-img {
@@ -402,6 +400,20 @@
   width: auto;
   display: block;
   object-fit: contain;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo-text {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-charcoal);
 }
 
 .footer__tagline {
